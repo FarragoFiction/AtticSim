@@ -11,8 +11,31 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'strife', sans-serif;
-  background-color: black;
+  background-color: grey;
   color: #00ff00;
+}
+
+.gameText {
+  height: 300px;
+  font-size: 18px;
+}
+
+.gameInput {
+    background-color: black;
+    width: 300px;
+    height: 33px;
+    color: #00ff00;
+    font-family: 'strife', sans-serif;
+    font-size: 18px;
+    border: none;
+}
+
+
+
+.game {
+  width:500px;
+  background-color: black;
+  padding: 10px;
 }
 
 #output {
