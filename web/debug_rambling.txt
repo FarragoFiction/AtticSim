@@ -1,0 +1,32 @@
+Alright.
+
+How do I want to design this adventure game in a OO kinda style?
+
+The setting is the control room, which has various things you can interact with. Are their other rooms?
+
+How does Thy DungeonMan work?
+
+Alright so:
+
+* type a command
+* screen prints out both the result of that command, and the description of where you currently are.
+
+
+Hrrrm, so a OneCharAtTimeWrapper would be made up of text from multiple sources....  how would i do line breaks?
+
+or....
+
+could have two sections, one for results of last command and one for description of environment?
+
+description is blank if nothing there?
+
+one awaits the other.
+
+should i modify how one car at a time works?
+yes.
+
+
+
+
+so....action instances s have associated point values. how to know total? have array of all actions and they sum automatically.
+

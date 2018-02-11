@@ -33,7 +33,7 @@ class Controller
 
 
 
-        intro = new OneCharAtTimeWrapper("A young Shogun stand in a control room. It just so happens that today, the 13th of January, 2018, is the day he finally took over SBURBSim. What will he do?",gameText);
+        intro = new OneCharAtTimeWrapper(<Line>[new Line("A young Shogun stand in a control room. It just so happens that today, the 13th of January, 2018, is the day he finally took over SBURBSim. What will he do?",gameText)]);
         intro.write();
     }
 
