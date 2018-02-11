@@ -30,3 +30,11 @@ yes.
 
 so....action instances s have associated point values. how to know total? have array of all actions and they sum automatically.
 
+
+
+
+~~~~~~~~
+
+Alright. What first.
+
+Rooms. Needs to start somewhere.
