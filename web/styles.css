@@ -1,0 +1,27 @@
+
+
+@font-face {
+    font-family: strife;
+    src: url(Fonts/Strife.ttf);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'strife', sans-serif;
+  background-color: black;
+  color: #00ff00;
+}
+
+#output {
+  padding: 20px;
+}
+
+.winner{
+  font-family: 'strife', sans-serif;
+  font-size: 72px;
+
+}
+
