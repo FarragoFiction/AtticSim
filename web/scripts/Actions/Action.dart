@@ -1,12 +1,36 @@
 import "../Item.dart";
 import "../random.dart";
 import "../weighted_lists.dart";
+import "../Controller.dart";
+import "Look.dart";
+
+/*
+
+sequence of events. action parses the command into an action subtype,
+then hands it over to that subtypes class (not instance).
+
+that subclass tries to find the item, and if it can't, uses a default message about how you can't look at nothing, dunkass.
+if it CAN find the item, it then asks the item if it reponds to anything of it's class.
+
+if it does, passes it to the instance
+if it doesn't, default error message.
+ */
 
 abstract class Action {
 
 
     String name;
     List<String>  alts;
+
+    Action(this.name, this.alts) {
+
+    }
+
+    String apply(Item item);
+
+    static Item findItemFromString(String itemString) {
+        itemString.trim();
+    }
 
     //all actions apply to an item, so rooms are items too. fuck the world.
     static String applyAction(String command ) {

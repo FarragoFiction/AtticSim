@@ -12,6 +12,7 @@ knows about all the possible commands and the intro thingy.
 class Controller
 {
 
+    static Controller instance;
 
     Element gameText = new DivElement();
     Element roomText = new DivElement();
@@ -23,6 +24,7 @@ class Controller
 
 
     Controller(Element wrapper) {
+        instance = this;
         Element container = new DivElement();
         container.classes.add('game');
         gameText.classes.add('gameText');
@@ -53,7 +55,7 @@ class Controller
 
     Future<Null> init() async {
 
-        intro = new OneCharAtTimeWrapper(<Line>[new Line("A young Shogun stands in a SBURBSim CONTROL ROOM. It just so happens that today, the 13th of January, 2018, is the day he finally took over SBURBSim. What will he do?",gameText),new Line(currentPlayer.currentRoom.fullDescription,roomText)]);
+        intro = new OneCharAtTimeWrapper(<Line>[new Line("A young Shogun stands in a SBURBSim CONTROL ROOM. It just so happens that today, the 13th of January, 2018, is the day he finally took over SBURBSim. What will he do? Probably type commands in a 'look room' sort of way. That does seem to be the type of game this is.",gameText),new Line(currentPlayer.currentRoom.fullDescription,roomText)]);
         await intro.write();
         //don't have commands be enabled till intro is finished
         initTextListener();
