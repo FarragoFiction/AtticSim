@@ -83,7 +83,7 @@ class Controller
         Item couch = new Item("Familiar Couch",<String>["CASTING COUCH", "COUCH", "FAMILIAR COUCH"],"I want to destroy this accursed fucking piece of ikea looking trash. let me destroy it. Where's the destroy option that is all I am good for.");
         controlRoom.contents.add(couch);
 
-        Room testExit = new Room("Dennis",[],"Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.");
+        Room testExit = new Room("Dennis",["DENNIS","DUDE","GUY","MEME"],"Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.");
         controlRoom.exits.add(testExit);
 
         currentPlayer = new Player(controlRoom, "Shogun", <String>[],"a towering memelord, 1.3 JRs tall.");
