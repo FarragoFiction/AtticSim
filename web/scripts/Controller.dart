@@ -80,7 +80,7 @@ class Controller
     void initRooms() {
         Room controlRoom = new Room("SBURBSim CONTROL ROOM",[],"a bizarre amagalmation of memes, coding paraphernalia and definitely no dictionaries. It fills you with an existential dread. JR is a demon.");
 
-        Item couch = new Item("Familiar Couch",<String>["CASTING COUCH"],"I want to destroy this accursed fucking piece of ikea looking trash. let me destroy it. Where's the destroy option that is all I am good for.");
+        Item couch = new Item("Familiar Couch",<String>["CASTING COUCH", "COUCH", "FAMILIAR COUCH"],"I want to destroy this accursed fucking piece of ikea looking trash. let me destroy it. Where's the destroy option that is all I am good for.");
         controlRoom.contents.add(couch);
 
         Room testExit = new Room("Dennis",[],"Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.");

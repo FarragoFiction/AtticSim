@@ -52,7 +52,9 @@ abstract class Action {
         if(Look.isCommand(parts[0])) {
             //print("it's a look command");
             String item = null;
-            if(parts.length > 1) item = parts[1];
+            parts.remove(parts[0]);
+            if(parts.length > 0) item = parts.join(' ');
+
             print("the item is $item");
             //then, give it the rest of the command and call it a day, you lazy fuck
             return Look.performAction(item);
