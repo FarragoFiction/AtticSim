@@ -2,6 +2,8 @@ import 'dart:html';
 import "OneCharAtTime.dart";
 import "Room.dart";
 import "Player.dart";
+import 'dart:async';
+import "Actions/Action.dart";
 
 /*
 knows about all the possible commands and the intro thingy.
@@ -36,18 +38,25 @@ class Controller
         textInputElement.classes.add("gameInput");
         textInputElement.autofocus = true;
 
-        initTextListener();
 
         container.append(inputContainer);
         wrapper.append(container);
 
-        Room controlRoom = new Room("SBURBSim CONTROL ROOM","a bizarre amagalmation of memes, coding paraphernalia and definitely no dictionaries. It fills you with an existential dread. JR is a demon.");
-        Room testExit = new Room("Dennis","Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.");
+        Room controlRoom = new Room("SBURBSim CONTROL ROOM",[],"a bizarre amagalmation of memes, coding paraphernalia and definitely no dictionaries. It fills you with an existential dread. JR is a demon.");
+        Room testExit = new Room("Dennis",[],"Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.");
         controlRoom.exits.add(testExit);
         currentPlayer = new Player(controlRoom, "Shogun", <String>[],"a towering memelord, 1.3 JRs tall.");
+        init();
 
-        intro = new OneCharAtTimeWrapper(<Line>[new Line("A young Shogun stand in a SBURBSim CONTROL ROOM. It just so happens that today, the 13th of January, 2018, is the day he finally took over SBURBSim. What will he do?",gameText),new Line(currentPlayer.currentRoom.description,roomText)]);
-        intro.write();
+
+    }
+
+    Future<Null> init() async {
+
+        intro = new OneCharAtTimeWrapper(<Line>[new Line("A young Shogun stands in a SBURBSim CONTROL ROOM. It just so happens that today, the 13th of January, 2018, is the day he finally took over SBURBSim. What will he do?",gameText),new Line(currentPlayer.currentRoom.fullDescription,roomText)]);
+        await intro.write();
+        //don't have commands be enabled till intro is finished
+        initTextListener();
     }
 
     void initTextListener() {
@@ -62,11 +71,11 @@ class Controller
         textInputElement.value = "";
         gameText.text = "";
         roomText.text = "";
-        displayText("JR is too lazy to implmeent $command yet.");
+        displayText(Action.applyAction(command));
     }
 
     void displayText(String text) {
-        new OneCharAtTimeWrapper(<Line>[new Line(text,gameText),new Line(currentPlayer.currentRoom.description,roomText)]).write();
+        new OneCharAtTimeWrapper(<Line>[new Line(text,gameText),new Line(currentPlayer.currentRoom.fullDescription,roomText)]).write();
     }
 
 }
