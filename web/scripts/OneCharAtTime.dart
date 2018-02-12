@@ -16,7 +16,7 @@ import 'dart:html';
 
     Future<Null> write() async {
         if(currentLine == null) currentLine = lines[0];
-        print("write");
+        //print("write");
         currentLine.div.text =  currentLine.text.substring(0, textIndex);
         textIndex ++;
 

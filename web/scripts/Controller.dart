@@ -4,7 +4,7 @@ import "Room.dart";
 import "Player.dart";
 import 'dart:async';
 import "Actions/Action.dart";
-
+import "Item.dart";
 /*
 knows about all the possible commands and the intro thingy.
  */
@@ -44,17 +44,14 @@ class Controller
         container.append(inputContainer);
         wrapper.append(container);
 
-        Room controlRoom = new Room("SBURBSim CONTROL ROOM",[],"a bizarre amagalmation of memes, coding paraphernalia and definitely no dictionaries. It fills you with an existential dread. JR is a demon.");
-        Room testExit = new Room("Dennis",[],"Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.");
-        controlRoom.exits.add(testExit);
-        currentPlayer = new Player(controlRoom, "Shogun", <String>[],"a towering memelord, 1.3 JRs tall.");
+
         init();
 
 
     }
 
     Future<Null> init() async {
-
+        initRooms();
         intro = new OneCharAtTimeWrapper(<Line>[new Line("A young Shogun stands in a SBURBSim CONTROL ROOM. It just so happens that today, the 13th of January, 2018, is the day he finally took over SBURBSim. What will he do? Probably type commands in a 'look room' sort of way. That does seem to be the type of game this is.",gameText),new Line(currentPlayer.currentRoom.fullDescription,roomText)]);
         await intro.write();
         //don't have commands be enabled till intro is finished
@@ -78,6 +75,18 @@ class Controller
 
     void displayText(String text) {
         new OneCharAtTimeWrapper(<Line>[new Line(text,gameText),new Line(currentPlayer.currentRoom.fullDescription,roomText)]).write();
+    }
+
+    void initRooms() {
+        Room controlRoom = new Room("SBURBSim CONTROL ROOM",[],"a bizarre amagalmation of memes, coding paraphernalia and definitely no dictionaries. It fills you with an existential dread. JR is a demon.");
+
+        Item couch = new Item("Familiar Couch",<String>["CASTING COUCH"],"I want to destroy this accursed fucking piece of ikea looking trash. let me destroy it. Where's the destroy option that is all I am good for.");
+        controlRoom.contents.add(couch);
+
+        Room testExit = new Room("Dennis",[],"Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.");
+        controlRoom.exits.add(testExit);
+
+        currentPlayer = new Player(controlRoom, "Shogun", <String>[],"a towering memelord, 1.3 JRs tall.");
     }
 
 }

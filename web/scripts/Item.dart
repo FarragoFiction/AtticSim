@@ -11,6 +11,11 @@ class Item {
         validActions.add(new Look()); //all things can be looked at.
     }
 
+     bool isItem(String word) {
+        //print("is $word another word for LOOK?");
+        return alts.contains(word.toUpperCase().trim());
+    }
+
     String toString() {
         return name;
     }
