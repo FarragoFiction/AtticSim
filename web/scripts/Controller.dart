@@ -80,6 +80,7 @@ class Controller
     }
 
     void calculateTotalAvailablePoints() {
+        _totalAvailablePoints  = 0;
         for(Action a in Action.allActions) {
             _totalAvailablePoints += a.pointValue;
         }
