@@ -162,7 +162,7 @@ class Controller
         controlRoom.contents.add(unicorn);
         controlRoom.contents.add(new Item("Toddler!JR 'Do it For Her' board",<String>["BOARD", "TODDLER JR BOARD", "DO IT FOR HER BOARD","TODDLER!JR 'DO IT FOR HER' BOARD"],"Pure. Blessed. Powerful. God Bless this board.","You admire the board. Toddler JR is always full of such terrible ideas. They are your favorite JR."));
         controlRoom.contents.add(new Item("JR's 4th Wall",<String>["WALL", "4TH WALL", "JR'S 4TH WALL","FENESTRATED WALL"],"Something something meta. If I climbed through this I could get myself some burgs.","You attempt to crawl through JR's Fenestrated Window. Luckily, it is currently unpowered.",destroyable: true,portable: true));
-        passwordScrawl = new Item("scrawled password riddle",<String>["SCRAWLED PASSWORD RIDDLE", "SCRAWL", "GIGGLESNORT","RIDDLE"],"... is JR's password REALLY 'where is everything better than expected?' What a shit riddle.","You stare in frustration at the gigglesnort.",destroyable: true, portable: true, consumable: true, useConditionString: Item.ORDERSHIT);
+        passwordScrawl = new Item("scrawled password riddle",<String>["SCRAWLED PASSWORD RIDDLE", "SCRAWL", "GIGGLESNORT","RIDDLE"],"... is JR's password REALLY 'where is everything better than expected?' What a shit riddle.","You stare in frustration at the gigglesnort.",destroyable: true, portable: true, consumable: true);
         controlRoom.contents.add(passwordScrawl);
 
 
@@ -173,6 +173,8 @@ class Controller
         //Control Console
         controlConsole = new Room("Control Console",["CONTROL CONSOLE","CONSOLE"],"the control console for SBURBSim. It's actually just a regular computer, with regular shit you can do on it, like shitpost or troll jr or buy shit online. It's not really a place, but close enough.","You fail to use the CONTROL CONSOLE as it requires a PASSWORD.");
         controlRoom.exits.add(controlConsole);
+        controlConsole.contents.add(new Item("Password Locked JR's Computer",<String>["COMPUTER", "PASSWORD LOCKED COMPUTER", "JR'S COMPUTER","PASSWORD LOCKED JR'S COMPUTER"],"JR's computer, with a shitty password.","You have no idea what the password is, so you can't use it.", useConditionString: Item.ORDERSHIT));
+
         controlConsole.exits.add(controlRoom);
 
         shogun = new Player(controlRoom, "Shogun", <String>["MAIN CHARACTER","PROTAGONIST","SHOGUN","SHOGUN OF SAUCE","MEMELORD","LORD OF WORDS", "FU","FUEDALULTIMATUM","THE ANTITHESIS","THE VILLAIN","VILLAIN"],"a towering memelord, 1.3 JRs tall. Who even IS he???", "You fail to use Shogun.");

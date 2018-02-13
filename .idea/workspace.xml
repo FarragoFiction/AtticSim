@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7aa57a7e-5955-4379-97ff-e64b08567478" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/Controller.dart" afterPath="$PROJECT_DIR$/web/scripts/Controller.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/Item.dart" afterPath="$PROJECT_DIR$/web/scripts/Item.dart" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -101,8 +100,8 @@
       <file leaf-file-name="Controller.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/scripts/Controller.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="164" column="360" lean-forward="false" selection-start-line="164" selection-start-column="360" selection-end-line="164" selection-end-column="360" />
+            <state relative-caret-position="270">
+              <caret line="175" column="313" lean-forward="false" selection-start-line="175" selection-start-column="313" selection-end-line="175" selection-end-column="313" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -845,8 +844,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/Controller.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="164" column="360" lean-forward="false" selection-start-line="164" selection-start-column="360" selection-end-line="164" selection-end-column="360" />
+        <state relative-caret-position="270">
+          <caret line="175" column="313" lean-forward="false" selection-start-line="175" selection-start-column="313" selection-end-line="175" selection-end-column="313" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
