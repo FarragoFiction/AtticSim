@@ -38,13 +38,8 @@ class Go extends Action {
           Controller.instance.currentPlayer.currentRoom = item;
           ret = "You GO to the ${item.name}.";
       }else {
-          WeightedList<String> snark = new WeightedList<String>();
-          snark.add("You do not see a $itemName anywhere.",1.0);
-          snark.add("You briefly hallucinate that there is a '$itemName' somewhere. ",0.5);
           Random rand = new Random();
-          //guess it's ab
-          snark.add("There is a ${90+(rand.nextDouble()*10)} % chance that JR was too much of a lazy fuck to realize that you would try to go to the  '$itemName'. ",0.5);
-          return rand.pickFrom(snark);
+          return rand.pickFrom(Action.cantFidnItemSnark(itemName));
       }
       return ret;
   }

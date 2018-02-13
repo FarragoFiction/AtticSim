@@ -14,6 +14,8 @@ class Controller
 
     static Controller instance;
 
+    DateTime currentDate;
+    Element dateText = new DivElement();
     Element gameText = new DivElement();
     Element roomText = new DivElement();
     Element inventoryText = new DivElement();
@@ -23,12 +25,18 @@ class Controller
 
     List<Player> players = new List<Player>();
     Player currentPlayer;
+    Player shogun;
 
 
     Controller(Element wrapper) {
+        currentDate = new DateTime(2018, 1, 13);
         instance = this;
         Element container = new DivElement();
         container.classes.add('game');
+
+        dateText.classes.add('date');
+        container.append(dateText);
+
         gameText.classes.add('gameText');
         container.append(gameText);
         roomText.classes.add('gameText');
@@ -90,6 +98,9 @@ class Controller
 
     void displayText(String text) {
         print("displaying text, current player is ${currentPlayer} and they are in room ${currentPlayer.currentRoom}");
+        String dateSlug ="${currentDate.year.toString()}-${currentDate.month.toString().padLeft(2,'0')}-${currentDate.day.toString().padLeft(2,'0')}";
+
+        dateText.text = dateSlug;
         new OneCharAtTimeWrapper(<Line>[new Line(text,gameText),new Line(currentPlayer.currentRoom.fullDescription,roomText),new Line(currentPlayer.itemsDescription,inventoryText),new Line(currentPlayer.currentRoom.itemsDescription,itemsText),new Line(currentPlayer.currentRoom.exitsDescription,exitsText)]).write();
     }
 
@@ -119,7 +130,8 @@ class Controller
         controlRoom.exits.add(controlConsole);
         controlConsole.exits.add(controlRoom);
 
-        currentPlayer = new Player(controlRoom, "Shogun", <String>["SHOGUN","SHOGUN OF SAUCE","MEMELORD","LORD OF WORDS", "FU","FUEDALULTIMATUM","THE ANTITHESIS"],"a towering memelord, 1.3 JRs tall.");
+        shogun = new Player(controlRoom, "Shogun", <String>["SHOGUN","SHOGUN OF SAUCE","MEMELORD","LORD OF WORDS", "FU","FUEDALULTIMATUM","THE ANTITHESIS"],"a towering memelord, 1.3 JRs tall.");
+        currentPlayer = shogun;
         currentPlayer.inventory.add(new Item("Katana",<String>["SWORD", "KATANA", "SHITTY SWORD","ANIME SWORD"],"This is an unbelievably shit sword. Where is Muramasa? Where is my blade why is it shit JR how dare you nerf me."));
         currentPlayer.inventory.add(new Item("Mind Hoodie",<String>["MIND HOODIE", "HOODIE", "JACKET","COAT"],"No comment."));
 

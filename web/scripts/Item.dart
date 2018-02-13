@@ -1,5 +1,7 @@
 import "Actions/Action.dart";
 import "Actions/Look.dart";
+import "Actions/Destroy.dart";
+
 
 class Item {
     String name;
@@ -7,8 +9,10 @@ class Item {
     String description;
     List<Action> validActions = new List<Action>();
 
-    Item(String this.name, List<String> this.alts, String this.description) {
+    Item(String this.name, List<String> this.alts, String this.description, [bool destroyable = false]) {
         validActions.add(new Look()); //all things can be looked at.
+        if(destroyable) validActions.add(new Destroy()); //all things can be looked at.
+
     }
 
      bool isItem(String word) {
