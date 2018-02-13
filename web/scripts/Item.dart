@@ -28,6 +28,8 @@ class Item {
     String useDescription;
 
     static String UNICORNMETHOD = "unicorn";
+    static String WIGRIDER = "wigrider";
+
 
     List<Action> validActions = new List<Action>();
 
@@ -44,6 +46,8 @@ class Item {
             useCondition = defaultCondition;
         }else if (useConditionString == UNICORNMETHOD) {
             useCondition = addMeToUnicorn;
+        }else if (useConditionString == WIGRIDER) {
+            useCondition = rideMeWithWigOn;
         }else {
             useCondition = defaultCondition;
         }
@@ -82,6 +86,23 @@ class Item {
             return "You really improve the look of the Frankenfuck Unicorn by adding a stylish wig to it.";
         }else{
              return defaultCondition(false);
+        }
+    }
+
+    //does what it says on the tin.
+    String rideMeWithWigOn() {
+        Player p = Controller.instance.currentPlayer;
+        Item nepetaWig = Controller.instance.nepetaWig;
+        Item guyFieriWig = Controller.instance.guyFieriWig;
+
+        if(p.inventory.contains(nepetaWig)){
+            applyPoints(130);
+            return "You wear the Nepeta Wig and be the Rider.";
+        }else if(p.inventory.contains(guyFieriWig)){
+            applyPoints(1300);
+            return "You ride the FrankenFuck Unicorn while appearing to have shocking blond hair. Everyone is suitably impressed.";
+        }else{
+            return defaultCondition(false);
         }
     }
 
