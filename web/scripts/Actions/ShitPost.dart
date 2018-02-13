@@ -45,6 +45,7 @@ class ShitPost extends Action {
   @override
   String apply(Item item, [String itemName]) {
       Random rand = new Random();
-      return rand.pickFrom(shitposts());
+      return "${Controller.instance.moveTime()} ${rand.pickFrom(shitposts())}";
+
   }
 }
