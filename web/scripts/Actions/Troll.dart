@@ -18,14 +18,17 @@ class Troll extends Action {
   static String performAction(String itemName) {
     if(Controller.instance.currentPlayer.currentRoom == Controller.instance.controlConsole && Controller.instance.currentPlayer == Controller.instance.shogun) {
         //i'm somewhere i can troll jr.
-        new Troll().apply(null,null,true);
+        return new Troll().apply(null,null,true);
+    }else if(Controller.instance.currentPlayer == Controller.instance.shogun) {
+        return "You fail to be at the CONTROL CONSOLE.";
     }
 
     if(Controller.instance.currentPlayer == Controller.instance.jr) {
         //i can always troll shogun
-        new Troll().apply(null,null,false);
+        return new Troll().apply(null,null,false);
 
     }
+    print("player was ${Controller.instance.currentPlayer} and they were in room ${Controller.instance.currentPlayer.currentRoom }. I don't think they can troll anyone.");
     return "You fail to be in a weird pitch/leprechaun trovey thing with anyone.";
   }
 

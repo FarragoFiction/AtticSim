@@ -77,7 +77,7 @@ class Controller
     }
 
     String moveTime() {
-        currentDate = new DateTime(currentDate.year, currentDate.month, currentDate.day);
+        currentDate = new DateTime(currentDate.year, currentDate.month, currentDate.day+7);
         WeightedList<String> snark = new WeightedList<String>();
         snark.add("You shitpost through the night. ",0.5);
         snark.add("You completely fail to sleep at all. ",0.5);
@@ -106,6 +106,7 @@ class Controller
         gameText.text = "";
         roomText.text = "";
         itemsText.text = "";
+        inventoryText.text = "";
         exitsText.text = "";
         displayText(Action.applyAction(command));
     }
