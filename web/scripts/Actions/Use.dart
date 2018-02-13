@@ -35,6 +35,11 @@ class Use extends Action {
   @override
   String apply(Item item, [String itemName, bool notFood = false]) {
       //usecondition will worry about applying points
-      return item.useCondition();
+      if(item != null) {
+          return item.useCondition();
+      }else {
+          Random rand = new Random();
+          return rand.pickFrom(Action.cantFidnItemSnark(itemName));
+      }
   }
 }
