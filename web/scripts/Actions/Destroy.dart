@@ -11,7 +11,7 @@ class Destroy extends Action {
         return ALTS.contains(word.toUpperCase().trim());
     }
 
-    Destroy():super("Destroy",ALTS);
+    Destroy():super("Destroy",ALTS,pointValue: 10);
 
 
 
@@ -53,6 +53,8 @@ class Destroy extends Action {
       if(item != null && Controller.instance.currentPlayer == Controller.instance.shogun) {
           Controller.instance.currentPlayer.currentRoom.contents.remove(item);
           Controller.instance.currentPlayer.inventory.remove(item);
+          //give points
+          applyPoints();
           return "You fucking wreck the ${item.name}.";
       }else if(item != null) {
           return "Your noodly appendages are far too shit to destroy anything, but especially a $item.";

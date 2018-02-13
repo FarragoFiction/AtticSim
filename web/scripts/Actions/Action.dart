@@ -28,15 +28,29 @@ if it doesn't, default error message.
 
 abstract class Action {
 
+    //useful for calculating total points
+    static List<Action> allActions = new List<Action>();
 
     String name;
     List<String>  alts;
 
-    Action(this.name, this.alts) {
+    //only specifically created actions have point values
+    int pointValue = 0;
+    //only gives points the first time
+    bool pointsGiven = false;
 
+
+    Action(this.name, this.alts, {this.pointValue: 0}) {
+        Action.allActions.add(this);
     }
 
     String apply(Item item, [String itemName]);
+
+    void applyPoints() {
+        if(!pointsGiven) {
+            Controller.instance.points += pointValue;
+        }
+    }
 
     static Item findItemFromString(String itemString) {
         itemString.trim();

@@ -12,7 +12,7 @@ class Be extends Action {
         return ALTS.contains(word.toUpperCase().trim());
     }
 
-    Be():super("Be",ALTS);
+    Be():super("Be",ALTS, pointValue: 130);
 
 
 
@@ -24,6 +24,7 @@ class Be extends Action {
           print("player found, it's $item");
           Be l = item.findActionWithSameClassAs(new Be());
           if(l != null) {
+              l.applyPoints();
               return l.apply(item);
           }
       }

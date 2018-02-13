@@ -11,7 +11,7 @@ class Vore extends Action {
         return ALTS.contains(word.toUpperCase().trim());
     }
 
-    Vore():super("Eat",ALTS);
+    Vore():super("Eat",ALTS,pointValue:10);
 
 
 
@@ -51,6 +51,7 @@ class Vore extends Action {
       if(item != null) {
           Controller.instance.currentPlayer.currentRoom.contents.remove(item);
           Controller.instance.currentPlayer.inventory.remove(item);
+          applyPoints();
           return "You fucking CONSUME the ${item.name}.";
       }else {
           Random rand = new Random();

@@ -17,6 +17,9 @@ class Controller
     static Controller instance;
     Room controlConsole;
 
+    int _totalAvailablePoints = -1300;
+
+    int points = 0;
     DateTime currentDate;
     Element dateText = new DivElement();
     Element gameText = new DivElement();
@@ -76,6 +79,19 @@ class Controller
 
     }
 
+    void calculateTotalAvailablePoints() {
+        for(Action a in Action.allActions) {
+            _totalAvailablePoints += a.pointValue;
+        }
+    }
+
+    int get totalAvailablePoints {
+        if(_totalAvailablePoints < 0) {
+            calculateTotalAvailablePoints();
+        }
+        return _totalAvailablePoints;
+    }
+
     String moveTime() {
         currentDate = new DateTime(currentDate.year, currentDate.month, currentDate.day+7);
         WeightedList<String> snark = new WeightedList<String>();
@@ -115,7 +131,7 @@ class Controller
         print("displaying text, current player is ${currentPlayer} and they are in room ${currentPlayer.currentRoom}");
         String dateSlug ="${currentDate.year.toString()}-${currentDate.month.toString().padLeft(2,'0')}-${currentDate.day.toString().padLeft(2,'0')}";
 
-        dateText.text = dateSlug;
+        dateText.text = "$dateSlug Points: ${points}/${totalAvailablePoints}";
         new OneCharAtTimeWrapper(<Line>[new Line(text,gameText),new Line(currentPlayer.currentRoom.fullDescription,roomText),new Line(currentPlayer.itemsDescription,inventoryText),new Line(currentPlayer.currentRoom.itemsDescription,itemsText),new Line(currentPlayer.currentRoom.exitsDescription,exitsText)]).write();
     }
 
