@@ -5,6 +5,8 @@ import "Player.dart";
 import 'dart:async';
 import "Actions/Action.dart";
 import "Item.dart";
+import "random.dart";
+import "weighted_lists.dart";
 /*
 knows about all the possible commands and the intro thingy.
  */
@@ -13,6 +15,7 @@ class Controller
 {
 
     static Controller instance;
+    Room controlConsole;
 
     DateTime currentDate;
     Element dateText = new DivElement();
@@ -26,6 +29,7 @@ class Controller
     List<Player> players = new List<Player>();
     Player currentPlayer;
     Player shogun;
+    Player jr;
 
 
     Controller(Element wrapper) {
@@ -72,6 +76,16 @@ class Controller
 
     }
 
+    String moveTime() {
+        currentDate = new DateTime(currentDate.year, currentDate.month, currentDate.day);
+        WeightedList<String> snark = new WeightedList<String>();
+        snark.add("You shitpost through the night. ",0.5);
+        snark.add("You completely fail to sleep at all. ",0.5);
+        snark.add("Wow, how did you spend THAT much time shitposting?",0.5);
+        Random rand = new Random();
+        return rand.pickFrom(snark);
+    }
+
     Future<Null> init() async {
         initRooms();
         displayText("A young Shogun stands in a SBURBSim CONTROL ROOM. It just so happens that today, the 13th of January, 2018, is the day he finally took over SBURBSim. What will he do? Probably type commands in a 'look katana' sort of way. That does seem to be the type of game this is.");
@@ -109,7 +123,7 @@ class Controller
 
         Item couch = new Item("Familiar Couch",<String>["CASTING COUCH", "COUCH", "FAMILIAR COUCH"],"I want to destroy this accursed fucking piece of ikea looking trash. let me destroy it. Where's the destroy option that is all I am good for.",destroyable: true);
         controlRoom.contents.add(couch);
-        controlRoom.contents.add(new Item("Unsettling Sculpture",<String>["SCULPTURE", "UNSETTLING SCULPTURE", "PUZZLECOCK","PUZZLE COCK"],"I have no idea what the fuck this implies, but one thing I know is that it is absol-fucking-lutely delicious looking. I want to eat it. Let me eat it. Give.",consumable: true));
+        controlRoom.contents.add(new Item("Unsettling Sculpture",<String>["SCULPTURE", "UNSETTLING SCULPTURE", "PUZZLECOCK","PUZZLE COCK"],"I have no idea what the fuck this implies, but one thing I know is that it is absol-fucking-lutely delicious looking. I want to eat it. Let me eat it. Give. (Is it made of Lucky Charms?)",consumable: true));
         //controlRoom.contents.add(new Item("",<String>["", "", "",""],""));
 
         controlRoom.contents.add(new Item("CatTroll Wigs",<String>["HAIR7", "WIG", "CATTROLL WIG","NEPETA WIG"],"Heheh."));
@@ -126,7 +140,7 @@ class Controller
        // controlRoom.exits.add(testExit);
 
         //Control Console
-        Room controlConsole = new Room("Control Console",["CONTROL CONSOLE","CONSOLE"],"the control console for SBURBSim. It's actually just a regular computer, with regular shit you can do on it. It's not really a place, but close enough.");
+        controlConsole = new Room("Control Console",["CONTROL CONSOLE","CONSOLE"],"the control console for SBURBSim. It's actually just a regular computer, with regular shit you can do on it, like shitpost or troll jr or buy shit online. It's not really a place, but close enough.");
         controlRoom.exits.add(controlConsole);
         controlConsole.exits.add(controlRoom);
 
@@ -135,13 +149,15 @@ class Controller
         currentPlayer.inventory.add(new Item("Katana",<String>["SWORD", "KATANA", "SHITTY SWORD","ANIME SWORD"],"This is an unbelievably shit sword. Where is Muramasa? Where is my blade why is it shit JR how dare you nerf me."));
         currentPlayer.inventory.add(new Item("Mind Hoodie",<String>["MIND HOODIE", "HOODIE", "JACKET","COAT"],"No comment."));
 
-        Player jr  = new Player(controlRoom, "jadedResearcher", <String>["JR","JADEDRESEARCHER","THE WASTE","A WASTE","WASTE OF MIND","THE WASTE OF MIND","THE AUTHOR"],"a waste, exactly 1.0 JRs tall.");
+        jr  = new Player(controlRoom, "jadedResearcher", <String>["JR","JADEDRESEARCHER","THE WASTE","A WASTE","WASTE OF MIND","THE WASTE OF MIND","THE AUTHOR"],"a waste, exactly 1.0 JRs tall.");
         jr.inventory.add(new Item("Yellow Yard",<String>["YELLOW YARD", "YARD", "YELLOW LAWNRING","STICK","GIMMICK"],"At least Shogun didn't break this. I hate it when I can't control all that fucking Waste shit."));
         jr.inventory.add(new Item("Unbelievably Shitty Laptop",<String>["LAPTOP", "SHITTY LAPTOP", "SHIT","UNBELIEVABLY SHITTY LAPTOP","COMPUTER"],"Oh god. It's so shitty. I have to close programs just to compile the Sim. At least I still CAN work on the Sim, though. Plus, I can still Troll Shogun. This isn't so bad."));
 
 
         Room attic = new Room("Attic",["ATTIC","ROOM"],"mostly empty. You're probably trapped in here, in fact, you're suddenly sure of it. At the very least if you left you'd have to be in the same room as that asshole and like fuck THAT's happening. ");
-        attic.contents.add(new Item("Hundreds of Boxes of Lucky Charms",<String>["LUCKY CHARMS", "LEWD CEREAL", "HUNDREDS OF BOXES OF LUCKY CHARMS","TROVE BAIT","CEREAL","CEREAL BOXES","BOXES","LUCKY CHARMS BOXES"],"Where did these even come from? Is this a trove thing? Did Shogun do this?"));
+        attic.contents.add(new Item("Boxes of Lucky Charms",<String>["LUCKY CHARMS", "LEWD CEREAL", "HUNDREDS OF BOXES OF LUCKY CHARMS","TROVE BAIT","CEREAL","CEREAL BOXES","BOXES","LUCKY CHARMS BOXES"],"Where did these even come from? Is this a trove thing? Did Shogun do this?",consumable: true));
+        attic.contents.add(new Item("Boxes of Lucky Charms",<String>["LUCKY CHARMS", "LEWD CEREAL", "HUNDREDS OF BOXES OF LUCKY CHARMS","TROVE BAIT","CEREAL","CEREAL BOXES","BOXES","LUCKY CHARMS BOXES"],"Where did these even come from? Is this a trove thing? Did Shogun do this?",consumable: true));
+        attic.contents.add(new Item("Boxes of Lucky Charms",<String>["LUCKY CHARMS", "LEWD CEREAL", "HUNDREDS OF BOXES OF LUCKY CHARMS","TROVE BAIT","CEREAL","CEREAL BOXES","BOXES","LUCKY CHARMS BOXES"],"Where did these even come from? Is this a trove thing? Did Shogun do this?",consumable: true));
         attic.contents.add(new Item("Unbelievably Shitty Spook Wolf Head",<String>["WOLF", "WOLF HEAD", "UNBELIEVABLY SHITTY SPOOK WOLF HEAD","SCARY WOLF",'NIGHTMARE'],"It doesn't even do the 'light activated' spooky howl unless you go up to it on purpose. 3/10, not spooky at all."));
         jr.currentRoom = attic;
     }
