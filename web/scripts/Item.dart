@@ -9,7 +9,7 @@ import "random.dart";
 import "Actions/Use.dart";
 
 //returns what happened with the item (and determines what SHOULD happen)
-typedef String Condition();
+typedef String Condition(List<Item> items);
 
 
 
@@ -19,6 +19,9 @@ class Item {
     String description;
     String useDescription;
     Condition useCondition;
+
+    //for shitty puzzles
+    List<Item> parts = new List<Item>();
 
     bool pointsApplied  = false;
 
@@ -46,8 +49,12 @@ class Item {
         }
     }
 
+    String hasPartCondition() {
+        //how would this work
+    }
+
     //almost no points
-    String defaultCondition() {
+    String defaultCondition(List<Item> goingToIgnore) {
         //if item is in inventory, put it on the ground
         if(Controller.instance.currentPlayer.inventory.contains(this)) {
             WeightedList<String> snark = new WeightedList<String>();

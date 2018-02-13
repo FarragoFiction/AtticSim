@@ -94,3 +94,19 @@ alright i've been brainstorming possible use cases, literally and i think they n
 
 like, an item needs to have a "use" function passed to them, with the default one just displaying some 'use text';
 default text getting used only gives you 1 point the first time and none the second, special ones give 10.
+
+~~~~~~
+
+alright i have default condition working okay but....
+
+look at this:
+
+defaultCondition()
+
+it takes in nothing
+
+but the next one i want to make is "has part x". Like, the console works if it has the password inside it.
+
+so that has to take something into it. may as well take a list of items just in case.
+
+can use that for "has all these x things inside it" or "hass all these x things in the room"
