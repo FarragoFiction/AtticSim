@@ -154,7 +154,7 @@ class Controller
         controlRoom.contents.add(new Item("Unsettling Sculpture",<String>["SCULPTURE", "UNSETTLING SCULPTURE", "PUZZLECOCK","PUZZLE COCK"],"I have no idea what the fuck this implies, but one thing I know is that it is absol-fucking-lutely delicious looking. I want to eat it. Let me eat it. Give. (Is it made of Lucky Charms?)","You realize you would be much more comfortable simply eating the lucky charms sculpture.",consumable: true,portable: true));
         //controlRoom.contents.add(new Item("",<String>["", "", "",""],""));
 
-        nepetaWig = new Item("Hair7 Wig",<String>["HAIR7", "WIG", "CATTROLL WIG","NEPETA WIG"],"Heheh.","You try the wig on. You get the eerie feeling that the Narrator hates you just a little bit more now.",portable: true, useConditionString: Item.UNICORNMETHOD);
+        nepetaWig = new Item("Hair7 Wig",<String>["HAIR7", "WIG", "CATTROLL WIG","NEPETA WIG", "HAIR7 WIG"],"Heheh.","You try the wig on. You get the eerie feeling that the Narrator hates you just a little bit more now.",portable: true, useConditionString: Item.UNICORNMETHOD);
         controlRoom.contents.add(nepetaWig);
         controlRoom.contents.add(new Item("AB Charging Station",<String>["AB'S CHARGING STATION", "STATION", "CHARGING STATION"],"Oh is this where that uncanny valley looking robot of JR sleeps or some shit? Hm. Well. Can I legally make an apple joke here?","You attempt to use my charging station. Since you are a fleshy organic weakling, it fails to charge you."));
         controlRoom.contents.add(new Item("PL's Guide to Dart Book",<String>["BOOK", "DART BOOK","PL's GUIDE TO DART","PL'S GUIDE TO DART BOOK","PL'S BOOK","PL'S GUIDE BOOK"],"This would be useful probably. If I gave enough of a fuck about reading or putting effort into this.","You flip through the book. Huh, apparently JR scrawled crude pictures of dicks and shitty comics about how learning things in a structured way is fucking stupid. ",destroyable: true,portable: true));
@@ -163,7 +163,7 @@ class Controller
         controlRoom.contents.add(new Item("Toddler!JR 'Do it For Her' board",<String>["BOARD", "TODDLER JR BOARD", "DO IT FOR HER BOARD","TODDLER!JR 'DO IT FOR HER' BOARD"],"Pure. Blessed. Powerful. God Bless this board.","You admire the board. Toddler JR is always full of such terrible ideas. They are your favorite JR."));
         controlRoom.contents.add(new Item("JR's 4th Wall",<String>["WALL", "4TH WALL", "JR'S 4TH WALL","FENESTRATED WALL"],"Something something meta. If I climbed through this I could get myself some burgs.","You attempt to crawl through JR's Fenestrated Window. Luckily, it is currently unpowered.",destroyable: true,portable: true));
         passwordScrawl = new Item("scrawled password riddle",<String>["SCRAWLED PASSWORD RIDDLE", "SCRAWL", "GIGGLESNORT","RIDDLE"],"... is JR's password REALLY 'where is everything better than expected?' What a shit riddle.","You stare in frustration at the gigglesnort.",destroyable: true, portable: true, consumable: true);
-        controlRoom.contents.add(unicorn);
+        controlRoom.contents.add(passwordScrawl);
 
 
 

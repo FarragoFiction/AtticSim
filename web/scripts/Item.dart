@@ -71,6 +71,7 @@ class Item {
 
     //does what it says on the tin.
     String addMeToUnicorn() {
+        print("trying to add me to unicorn");
         Player p = Controller.instance.currentPlayer;
         Room r = p.currentRoom;
         Item unicorn = Controller.instance.unicorn;
@@ -80,7 +81,7 @@ class Item {
             applyPoints(130);
             return "You really improve the look of the Frankenfuck Unicorn by adding a stylish wig to it.";
         }else{
-             defaultCondition(false);
+             return defaultCondition(false);
         }
     }
 
