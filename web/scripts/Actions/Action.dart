@@ -66,6 +66,21 @@ abstract class Action {
         return null;
     }
 
+
+    static Item findItemFromStringInRoom(String itemString) {
+        itemString.trim();
+        Player p = Controller.instance.currentPlayer;
+        print("player is p");
+
+        List<Item> allItems = p.currentRoom.contents;
+        print("found ${allItems.length} items");
+        for(Item item in allItems) {
+            if(item.isItem(itemString)) return item;
+        }
+
+        return null;
+    }
+
     static Item findExitFromString(String itemString) {
         itemString.trim();
 
