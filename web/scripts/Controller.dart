@@ -81,7 +81,7 @@ class Controller
         WeightedList<String> snark = new WeightedList<String>();
         snark.add("You shitpost through the night. ",0.5);
         snark.add("You completely fail to sleep at all. ",0.5);
-        snark.add("Wow, how did you spend THAT much time shitposting?",0.5);
+        snark.add("Wow, how did you spend THAT much time shitposting? May as well just not go to sleep. ",0.5);
         Random rand = new Random();
         return rand.pickFrom(snark);
     }
@@ -145,7 +145,7 @@ class Controller
         controlRoom.exits.add(controlConsole);
         controlConsole.exits.add(controlRoom);
 
-        shogun = new Player(controlRoom, "Shogun", <String>["SHOGUN","SHOGUN OF SAUCE","MEMELORD","LORD OF WORDS", "FU","FUEDALULTIMATUM","THE ANTITHESIS"],"a towering memelord, 1.3 JRs tall.");
+        shogun = new Player(controlRoom, "Shogun", <String>["MAIN CHARACTER","PROTAGONIST","SHOGUN","SHOGUN OF SAUCE","MEMELORD","LORD OF WORDS", "FU","FUEDALULTIMATUM","THE ANTITHESIS","THE VILLAIN","VILLAIN"],"a towering memelord, 1.3 JRs tall.");
         currentPlayer = shogun;
         currentPlayer.inventory.add(new Item("Katana",<String>["SWORD", "KATANA", "SHITTY SWORD","ANIME SWORD"],"This is an unbelievably shit sword. Where is Muramasa? Where is my blade why is it shit JR how dare you nerf me."));
         currentPlayer.inventory.add(new Item("Mind Hoodie",<String>["MIND HOODIE", "HOODIE", "JACKET","COAT"],"No comment."));
@@ -156,9 +156,9 @@ class Controller
 
 
         Room attic = new Room("Attic",["ATTIC","ROOM"],"mostly empty. You're probably trapped in here, in fact, you're suddenly sure of it. At the very least if you left you'd have to be in the same room as that asshole and like fuck THAT's happening. ");
-        attic.contents.add(new Item("Boxes of Lucky Charms",<String>["LUCKY CHARMS", "LEWD CEREAL", "HUNDREDS OF BOXES OF LUCKY CHARMS","TROVE BAIT","CEREAL","CEREAL BOXES","BOXES","LUCKY CHARMS BOXES"],"Where did these even come from? Is this a trove thing? Did Shogun do this?",consumable: true));
-        attic.contents.add(new Item("Boxes of Lucky Charms",<String>["LUCKY CHARMS", "LEWD CEREAL", "HUNDREDS OF BOXES OF LUCKY CHARMS","TROVE BAIT","CEREAL","CEREAL BOXES","BOXES","LUCKY CHARMS BOXES"],"Where did these even come from? Is this a trove thing? Did Shogun do this?",consumable: true));
-        attic.contents.add(new Item("Boxes of Lucky Charms",<String>["LUCKY CHARMS", "LEWD CEREAL", "HUNDREDS OF BOXES OF LUCKY CHARMS","TROVE BAIT","CEREAL","CEREAL BOXES","BOXES","LUCKY CHARMS BOXES"],"Where did these even come from? Is this a trove thing? Did Shogun do this?",consumable: true));
+        for(int i = 0; i <13; i++) {
+            attic.contents.add(new Item("Boxes of Lucky Charms",<String>["LUCKY CHARMS", "LEWD CEREAL", "HUNDREDS OF BOXES OF LUCKY CHARMS","TROVE BAIT","CEREAL","CEREAL BOXES","BOXES","LUCKY CHARMS BOXES"],"Where did these even come from? Is this a trove thing? Did Shogun do this?",consumable: true));
+        }
         attic.contents.add(new Item("Unbelievably Shitty Spook Wolf Head",<String>["WOLF", "WOLF HEAD", "UNBELIEVABLY SHITTY SPOOK WOLF HEAD","SCARY WOLF",'NIGHTMARE'],"It doesn't even do the 'light activated' spooky howl unless you go up to it on purpose. 3/10, not spooky at all."));
         jr.currentRoom = attic;
     }

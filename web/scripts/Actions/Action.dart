@@ -9,6 +9,7 @@ import "Destroy.dart";
 import "Vore.dart";
 import "Troll.dart";
 import "ShitPost.dart";
+import "Sleep.dart";
 
 
 import "../Player.dart";
@@ -105,6 +106,9 @@ abstract class Action {
         }else if(ShitPost.isCommand(parts[0])) {
             String item = parseOutItem(parts);
             return ShitPost.performAction(item);
+        }else if(Sleep.isCommand(parts[0])) {
+            String item = parseOutItem(parts);
+            return Sleep.performAction(item);
         }
         return null;
     }
