@@ -164,14 +164,22 @@ class Controller
         controlRoom.exits.add(controlConsole);
         controlConsole.exits.add(controlRoom);
 
-        shogun = new Player(controlRoom, "Shogun", <String>["MAIN CHARACTER","PROTAGONIST","SHOGUN","SHOGUN OF SAUCE","MEMELORD","LORD OF WORDS", "FU","FUEDALULTIMATUM","THE ANTITHESIS","THE VILLAIN","VILLAIN"],"a towering memelord, 1.3 JRs tall.", "You fail to use Shogun.");
+        shogun = new Player(controlRoom, "Shogun", <String>["MAIN CHARACTER","PROTAGONIST","SHOGUN","SHOGUN OF SAUCE","MEMELORD","LORD OF WORDS", "FU","FUEDALULTIMATUM","THE ANTITHESIS","THE VILLAIN","VILLAIN"],"a towering memelord, 1.3 JRs tall. Who even IS he???", "You fail to use Shogun.");
         currentPlayer = shogun;
-        currentPlayer.inventory.add(new Item("Katana",<String>["SWORD", "KATANA", "SHITTY SWORD","ANIME SWORD"],"This is an unbelievably shit sword. Where is Muramasa? Where is my blade why is it shit JR how dare you nerf me.","You contemplate using your shitty sword to DESTROY some object."));
-        currentPlayer.inventory.add(new Item("Mind Hoodie",<String>["MIND HOODIE", "HOODIE", "JACKET","COAT"],"No comment.","You feel so safe."));
+        currentPlayer.inventory.add(new Item("Katana",<String>["SWORD", "KATANA", "SHITTY SWORD","ANIME SWORD"],"This is an unbelievably shit sword. Where is Muramasa? Where is my blade why is it shit JR how dare you nerf me.","You contemplate using your shitty sword to DESTROY some object.", portable: true));
+        currentPlayer.inventory.add(new Item("Mind Hoodie",<String>["MIND HOODIE", "HOODIE", "JACKET","COAT"],"No comment.","You feel so safe.", portable: true));
 
         jr  = new Player(controlRoom, "jadedResearcher", <String>["JR","JADEDRESEARCHER","THE WASTE","A WASTE","WASTE OF MIND","THE WASTE OF MIND","THE AUTHOR"],"a waste, exactly 1.0 JRs tall.","You fail to use JR.");
-        jr.inventory.add(new Item("Yellow Yard",<String>["YELLOW YARD", "YARD", "YELLOW LAWNRING","STICK","GIMMICK"],"At least Shogun didn't break this. I hate it when I can't control all that fucking Waste shit.","You fail to change the Decisions that lead you here. You kind of want to see how this plays out."));
-        jr.inventory.add(new Item("Unbelievably Shitty Laptop",<String>["LAPTOP", "SHITTY LAPTOP", "SHIT","UNBELIEVABLY SHITTY LAPTOP","COMPUTER"],"Oh god. It's so shitty. I have to close programs just to compile the Sim. At least I still CAN work on the Sim, though. Plus, I can still Troll Shogun. This isn't so bad.","This should  troll shogun and not be seen directly."));
+        jr.inventory.add(new Item("Yellow Yard",<String>["YELLOW YARD", "YARD", "YELLOW LAWNRING","STICK","GIMMICK"],"At least Shogun didn't break this. I hate it when I can't control all that fucking Waste shit.","You fail to change the Decisions that lead you here. You kind of want to see how this plays out.", portable: true));
+        jr.inventory.add(new Item("Unbelievably Shitty Laptop",<String>["LAPTOP", "SHITTY LAPTOP", "SHIT","UNBELIEVABLY SHITTY LAPTOP","COMPUTER"],"Oh god. It's so shitty. I have to close programs just to compile the Sim. At least I still CAN work on the Sim, though. Plus, I can still Troll Shogun. This isn't so bad.","This should  troll shogun and not be seen directly.", portable: true));
+
+
+        Room voidRoom = new Room("the Void",["VOID","SKAIAN MAGICANT"],"mostly void, partially stars. You feel like where you are isn't particularly narratively significant to AtticStuck. ","You decide to use the Void. Somehow.");
+        Player pl  = new Player(voidRoom, "paradoxLands", <String>["PL","PARADOXLANDS","THE WITCH","A WITCH","THE WITCH OF VOID","THE ARCHITECT"],", the Architect, exactly 1.25 JRs tall. Good at both Art and Programming. Currently watching the shenanigans the Author and the Antithesis are up to and being very amused.","You fail to use PL.");
+        Player kr  = new Player(voidRoom, "karmicRetribution", <String>["KR","KARMICRETRIBUTION","THE SMITH","A SMITH","THE SMITH OF DREAM","THE ARTIST"],", the Artist, exactly 1.05 JRs tall. Currently ignoring the shenanigans the Author and the Antithesis are up to entirely. JR knows they can just leave the attic at any time, don't they?","You fail to use KR.");
+        Player mi  = new Player(voidRoom, "manicInsomniac", <String>["MI","MANICINSOMNIAC","THE BARD","A BARD","THE BARD OF DOOM","MANIC"],"You are suddenly accosted by about 50000 notes being played all at once. There is no rhyme, no reason, no connection. There is only chaos. Again. Man you need to learn how to stop your music program crashing.","You fail to use MI.");
+        Player cd  = new Player(voidRoom, "Clubs Deuce", <String>["CD","COURTYARD DROLL","CLUBS DEUCE"],"You are now the CRAZY DESTROYER. You are SO HAPPY that you have this shiny shiny ring!!! ", "You use Clubs Deuce for your own ends.");
+        Player hussie  = new Player(voidRoom, "Andrew Hussie", <String>["AH","ANDREW HUSSIE","HUSSIE","WASTE OF SPACE","HUSS OF LIPS"],"You have absolutely no idea what is going on.", "You use Andrew Hussie's IP to make shitty fan works.");
 
 
         Room attic = new Room("Attic",["ATTIC","ROOM"],"mostly empty. You're probably trapped in here, in fact, you're suddenly sure of it. At the very least if you left you'd have to be in the same room as that asshole and like fuck THAT's happening. ","You decide to use this Attic as a base of operations in your campaign to annoy Shogun.");
