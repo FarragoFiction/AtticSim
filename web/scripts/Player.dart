@@ -1,7 +1,7 @@
 import "Item.dart";
 import "Room.dart";
 import "Controller.dart";
-
+import "Actions/Be.dart";
 
 //a player can do anything an item can do because i said so that's why
 class Player extends Item {
@@ -10,6 +10,8 @@ class Player extends Item {
 
     Player(this.currentRoom, String name, List<String> alts, String desc):super(name, alts, desc) {
         Controller.instance.players.add(this);
+        validActions.add(new Be()); //all things can be looked at.
+
     }
 
     //things in your inventory, things in the room you're in (including obvious exits)

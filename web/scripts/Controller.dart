@@ -21,7 +21,7 @@ class Controller
     Element exitsText = new DivElement();
     TextInputElement textInputElement = new TextInputElement();
 
-    List<Player> players;
+    List<Player> players = new List<Player>();
     Player currentPlayer;
 
 
@@ -92,7 +92,7 @@ class Controller
     }
 
     void initRooms() {
-        Room controlRoom = new Room("SBURBSim CONTROL ROOM",[],"a bizarre amagalmation of memes, coding paraphernalia and definitely no dictionaries. It fills you with an existential dread. JR is a demon.");
+        Room controlRoom = new Room("SBURBSim CONTROL ROOM",["ROOM","CONTROL ROOM","SBURBSim CONTROL ROOM"],"a bizarre amagalmation of memes, coding paraphernalia and definitely no dictionaries. It fills you with an existential dread. JR is a demon.");
 
         Item couch = new Item("Familiar Couch",<String>["CASTING COUCH", "COUCH", "FAMILIAR COUCH"],"I want to destroy this accursed fucking piece of ikea looking trash. let me destroy it. Where's the destroy option that is all I am good for.");
         controlRoom.contents.add(couch);
@@ -112,10 +112,19 @@ class Controller
         Room testExit = new Room("Dennis",["DENNIS","DUDE","GUY","MEME"],"Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.");
         controlRoom.exits.add(testExit);
 
-        currentPlayer = new Player(controlRoom, "Shogun", <String>["SHOGUN","SHOGUN OF SAUCE","MEMELORD","LORD OF WORDS"],"a towering memelord, 1.3 JRs tall.");
+        currentPlayer = new Player(controlRoom, "Shogun", <String>["SHOGUN","SHOGUN OF SAUCE","MEMELORD","LORD OF WORDS", "FU","FUEDALULTIMATUM","THE ANTITHESIS"],"a towering memelord, 1.3 JRs tall.");
         currentPlayer.inventory.add(new Item("Katana",<String>["SWORD", "KATANA", "SHITTY SWORD","ANIME SWORD"],"This is an unbelievably shit sword. Where is Muramasa? Where is my blade why is it shit JR how dare you nerf me."));
         currentPlayer.inventory.add(new Item("Mind Hoodie",<String>["MIND HOODIE", "HOODIE", "JACKET","COAT"],"No comment."));
 
+        Player jr  = new Player(controlRoom, "jadedResearcher", <String>["JR","JADEDRESEARCHER","THE WASTE","A WASTE","WASTE OF MIND","THE WASTE OF MIND","THE AUTHOR"],"a waste, exactly 1.0 JRs tall.");
+        jr.inventory.add(new Item("Yellow Yard",<String>["YELLOW YARD", "YARD", "YELLOW LAWNRING","STICK","GIMMICK"],"At least Shogun didn't break this. I hate it when I can't control all that fucking Waste shit."));
+        jr.inventory.add(new Item("Unbelievably Shitty Laptop",<String>["LAPTOP", "SHITTY LAPTOP", "SHIT","UNBELIEVABLY SHITTY LAPTOP","COMPUTER"],"Oh god. It's so shitty. I have to close programs just to compile the Sim. At least I still CAN work on the Sim, though. Plus, I can still Troll Shogun. This isn't so bad."));
+
+
+        Room attic = new Room("Attic",["ATTIC","ROOM"],"It's an attic, you're probably trapped in here, in fact, you're suddenly sure of it. At the very least if you left you'd have to be in the same room as that asshole and like fuck THAT's happening. ");
+        attic.contents.add(new Item("Hundreds of Boxes of Lucky Charms",<String>["LUCKY CHARMS", "LEWD CEREAL", "HUNDREDS OF BOXES OF LUCKY CHARMS","TROVE BAIT","CEREAL","CEREAL BOXES","BOXES","LUCKY CHARMS BOXES"],"Where did these even come from? Is this a trove thing? Did Shogun do this?"));
+        attic.contents.add(new Item("Unbelievably Shitty Spook Wolf Head",<String>["WOLF", "WOLF HEAD", "UNBELIEVABLY SHITTY SPOOK WOLF HEAD","SCARY WOLF",'NIGHTMARE'],"It doesn't even do the 'light activated' spooky howl unless you go up to it on purpose. 3/10, not spooky at all."));
+        jr.currentRoom = attic;
     }
 
 }

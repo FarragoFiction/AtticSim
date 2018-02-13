@@ -3,6 +3,7 @@ import "../random.dart";
 import "../weighted_lists.dart";
 import "../Controller.dart";
 import "Look.dart";
+import "Be.dart";
 import "../Player.dart";
 
 /*
@@ -64,15 +65,23 @@ abstract class Action {
         //then check all known actions and ask if it's them
         if(Look.isCommand(parts[0])) {
             //print("it's a look command");
-            String item = null;
-            parts.remove(parts[0]);
-            if(parts.length > 0) item = parts.join(' ');
-
-            print("the item is $item");
-            //then, give it the rest of the command and call it a day, you lazy fuck
+            String item = parseOutItem(parts);
             return Look.performAction(item);
+        }else if(Be.isCommand(parts[0])) {
+        String item = parseOutItem(parts);
+        return Be.performAction(item);
         }
         return null;
+    }
+
+    static String parseOutItem(List<String> parts) {
+        String item = null;
+        parts.remove(parts[0]);
+        if(parts.length > 0) item = parts.join(' ');
+
+        print("the item is $item");
+        //then, give it the rest of the command and call it a day, you lazy fuck
+        return item;
     }
 
     //all actions apply to an item, so rooms are items too. fuck the world.

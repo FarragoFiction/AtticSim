@@ -5,7 +5,7 @@ import "../weighted_lists.dart";
 import "../Controller.dart";
 class Be extends Action {
 
-    static List<String> ALTS = <String>["LOOK","OBSERVE","EXAMINE","SEE","EYEBALL","OOGLE","OGLE","LEER","PONDER","CONTEMPLATE","REGARD"];
+    static List<String> ALTS = <String>["BE","BECOME","TRANSFORM","ASCEND"];
 
     static bool isCommand(String word) {
         //print("is $word another word for LOOK?");
