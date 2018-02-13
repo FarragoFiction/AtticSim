@@ -7,6 +7,7 @@ import "Controller.dart";
 import "weighted_lists.dart";
 import "random.dart";
 import "Actions/Use.dart";
+import "Player.dart";
 
 //returns what happened with the item (and determines what SHOULD happen)
 typedef String Condition(List<Item> items);
@@ -22,6 +23,8 @@ class Item {
 
     //for shitty puzzles
     List<Item> parts = new List<Item>();
+    //the condition itself will handle what this means
+    List<Item> itemConditions = new List<Item>();
 
     bool pointsApplied  = false;
 
@@ -49,8 +52,15 @@ class Item {
         }
     }
 
-    String hasPartCondition() {
+    String hasItemInInventory(List<Item> itemsNeeded) {
         //how would this work
+        Player p = Controller.instance.currentPlayer;
+        bool isvalid = true;
+        for(Item p in itemsNeeded) {
+            if(!parts.contains(p)){
+             isvalid = false;
+            }
+        }
     }
 
     //almost no points

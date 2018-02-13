@@ -110,3 +110,17 @@ but the next one i want to make is "has part x". Like, the console works if it h
 so that has to take something into it. may as well take a list of items just in case.
 
 can use that for "has all these x things inside it" or "hass all these x things in the room"
+
+
+
+wait that's not enough.
+
+i need to think through this use case.
+
+
+the condition list is on the item so....
+
+
+how would i do:
+
+if have wig in inventory, ride horse.....hrm.

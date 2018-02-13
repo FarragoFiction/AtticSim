@@ -36,7 +36,7 @@ class Use extends Action {
   String apply(Item item, [String itemName, bool notFood = false]) {
       //usecondition will worry about applying points
       if(item != null) {
-          return item.useCondition();
+          return item.useCondition(item.itemConditions);
       }else {
           Random rand = new Random();
           return rand.pickFrom(Action.cantFidnItemSnark(itemName));
