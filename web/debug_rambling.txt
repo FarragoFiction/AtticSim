@@ -38,3 +38,59 @@ so....action instances s have associated point values. how to know total? have a
 Alright. What first.
 
 Rooms. Needs to start somewhere.
+
+
+
+~~~~~~
+
+How do I want use/deploy etc to work? Not looking for this to be overly hard.
+
+If you deploy an item, it asks the room what happens to it?
+
+Default is it's now just in the room, but it might also change the state of something in the room
+(like unlocking the CONTROL CONSOLE) or letting you decorate the UNICORN.
+
+
+what are some examples of items that are usable?
+
+if you are wearing the wig, you can RIDE the unicorn for points.
+
+you can use the wig on the unicorn to make STYLISH UNICORN. (if room has unicorn)
+
+
+use PL's book in the CONTROL CONSOLE to gain access to it.
+
+
+if more than 2 gundums in a room and you use another gundum it becomes SHOGUN GUNDUM.
+
+sounds like there's few enough of these that they can just be methods and not objects or....hrrm..
+
+can give a room a list of "special uses"? but it's not the room...it's the items....
+
+
+if "use wig" and room contains unicorn, ride the unicorn.
+
+static list of 'uses'?
+
+how do i know it's a unicorn, though? maybe i should rework how i do items.
+
+static name for Unicorn? or keep the item itself?
+
+static array rideable?
+static array wearable?
+
+if inventory contains wearable, and room contains rideable, ride it.
+
+hrrrrm....
+
+if joinable.contain(useItem.name) && room.contains(joinable), from Shogun X?
+
+Items can have lists of sub items for things like wearing a wig?
+
+
+~~~
+
+alright i've been brainstorming possible use cases, literally and i think they need to be attached to items
+
+like, an item needs to have a "use" function passed to them, with the default one just displaying some 'use text';
+default text getting used only gives you 1 point the first time and none the second, special ones give 10.

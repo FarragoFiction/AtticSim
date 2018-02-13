@@ -8,8 +8,10 @@ import "Go.dart";
 import "Destroy.dart";
 import "Vore.dart";
 import "Troll.dart";
+import "Take.dart";
 import "ShitPost.dart";
 import "Sleep.dart";
+import "Use.dart";
 
 
 import "../Player.dart";
@@ -138,6 +140,12 @@ abstract class Action {
         }else if(Sleep.isCommand(parts[0])) {
             String item = parseOutItem(parts);
             return Sleep.performAction(item);
+        }else if(Take.isCommand(parts[0])) {
+            String item = parseOutItem(parts);
+            return Take.performAction(item);
+        }else if(Use.isCommand(parts[0])) {
+            String item = parseOutItem(parts);
+            return Use.performAction(item);
         }
         return null;
     }
