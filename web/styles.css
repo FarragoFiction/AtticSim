@@ -37,6 +37,12 @@ html, body {
     font-size: 13px;
     border: 3px solid #00ff00;
     padding-left: 10px;
+
+}
+
+.gameInputContainer{
+    position: absolute;
+    top: 88%;
 }
 
 input:focus {
@@ -47,8 +53,9 @@ input:focus {
 
 
 .game {
-  width:500px;
+  width:700px;
   min-height: 300px;
+  position:relative;
 
   background-color: black;
   padding: 10px;

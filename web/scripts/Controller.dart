@@ -46,6 +46,7 @@ class Controller
 
 
         Element inputContainer = new DivElement();
+        inputContainer.classes.add("gameInputContainer");
         Element prompt = new SpanElement();
         inputContainer.append(prompt);
         inputContainer.append(textInputElement);
