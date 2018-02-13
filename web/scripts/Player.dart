@@ -10,7 +10,7 @@ class Player extends Item {
 
     Player(this.currentRoom, String name, List<String> alts, String desc):super(name, alts, desc) {
         Controller.instance.players.add(this);
-        validActions.add(new Be()); //all things can be looked at.
+        validActions.add(new Be()); //all players can be played at.
 
     }
 

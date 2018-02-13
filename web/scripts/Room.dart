@@ -1,5 +1,6 @@
 import "Item.dart";
 import "Controller.dart";
+import "Actions/Go.dart";
 class Room extends Item{
 
 
@@ -12,6 +13,8 @@ class Room extends Item{
         if(description == null) description = "perfectly generic";
         if(contents == null) contents = new List<Item>();
         if(exits == null) exits = new List<Room>();
+        validActions.add(new Go()); //all rooms can be entered.
+
     }
 
 

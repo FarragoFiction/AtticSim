@@ -65,7 +65,7 @@ class Controller
 
     Future<Null> init() async {
         initRooms();
-        displayText("A young Shogun stands in a SBURBSim CONTROL ROOM. It just so happens that today, the 13th of January, 2018, is the day he finally took over SBURBSim. What will he do? Probably type commands in a 'look room' sort of way. That does seem to be the type of game this is.");
+        displayText("A young Shogun stands in a SBURBSim CONTROL ROOM. It just so happens that today, the 13th of January, 2018, is the day he finally took over SBURBSim. What will he do? Probably type commands in a 'look katana' sort of way. That does seem to be the type of game this is.");
         //don't have commands be enabled till intro is finished
         initTextListener();
     }
