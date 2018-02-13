@@ -162,7 +162,7 @@ class Controller
         controlRoom.contents.add(unicorn);
         controlRoom.contents.add(new Item("Toddler!JR 'Do it For Her' board",<String>["BOARD", "TODDLER JR BOARD", "DO IT FOR HER BOARD","TODDLER!JR 'DO IT FOR HER' BOARD"],"Pure. Blessed. Powerful. God Bless this board.","You admire the board. Toddler JR is always full of such terrible ideas. They are your favorite JR."));
         controlRoom.contents.add(new Item("JR's 4th Wall",<String>["WALL", "4TH WALL", "JR'S 4TH WALL","FENESTRATED WALL"],"Something something meta. If I climbed through this I could get myself some burgs.","You attempt to crawl through JR's Fenestrated Window. Luckily, it is currently unpowered.",destroyable: true,portable: true));
-        passwordScrawl = new Item("scrawled password riddle",<String>["SCRAWLED PASSWORD RIDDLE", "SCRAWL", "GIGGLESNORT","RIDDLE"],"... is JR's password REALLY 'where is everything better than expected?' What a shit riddle.","You stare in frustration at the gigglesnort.",destroyable: true, portable: true, consumable: true);
+        passwordScrawl = new Item("scrawled password riddle",<String>["SCRAWLED PASSWORD RIDDLE", "SCRAWL", "GIGGLESNORT","RIDDLE"],"... is JR's password REALLY 'where is everything better than expected?' What a shit riddle.","You stare in frustration at the gigglesnort.",destroyable: true, portable: true, consumable: true, useConditionString: Item.ORDERSHIT);
         controlRoom.contents.add(passwordScrawl);
 
 

@@ -29,6 +29,7 @@ class Item {
 
     static String UNICORNMETHOD = "unicorn";
     static String WIGRIDER = "wigrider";
+    static String ORDERSHIT = "ORDERSHIT";
 
 
     List<Action> validActions = new List<Action>();
@@ -48,6 +49,8 @@ class Item {
             useCondition = addMeToUnicorn;
         }else if (useConditionString == WIGRIDER) {
             useCondition = rideMeWithWigOn;
+        }else if (useConditionString == ORDERSHIT) {
+            useCondition = orderShit;
         }else {
             useCondition = defaultCondition;
         }
@@ -101,6 +104,21 @@ class Item {
         }else if(p.inventory.contains(guyFieriWig)){
             applyPoints(1300);
             return "You ride the FrankenFuck Unicorn while appearing to have shocking blond hair. Everyone is suitably impressed.";
+        }else{
+            return defaultCondition(false);
+        }
+    }
+
+    //does what it says on the tin.
+    String orderShit() {
+        Player p = Controller.instance.currentPlayer;
+        Item passwordScrawl = Controller.instance.passwordScrawl;
+
+        if(p.inventory.contains(passwordScrawl)){
+            applyPoints(130);
+            return "Huh. So that's what that shitty password hint means. You're in. You can now use JR's CONTROL CONSOLE to order all sorts of dumb shit online to pass the time.";
+        }else if(parts.contains(passwordScrawl)) {
+            return "TODO: Need to be able to order random shit and have them show up in 24 hours.";
         }else{
             return defaultCondition(false);
         }
