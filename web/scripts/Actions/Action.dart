@@ -27,7 +27,7 @@ abstract class Action {
 
     }
 
-    String apply(Item item);
+    String apply(Item item, [String itemName]);
 
     static Item findItemFromString(String itemString) {
         itemString.trim();
@@ -35,6 +35,19 @@ abstract class Action {
         print("player is p");
 
         List<Item> allItems = p.allAccessibleItems();
+        print("found ${allItems.length} items");
+        for(Item item in allItems) {
+            if(item.isItem(itemString)) return item;
+        }
+
+        return null;
+    }
+
+    static Item findPlayerFromString(String itemString) {
+        itemString.trim();
+
+
+        List<Item> allItems = new List.from(Controller.instance.players);
         print("found ${allItems.length} items");
         for(Item item in allItems) {
             if(item.isItem(itemString)) return item;

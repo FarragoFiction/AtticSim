@@ -16,8 +16,16 @@ html, body {
 }
 
 .gameText {
-  height: 130px;
+  min-height: 10px;
   font-size: 13px;
+  padding-bottom: 10px;
+}
+
+.optionalText{
+  min-height: 10px;
+  font-size: 13px;
+  padding-bottom: 10px;
+
 }
 
 .gameInput {
@@ -40,6 +48,8 @@ input:focus {
 
 .game {
   width:500px;
+  min-height: 300px;
+
   background-color: black;
   padding: 10px;
   margin-left: auto;

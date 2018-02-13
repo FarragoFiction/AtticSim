@@ -1,4 +1,5 @@
 import "Item.dart";
+import "Controller.dart";
 class Room extends Item{
 
 
@@ -25,11 +26,19 @@ class Room extends Item{
 
     String get fullDescription {
         String ret = "You are in $name. It is $description";
+        return ret;
+    }
 
-        if(contents.isNotEmpty) ret = "$ret You see: ${turnArrayIntoHumanSentence(contents)}.";
-        if(exits.isNotEmpty) ret = "$ret Obvious exits are: ${turnArrayIntoHumanSentence(exits)}.";
+    String get exitsDescription {
+        print ("exits");
+        String ret = "You are trapped here. It's no good, can't find the exit.";
+        if(exits.isNotEmpty) ret = "Obvious exits are: ${turnArrayIntoHumanSentence(exits)}.";
+        return ret;
+    }
 
-
+    String get itemsDescription {
+        String ret = "It is empty.";
+        if(contents.isNotEmpty) ret = "You see: ${turnArrayIntoHumanSentence(contents)}.";
         return ret;
     }
 }

@@ -35,7 +35,7 @@ class Look extends Action {
     }
   }
   @override
-  String apply(Item item) {
+  String apply(Item item, [String itemName]) {
       return "You LOOK at the ${item.name}. ${item.description}";
   }
 }

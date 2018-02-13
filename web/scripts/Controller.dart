@@ -16,8 +16,10 @@ class Controller
 
     Element gameText = new DivElement();
     Element roomText = new DivElement();
+    Element inventoryText = new DivElement();
+    Element itemsText = new DivElement();
+    Element exitsText = new DivElement();
     TextInputElement textInputElement = new TextInputElement();
-    OneCharAtTimeWrapper intro;
 
     List<Player> players;
     Player currentPlayer;
@@ -31,6 +33,17 @@ class Controller
         container.append(gameText);
         roomText.classes.add('gameText');
         container.append(roomText);
+
+        container.append(inventoryText);
+        inventoryText.classes.add('optionalText');
+
+        container.append(itemsText);
+        itemsText.classes.add('optionalText');
+
+        container.append(exitsText);
+        exitsText.classes.add('optionalText');
+
+
 
         Element inputContainer = new DivElement();
         Element prompt = new SpanElement();
@@ -52,8 +65,7 @@ class Controller
 
     Future<Null> init() async {
         initRooms();
-        intro = new OneCharAtTimeWrapper(<Line>[new Line("A young Shogun stands in a SBURBSim CONTROL ROOM. It just so happens that today, the 13th of January, 2018, is the day he finally took over SBURBSim. What will he do? Probably type commands in a 'look room' sort of way. That does seem to be the type of game this is.",gameText),new Line(currentPlayer.currentRoom.fullDescription,roomText)]);
-        await intro.write();
+        displayText("A young Shogun stands in a SBURBSim CONTROL ROOM. It just so happens that today, the 13th of January, 2018, is the day he finally took over SBURBSim. What will he do? Probably type commands in a 'look room' sort of way. That does seem to be the type of game this is.");
         //don't have commands be enabled till intro is finished
         initTextListener();
     }
@@ -70,11 +82,13 @@ class Controller
         textInputElement.value = "";
         gameText.text = "";
         roomText.text = "";
+        itemsText.text = "";
+        exitsText.text = "";
         displayText(Action.applyAction(command));
     }
 
     void displayText(String text) {
-        new OneCharAtTimeWrapper(<Line>[new Line(text,gameText),new Line(currentPlayer.currentRoom.fullDescription,roomText)]).write();
+        new OneCharAtTimeWrapper(<Line>[new Line(text,gameText),new Line(currentPlayer.currentRoom.fullDescription,roomText),new Line(currentPlayer.itemsDescription,inventoryText),new Line(currentPlayer.currentRoom.itemsDescription,itemsText),new Line(currentPlayer.currentRoom.exitsDescription,exitsText)]).write();
     }
 
     void initRooms() {
@@ -94,10 +108,14 @@ class Controller
 
 
 
+
         Room testExit = new Room("Dennis",["DENNIS","DUDE","GUY","MEME"],"Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.");
         controlRoom.exits.add(testExit);
 
-        currentPlayer = new Player(controlRoom, "Shogun", <String>[],"a towering memelord, 1.3 JRs tall.");
+        currentPlayer = new Player(controlRoom, "Shogun", <String>["SHOGUN","SHOGUN OF SAUCE","MEMELORD","LORD OF WORDS"],"a towering memelord, 1.3 JRs tall.");
+        currentPlayer.inventory.add(new Item("Katana",<String>["SWORD", "KATANA", "SHITTY SWORD","ANIME SWORD"],"This is an unbelievably shit sword. Where is Muramasa? Where is my blade why is it shit JR how dare you nerf me."));
+        currentPlayer.inventory.add(new Item("Mind Hoodie",<String>["MIND HOODIE", "HOODIE", "JACKET","COAT"],"No comment."));
+
     }
 
 }
