@@ -23,7 +23,9 @@ class Go extends Action {
       if(item != null) {
           print("exit found, it's $item");
           Go l = item.findActionWithSameClassAs(new Go());
-          return l.apply(item);
+          if(l != null) {
+              return l.apply(item);
+          }
       }
 
       return new Go().apply(null, itemName);

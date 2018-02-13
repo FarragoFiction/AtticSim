@@ -1,6 +1,7 @@
 import "Actions/Action.dart";
 import "Actions/Look.dart";
 import "Actions/Destroy.dart";
+import "Actions/Vore.dart";
 
 
 class Item {
@@ -9,9 +10,11 @@ class Item {
     String description;
     List<Action> validActions = new List<Action>();
 
-    Item(String this.name, List<String> this.alts, String this.description, [bool destroyable = false]) {
+    Item(String this.name, List<String> this.alts, String this.description, {bool destroyable: false, bool consumable: false}) {
         validActions.add(new Look()); //all things can be looked at.
         if(destroyable) validActions.add(new Destroy()); //all things can be looked at.
+        if(consumable) validActions.add(new Vore()); //all things can be looked at.
+
 
     }
 

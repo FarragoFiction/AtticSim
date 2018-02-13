@@ -5,6 +5,10 @@ import "../Controller.dart";
 import "Look.dart";
 import "Be.dart";
 import "Go.dart";
+import "Destroy.dart";
+import "Vore.dart";
+
+
 import "../Player.dart";
 
 /*
@@ -87,6 +91,12 @@ abstract class Action {
         }else if(Go.isCommand(parts[0])) {
             String item = parseOutItem(parts);
             return Go.performAction(item);
+        }else if(Destroy.isCommand(parts[0])) {
+            String item = parseOutItem(parts);
+            return Destroy.performAction(item);
+        }else if(Vore.isCommand(parts[0])) {
+            String item = parseOutItem(parts);
+            return Vore.performAction(item);
         }
         return null;
     }

@@ -23,7 +23,9 @@ class Be extends Action {
       if(item != null) {
           print("player found, it's $item");
           Be l = item.findActionWithSameClassAs(new Be());
-          return l.apply(item);
+          if(l != null) {
+              return l.apply(item);
+          }
       }
 
       return new Be().apply(null, itemName);
