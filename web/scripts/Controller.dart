@@ -111,7 +111,12 @@ class Controller
 
 
         Room testExit = new Room("Dennis",["DENNIS","DUDE","GUY","MEME"],"Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.");
-        controlRoom.exits.add(testExit);
+       // controlRoom.exits.add(testExit);
+
+        //Control Console
+        Room controlConsole = new Room("Control Console",["CONTROL CONSOLE","CONSOLE"],"the control console for SBURBSim. It's actually just a regular computer, with regular shit you can do on it. It's not really a place, but close enough.");
+        controlRoom.exits.add(controlConsole);
+        controlConsole.exits.add(controlRoom);
 
         currentPlayer = new Player(controlRoom, "Shogun", <String>["SHOGUN","SHOGUN OF SAUCE","MEMELORD","LORD OF WORDS", "FU","FUEDALULTIMATUM","THE ANTITHESIS"],"a towering memelord, 1.3 JRs tall.");
         currentPlayer.inventory.add(new Item("Katana",<String>["SWORD", "KATANA", "SHITTY SWORD","ANIME SWORD"],"This is an unbelievably shit sword. Where is Muramasa? Where is my blade why is it shit JR how dare you nerf me."));

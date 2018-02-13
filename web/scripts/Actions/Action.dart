@@ -4,6 +4,7 @@ import "../weighted_lists.dart";
 import "../Controller.dart";
 import "Look.dart";
 import "Be.dart";
+import "Go.dart";
 import "../Player.dart";
 
 /*
@@ -44,6 +45,19 @@ abstract class Action {
         return null;
     }
 
+    static Item findExitFromString(String itemString) {
+        itemString.trim();
+
+
+        List<Item> allItems = new List.from(Controller.instance.currentPlayer.currentRoom.exits);
+        print("found ${allItems.length} items");
+        for(Item item in allItems) {
+            if(item.isItem(itemString)) return item;
+        }
+
+        return null;
+    }
+
     static Item findPlayerFromString(String itemString) {
         itemString.trim();
 
@@ -68,8 +82,11 @@ abstract class Action {
             String item = parseOutItem(parts);
             return Look.performAction(item);
         }else if(Be.isCommand(parts[0])) {
-        String item = parseOutItem(parts);
-        return Be.performAction(item);
+            String item = parseOutItem(parts);
+            return Be.performAction(item);
+        }else if(Go.isCommand(parts[0])) {
+            String item = parseOutItem(parts);
+            return Go.performAction(item);
         }
         return null;
     }
