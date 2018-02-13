@@ -4,7 +4,7 @@ import "../random.dart";
 import "../weighted_lists.dart";
 import "../Controller.dart";
 class Take extends Action {
-    static List<String> ALTS = <String>["TAKE","STEAL","YOINK","ACQUIRE", "PILFER","PICK","APPROPRIATE","POCKET"];
+    static List<String> ALTS = <String>["TAKE","STEAL","YOINK","ACQUIRE", "PILFER","PICK","APPROPRIATE","POCKET","GET"];
 
     static bool isCommand(String word) {
         return ALTS.contains(word.toUpperCase().trim());

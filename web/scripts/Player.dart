@@ -8,7 +8,7 @@ class Player extends Item {
     Room currentRoom;
     List<Item> inventory = new List<Item>();
 
-    Player(this.currentRoom, String name, List<String> alts, String desc):super(name, alts, desc) {
+    Player(this.currentRoom, String name, List<String> alts, String desc, String useDescription):super(name, alts, desc, useDescription) {
         Controller.instance.players.add(this);
         validActions.add(new Be()); //all players can be played at.
 

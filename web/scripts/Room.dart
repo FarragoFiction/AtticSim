@@ -9,12 +9,11 @@ class Room extends Item{
     //obvious exits are:
     List<Room> exits;
 
-    Room(String name, List<String> alts, String description, {this.contents: null, this.exits: null}):super(name, alts, description) {
+    Room(String name, List<String> alts, String description,String useDescription, {this.contents: null, this.exits: null}):super(name, alts, description, useDescription) {
         if(description == null) description = "perfectly generic";
         if(contents == null) contents = new List<Item>();
         if(exits == null) exits = new List<Room>();
         validActions.add(new Go()); //all rooms can be entered.
-
     }
 
 

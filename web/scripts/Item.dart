@@ -20,9 +20,11 @@ class Item {
     String useDescription;
     Condition useCondition;
 
+    bool pointsApplied  = false;
+
     List<Action> validActions = new List<Action>();
 
-    Item(String this.name, List<String> this.alts, String this.description, {bool destroyable: false, bool consumable: false, bool portable: false, Condition this.useCondition: null}) {
+    Item(String this.name, List<String> this.alts, String this.description, String this.useDescription, {bool destroyable: false, bool consumable: false, bool portable: false, Condition this.useCondition: null}) {
         validActions.add(new Look()); //all things can be looked at.
         validActions.add(new Use()); //all things can be used.
 
@@ -38,6 +40,13 @@ class Item {
 
     }
 
+    void applyPoints(int pointValue) {
+        if(!pointsApplied) {
+            Controller.instance.points += pointValue;
+        }
+    }
+
+    //almost no points
     String defaultCondition() {
         //if item is in inventory, put it on the ground
         if(Controller.instance.currentPlayer.inventory.contains(this)) {
@@ -47,12 +56,13 @@ class Item {
             snark.add("Why did you ever think you wanted to own the '$this'? ", 1.0);
             snark.add("The '$this' belongs on the floor. ", 0.5);
             snark.add("The '$this' rocket out of your inventory and onto the floor.", 0.5);
-
+            Controller.instance.currentPlayer.inventory.remove(this);
+            Controller.instance.currentPlayer.currentRoom.contents.add(this);
             Random rand = new Random();
             return rand.pickFrom(snark);
         }else { //if item is on ground, display use text
-
-            return "You use the $this. ${useDescription}";
+            applyPoints(1);
+            return "${useDescription}";
         }
 
     }

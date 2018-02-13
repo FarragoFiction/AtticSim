@@ -137,46 +137,46 @@ class Controller
     }
 
     void initRooms() {
-        Room controlRoom = new Room("SBURBSim CONTROL ROOM",["ROOM","CONTROL ROOM","SBURBSim CONTROL ROOM"],"a bizarre amagalmation of memes, coding paraphernalia and definitely no dictionaries. It fills you with an existential dread. JR is a demon.");
+        Room controlRoom = new Room("SBURBSim CONTROL ROOM",["ROOM","CONTROL ROOM","SBURBSim CONTROL ROOM"],"a bizarre amagalmation of memes, coding paraphernalia and definitely no dictionaries. It fills you with an existential dread. JR is a demon.","You attempt to use a room. Somehow. It probably happens.");
 
-        Item couch = new Item("Familiar Couch",<String>["CASTING COUCH", "COUCH", "FAMILIAR COUCH"],"I want to destroy this accursed fucking piece of ikea looking trash. let me destroy it. Where's the destroy option that is all I am good for.",destroyable: true);
+        Item couch = new Item("Familiar Couch",<String>["CASTING COUCH", "COUCH", "FAMILIAR COUCH"],"I want to destroy this accursed fucking piece of ikea looking trash. let me destroy it. Where's the destroy option that is all I am good for.","Nice try, but the Shogun doesn't sleep.",destroyable: true);
         controlRoom.contents.add(couch);
-        controlRoom.contents.add(new Item("Unsettling Sculpture",<String>["SCULPTURE", "UNSETTLING SCULPTURE", "PUZZLECOCK","PUZZLE COCK"],"I have no idea what the fuck this implies, but one thing I know is that it is absol-fucking-lutely delicious looking. I want to eat it. Let me eat it. Give. (Is it made of Lucky Charms?)",consumable: true,portable: true));
+        controlRoom.contents.add(new Item("Unsettling Sculpture",<String>["SCULPTURE", "UNSETTLING SCULPTURE", "PUZZLECOCK","PUZZLE COCK"],"I have no idea what the fuck this implies, but one thing I know is that it is absol-fucking-lutely delicious looking. I want to eat it. Let me eat it. Give. (Is it made of Lucky Charms?)","You realize you would be much more comfortable simply eating the lucky charms sculpture.",consumable: true,portable: true));
         //controlRoom.contents.add(new Item("",<String>["", "", "",""],""));
 
-        controlRoom.contents.add(new Item("CatTroll Wigs",<String>["HAIR7", "WIG", "CATTROLL WIG","NEPETA WIG"],"Heheh.",portable: true));
-        controlRoom.contents.add(new Item("AB Charging Station",<String>["AB'S CHARGING STATION", "STATION", "CHARGING STATION"],"Oh is this where that uncanny valley looking robot of JR sleeps or some shit? Hm. Well. Can I legally make an apple joke here?"));
-        controlRoom.contents.add(new Item("PL's Guide to Dart Book",<String>["BOOK", "DART BOOK","PL's GUIDE TO DART","PL'S GUIDE TO DART BOOK","PL'S BOOK","PL'S GUIDE BOOK"],"This would be useful probably. If I gave enough of a fuck about reading or putting effort into this.",destroyable: true,portable: true));
-        controlRoom.contents.add(new Item("life size unicorn plush",<String>["UNICORN", "PLUSH", "HOOF BEAST","HOOFBEAST"],"This is like a fucking anomaly. it looks so normal from a distance but it's like, it's a fucking frankenfuck of other stuff creatured. How many corpses has JR got in this? ",destroyable: true));
-        controlRoom.contents.add(new Item("Toddler!JR 'Do it For Her' board",<String>["BOARD", "TODDLER JR BOARD", "DO IT FOR HER BOARD","TODDLER!JR 'DO IT FOR HER' BOARD"],"Pure. Blessed. Powerful. God Bless this board."));
-        controlRoom.contents.add(new Item("JR's 4th Wall",<String>["WALL", "4TH WALL", "JR'S 4TH WALL","FENESTRATED WALL"],"Something something meta. If I climbed through this I could get myself some burgs.",destroyable: true,portable: true));
+        controlRoom.contents.add(new Item("CatTroll Wigs",<String>["HAIR7", "WIG", "CATTROLL WIG","NEPETA WIG"],"Heheh.","You try the wig on. You get the eerie feeling that the Narrator hates you just a little bit more now.",portable: true));
+        controlRoom.contents.add(new Item("AB Charging Station",<String>["AB'S CHARGING STATION", "STATION", "CHARGING STATION"],"Oh is this where that uncanny valley looking robot of JR sleeps or some shit? Hm. Well. Can I legally make an apple joke here?","You attempt to use my charging station. Since you are a fleshy organic weakling, it fails to charge you."));
+        controlRoom.contents.add(new Item("PL's Guide to Dart Book",<String>["BOOK", "DART BOOK","PL's GUIDE TO DART","PL'S GUIDE TO DART BOOK","PL'S BOOK","PL'S GUIDE BOOK"],"This would be useful probably. If I gave enough of a fuck about reading or putting effort into this.","You flip through the book. Huh, apparently JR scrawled crude pictures of dicks and shitty comics about how learning things in a structured way is fucking stupid. ",destroyable: true,portable: true));
+        controlRoom.contents.add(new Item("life size unicorn plush",<String>["UNICORN", "PLUSH", "HOOF BEAST","HOOFBEAST"],"This is like a fucking anomaly. it looks so normal from a distance but it's like, it's a fucking frankenfuck of other stuff creatured. How many corpses has JR got in this? ","You admire the Unicorn in all it's unnatural glory.",destroyable: true));
+        controlRoom.contents.add(new Item("Toddler!JR 'Do it For Her' board",<String>["BOARD", "TODDLER JR BOARD", "DO IT FOR HER BOARD","TODDLER!JR 'DO IT FOR HER' BOARD"],"Pure. Blessed. Powerful. God Bless this board.","You admire the board. Toddler JR is always full of such terrible ideas. They are your favorite JR."));
+        controlRoom.contents.add(new Item("JR's 4th Wall",<String>["WALL", "4TH WALL", "JR'S 4TH WALL","FENESTRATED WALL"],"Something something meta. If I climbed through this I could get myself some burgs.","You attempt to crawl through JR's Fenestrated Window. Luckily, it is currently unpowered.",destroyable: true,portable: true));
 
 
 
 
-        Room testExit = new Room("Dennis",["DENNIS","DUDE","GUY","MEME"],"Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.");
+        Room testExit = new Room("Dennis",["DENNIS","DUDE","GUY","MEME"],"Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.","You use Dennis, you heartless monster.");
        // controlRoom.exits.add(testExit);
 
         //Control Console
-        controlConsole = new Room("Control Console",["CONTROL CONSOLE","CONSOLE"],"the control console for SBURBSim. It's actually just a regular computer, with regular shit you can do on it, like shitpost or troll jr or buy shit online. It's not really a place, but close enough.");
+        controlConsole = new Room("Control Console",["CONTROL CONSOLE","CONSOLE"],"the control console for SBURBSim. It's actually just a regular computer, with regular shit you can do on it, like shitpost or troll jr or buy shit online. It's not really a place, but close enough.","You fail to use the CONTROL CONSOLE as it requires a PASSWORD.");
         controlRoom.exits.add(controlConsole);
         controlConsole.exits.add(controlRoom);
 
-        shogun = new Player(controlRoom, "Shogun", <String>["MAIN CHARACTER","PROTAGONIST","SHOGUN","SHOGUN OF SAUCE","MEMELORD","LORD OF WORDS", "FU","FUEDALULTIMATUM","THE ANTITHESIS","THE VILLAIN","VILLAIN"],"a towering memelord, 1.3 JRs tall.");
+        shogun = new Player(controlRoom, "Shogun", <String>["MAIN CHARACTER","PROTAGONIST","SHOGUN","SHOGUN OF SAUCE","MEMELORD","LORD OF WORDS", "FU","FUEDALULTIMATUM","THE ANTITHESIS","THE VILLAIN","VILLAIN"],"a towering memelord, 1.3 JRs tall.", "You fail to use Shogun.");
         currentPlayer = shogun;
-        currentPlayer.inventory.add(new Item("Katana",<String>["SWORD", "KATANA", "SHITTY SWORD","ANIME SWORD"],"This is an unbelievably shit sword. Where is Muramasa? Where is my blade why is it shit JR how dare you nerf me."));
-        currentPlayer.inventory.add(new Item("Mind Hoodie",<String>["MIND HOODIE", "HOODIE", "JACKET","COAT"],"No comment."));
+        currentPlayer.inventory.add(new Item("Katana",<String>["SWORD", "KATANA", "SHITTY SWORD","ANIME SWORD"],"This is an unbelievably shit sword. Where is Muramasa? Where is my blade why is it shit JR how dare you nerf me.","You contemplate using your shitty sword to DESTROY some object."));
+        currentPlayer.inventory.add(new Item("Mind Hoodie",<String>["MIND HOODIE", "HOODIE", "JACKET","COAT"],"No comment.","You feel so safe."));
 
-        jr  = new Player(controlRoom, "jadedResearcher", <String>["JR","JADEDRESEARCHER","THE WASTE","A WASTE","WASTE OF MIND","THE WASTE OF MIND","THE AUTHOR"],"a waste, exactly 1.0 JRs tall.");
-        jr.inventory.add(new Item("Yellow Yard",<String>["YELLOW YARD", "YARD", "YELLOW LAWNRING","STICK","GIMMICK"],"At least Shogun didn't break this. I hate it when I can't control all that fucking Waste shit."));
-        jr.inventory.add(new Item("Unbelievably Shitty Laptop",<String>["LAPTOP", "SHITTY LAPTOP", "SHIT","UNBELIEVABLY SHITTY LAPTOP","COMPUTER"],"Oh god. It's so shitty. I have to close programs just to compile the Sim. At least I still CAN work on the Sim, though. Plus, I can still Troll Shogun. This isn't so bad."));
+        jr  = new Player(controlRoom, "jadedResearcher", <String>["JR","JADEDRESEARCHER","THE WASTE","A WASTE","WASTE OF MIND","THE WASTE OF MIND","THE AUTHOR"],"a waste, exactly 1.0 JRs tall.","You fail to use JR.");
+        jr.inventory.add(new Item("Yellow Yard",<String>["YELLOW YARD", "YARD", "YELLOW LAWNRING","STICK","GIMMICK"],"At least Shogun didn't break this. I hate it when I can't control all that fucking Waste shit.","You fail to change the Decisions that lead you here. You kind of want to see how this plays out."));
+        jr.inventory.add(new Item("Unbelievably Shitty Laptop",<String>["LAPTOP", "SHITTY LAPTOP", "SHIT","UNBELIEVABLY SHITTY LAPTOP","COMPUTER"],"Oh god. It's so shitty. I have to close programs just to compile the Sim. At least I still CAN work on the Sim, though. Plus, I can still Troll Shogun. This isn't so bad.","This should  troll shogun and not be seen directly."));
 
 
-        Room attic = new Room("Attic",["ATTIC","ROOM"],"mostly empty. You're probably trapped in here, in fact, you're suddenly sure of it. At the very least if you left you'd have to be in the same room as that asshole and like fuck THAT's happening. ");
+        Room attic = new Room("Attic",["ATTIC","ROOM"],"mostly empty. You're probably trapped in here, in fact, you're suddenly sure of it. At the very least if you left you'd have to be in the same room as that asshole and like fuck THAT's happening. ","You decide to use this Attic as a base of operations in your campaign to annoy Shogun.");
         for(int i = 0; i <13; i++) {
-            attic.contents.add(new Item("Box of Lucky Charms",<String>["LUCKY CHARMS", "LEWD CEREAL", "BOX OF LUCKY CHARMS","TROVE BAIT","CEREAL","CEREAL BOXES","BOXES","LUCKY CHARMS BOXES"],"Where did these even come from? Is this a trove thing? Did Shogun do this?",consumable: true, portable: true));
+            attic.contents.add(new Item("Box of Lucky Charms",<String>["LUCKY CHARMS", "LEWD CEREAL", "BOX OF LUCKY CHARMS","TROVE BAIT","CEREAL","CEREAL BOXES","BOXES","LUCKY CHARMS BOXES"],"Where did these even come from? Is this a trove thing? Did Shogun do this?","You assemble the Lucky Charms boxes into passable furniture.",consumable: true, portable: true));
         }
-        attic.contents.add(new Item("Unbelievably Shitty Spook Wolf Head",<String>["WOLF", "WOLF HEAD", "UNBELIEVABLY SHITTY SPOOK WOLF HEAD","SCARY WOLF",'NIGHTMARE'],"It doesn't even do the 'light activated' spooky howl unless you go up to it on purpose. 3/10, not spooky at all."));
+        attic.contents.add(new Item("Unbelievably Shitty Spook Wolf Head",<String>["WOLF", "WOLF HEAD", "UNBELIEVABLY SHITTY SPOOK WOLF HEAD","SCARY WOLF",'NIGHTMARE'],"It doesn't even do the 'light activated' spooky howl unless you go up to it on purpose. 3/10, not spooky at all.", "You puposefully activate the motion capture Spook Wolf. It manages to scare the shit out of you despite you being literally as prepared as it is Wastely possible."));
         jr.currentRoom = attic;
     }
 

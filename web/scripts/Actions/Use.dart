@@ -34,6 +34,7 @@ class Use extends Action {
     //if i am passed null, i fail to becomd x and isntead become some random player
   @override
   String apply(Item item, [String itemName, bool notFood = false]) {
+      //usecondition will worry about applying points
       return item.useCondition();
   }
 }
