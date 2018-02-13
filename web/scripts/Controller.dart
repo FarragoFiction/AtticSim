@@ -88,6 +88,7 @@ class Controller
     }
 
     void displayText(String text) {
+        print("displaying text, current player is ${currentPlayer} and they are in room ${currentPlayer.currentRoom}");
         new OneCharAtTimeWrapper(<Line>[new Line(text,gameText),new Line(currentPlayer.currentRoom.fullDescription,roomText),new Line(currentPlayer.itemsDescription,inventoryText),new Line(currentPlayer.currentRoom.itemsDescription,itemsText),new Line(currentPlayer.currentRoom.exitsDescription,exitsText)]).write();
     }
 
@@ -121,7 +122,7 @@ class Controller
         jr.inventory.add(new Item("Unbelievably Shitty Laptop",<String>["LAPTOP", "SHITTY LAPTOP", "SHIT","UNBELIEVABLY SHITTY LAPTOP","COMPUTER"],"Oh god. It's so shitty. I have to close programs just to compile the Sim. At least I still CAN work on the Sim, though. Plus, I can still Troll Shogun. This isn't so bad."));
 
 
-        Room attic = new Room("Attic",["ATTIC","ROOM"],"It's an attic, you're probably trapped in here, in fact, you're suddenly sure of it. At the very least if you left you'd have to be in the same room as that asshole and like fuck THAT's happening. ");
+        Room attic = new Room("Attic",["ATTIC","ROOM"],"mostly empty. You're probably trapped in here, in fact, you're suddenly sure of it. At the very least if you left you'd have to be in the same room as that asshole and like fuck THAT's happening. ");
         attic.contents.add(new Item("Hundreds of Boxes of Lucky Charms",<String>["LUCKY CHARMS", "LEWD CEREAL", "HUNDREDS OF BOXES OF LUCKY CHARMS","TROVE BAIT","CEREAL","CEREAL BOXES","BOXES","LUCKY CHARMS BOXES"],"Where did these even come from? Is this a trove thing? Did Shogun do this?"));
         attic.contents.add(new Item("Unbelievably Shitty Spook Wolf Head",<String>["WOLF", "WOLF HEAD", "UNBELIEVABLY SHITTY SPOOK WOLF HEAD","SCARY WOLF",'NIGHTMARE'],"It doesn't even do the 'light activated' spooky howl unless you go up to it on purpose. 3/10, not spooky at all."));
         jr.currentRoom = attic;
