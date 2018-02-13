@@ -8,29 +8,30 @@ import "weighted_lists.dart";
 import "random.dart";
 import "Actions/Use.dart";
 import "Player.dart";
+import "Room.dart";
 
 //returns what happened with the item (and determines what SHOULD happen)
-typedef String Condition(List<Item> items);
+typedef String Condition();
 
 
 
 class Item {
     String name;
     List<String> alts;
-    String description;
-    String useDescription;
-    Condition useCondition;
+    String _description;
 
     //for shitty puzzles
     List<Item> parts = new List<Item>();
     //the condition itself will handle what this means
-    List<Item> itemConditions = new List<Item>();
-
     bool pointsApplied  = false;
+    Condition useCondition;
+    String useDescription;
+
+    static String UNICORNMETHOD = "unicorn";
 
     List<Action> validActions = new List<Action>();
 
-    Item(String this.name, List<String> this.alts, String this.description, String this.useDescription, {bool destroyable: false, bool consumable: false, bool portable: false, Condition this.useCondition: null}) {
+    Item(String this.name, List<String> this.alts, String this._description, String this.useDescription, {bool destroyable: false, bool consumable: false, bool portable: false, String useConditionString: null }) {
         validActions.add(new Look()); //all things can be looked at.
         validActions.add(new Use()); //all things can be used.
 
@@ -39,7 +40,11 @@ class Item {
         if(portable) validActions.add(new Take()); //all things can be looked at.
 
 
-        if(useCondition == null) {
+        if(useConditionString == null) {
+            useCondition = defaultCondition;
+        }else if (useConditionString == UNICORNMETHOD) {
+            useCondition = addMeToUnicorn;
+        }else {
             useCondition = defaultCondition;
         }
 
@@ -52,19 +57,35 @@ class Item {
         }
     }
 
-    String hasItemInInventory(List<Item> itemsNeeded) {
-        //how would this work
+    String turnArrayIntoHumanSentence(List<dynamic> retArray) {
+        return [retArray.sublist(0, retArray.length - 1).join(', '), retArray.last].join(retArray.length < 2 ? '' : ' and ');
+    }
+
+    String get description {
+        if(parts.isEmpty) return _description;
+        return "$_description Attached are ${turnArrayIntoHumanSentence(parts)}. You cannot remove them.";
+
+    }
+
+    //fuck it, stop trying to be fancy, just hard code each type of use
+
+    //does what it says on the tin.
+    String addMeToUnicorn() {
         Player p = Controller.instance.currentPlayer;
-        bool isvalid = true;
-        for(Item p in itemsNeeded) {
-            if(!parts.contains(p)){
-             isvalid = false;
-            }
+        Room r = p.currentRoom;
+        Item unicorn = Controller.instance.unicorn;
+        if(r.contents.contains(unicorn) && p.inventory.contains(this)){
+            unicorn.parts.add(this);
+            p.inventory.remove(this);
+            applyPoints(130);
+            return "You really improve the look of the Frankenfuck Unicorn by adding a stylish wig to it.";
+        }else{
+             defaultCondition(false);
         }
     }
 
     //almost no points
-    String defaultCondition(List<Item> goingToIgnore) {
+    String defaultCondition([bool givePoints = true]) {
         //if item is in inventory, put it on the ground
         if(Controller.instance.currentPlayer.inventory.contains(this)) {
             WeightedList<String> snark = new WeightedList<String>();
@@ -80,7 +101,7 @@ class Item {
             Random rand = new Random();
             return rand.pickFrom(snark);
         }else { //if item is on ground, display use text
-            applyPoints(1);
+            if(givePoints)applyPoints(1);
             return "${useDescription}";
         }
 

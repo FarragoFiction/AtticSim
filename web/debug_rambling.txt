@@ -124,3 +124,12 @@ the condition list is on the item so....
 how would i do:
 
 if have wig in inventory, ride horse.....hrm.
+~~~~~
+
+Fuck.
+
+I'm screwing up. I keep forgetting parts of the use case while coding.
+
+How do I fix this?
+
+fuck it, let's not care about reuse, then.
