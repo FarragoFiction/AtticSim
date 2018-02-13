@@ -51,10 +51,12 @@ class Item {
         //if item is in inventory, put it on the ground
         if(Controller.instance.currentPlayer.inventory.contains(this)) {
             WeightedList<String> snark = new WeightedList<String>();
-            snark.add("You abjure the '$this'. ", 0.5);
-            snark.add("You deploy the '$this'. ", 1.0);
-            snark.add("Why did you ever think you wanted to own the '$this'? ", 1.0);
+            snark.add("You abjure the '$this'. It is now on the ground.", 1.0);
+            snark.add("You deploy the '$this'. It is now on the ground.", 1.0);
+            snark.add("Why did you ever think you wanted to own the '$this'? It's now on the floor, where it belongs.", 0.5);
             snark.add("The '$this' belongs on the floor. ", 0.5);
+            snark.add("You take the '$this' and throw it to the ground. You're an adult. ", 0.2);
+
             snark.add("The '$this' rocket out of your inventory and onto the floor.", 0.5);
             Controller.instance.currentPlayer.inventory.remove(this);
             Controller.instance.currentPlayer.currentRoom.contents.add(this);

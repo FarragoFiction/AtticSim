@@ -94,7 +94,7 @@ class Controller
     }
 
     String moveTime() {
-        currentDate = new DateTime(currentDate.year, currentDate.month, currentDate.day+7);
+        currentDate = new DateTime(currentDate.year, currentDate.month, currentDate.day+7, currentDate.hour, currentDate.minute);
         WeightedList<String> snark = new WeightedList<String>();
         snark.add("You shitpost through the night. ",0.5);
         snark.add("You completely fail to sleep at all. ",0.5);
@@ -119,6 +119,8 @@ class Controller
     }
 
     void processCommand(String command) {
+        currentDate = new DateTime(currentDate.year, currentDate.month, currentDate.day, currentDate.hour+3, currentDate.minute);
+
         textInputElement.value = "";
         gameText.text = "";
         roomText.text = "";
@@ -130,7 +132,7 @@ class Controller
 
     void displayText(String text) {
         print("displaying text, current player is ${currentPlayer} and they are in room ${currentPlayer.currentRoom}");
-        String dateSlug ="${currentDate.year.toString()}-${currentDate.month.toString().padLeft(2,'0')}-${currentDate.day.toString().padLeft(2,'0')}";
+        String dateSlug ="${currentDate.year.toString()}-${currentDate.month.toString().padLeft(2,'0')}-${currentDate.day.toString().padLeft(2,'0')} ${currentDate.hour.toString().padLeft(2,'0')}:${currentDate.minute.toString().padLeft(2,'0')}";
 
         dateText.text = "$dateSlug Points: ${points}/${totalAvailablePoints}";
         new OneCharAtTimeWrapper(<Line>[new Line(text,gameText),new Line(currentPlayer.currentRoom.fullDescription,roomText),new Line(currentPlayer.itemsDescription,inventoryText),new Line(currentPlayer.currentRoom.itemsDescription,itemsText),new Line(currentPlayer.currentRoom.exitsDescription,exitsText)]).write();
