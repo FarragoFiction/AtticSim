@@ -20,7 +20,9 @@ class Controller {
   int _totalAvailablePoints = -1300;
 
   int points = 0;
-  DateTime currentDate;
+  DateTime currentDate = new DateTime(2018, 1, 13);
+  DateTime endDate = new DateTime(2018, 2, 13);
+
   Element dateText = new DivElement();
   Element gameText = new DivElement();
   Element roomText = new DivElement();
@@ -40,7 +42,6 @@ class Controller {
   Item passwordScrawl;
 
   Controller(Element wrapper) {
-    currentDate = new DateTime(2018, 1, 13);
     instance = this;
     Element container = new DivElement();
     container.classes.add('game');
@@ -92,7 +93,7 @@ class Controller {
   }
 
   String moveTime() {
-    currentDate = new DateTime(currentDate.year, currentDate.month, currentDate.day + 1, currentDate.hour, currentDate.minute);
+    currentDate = new DateTime(currentDate.year, currentDate.month, currentDate.day + 7, currentDate.hour, currentDate.minute);
     WeightedList<String> snark = new WeightedList<String>();
     snark.add("You shitpost through the night. ", 0.5);
     snark.add("You completely fail to sleep at all. ", 0.5);
@@ -132,6 +133,7 @@ class Controller {
     for (Delivery d in expectedDeliveries) {
       if (d.checkDelivery()) {
         shogun.inventory.add(d.item);
+        print("Delivery $d is ready with ${d.item}");
         ret += " You got a ${d.item} delivered! ";
         toRemove.add(d);
       }
@@ -146,13 +148,34 @@ class Controller {
     return ret;
   }
 
+  void endGame() {
+      gameText.text = "It has been a full month since Shogun shit post his way into the SBURBSim Control room. Can JR shitpost their way back?";
+      String embed = '<iframe width="560" height="315" src="https://www.youtube.com/embed/hS5c7p8zFSY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+      inventoryText.appendHtml(embed, treeSanitizer: NodeTreeSanitizer.trusted);
+      String bodyPillow = "It seems to have worked! Shogun seems to have fled in confusion and terror and or boredom. But what's this he left behind amid the flood of weird useless shit he bought online? A...body pillow of JR? <img src = 'bodypillow.png>";
+      inventoryText.appendHtml(bodyPillow, treeSanitizer: NodeTreeSanitizer.trusted);
+
+  }
   void displayText(String text) {
+      if(checkEnd()) {
+        endGame();
+        return;
+      }
     print("displaying text, current player is ${currentPlayer} and they are in room ${currentPlayer.currentRoom}");
     String dateSlug = "${currentDate.year.toString()}-${currentDate.month.toString().padLeft(2,'0')}-${currentDate.day.toString().padLeft(2,'0')} ${currentDate.hour.toString().padLeft(2,'0')}:${currentDate.minute.toString().padLeft(2,'0')}";
 
     String newItems = checkDeliveries();
     dateText.text = "$dateSlug Points: ${points}/${totalAvailablePoints} $newItems";
     new OneCharAtTimeWrapper(<Line>[new Line(text, gameText), new Line(currentPlayer.currentRoom.fullDescription, roomText), new Line(currentPlayer.itemsDescription, inventoryText), new Line(currentPlayer.currentRoom.itemsDescription, itemsText), new Line(currentPlayer.currentRoom.exitsDescription, exitsText)]).write();
+  }
+
+  bool checkEnd() {
+      Duration diff = currentDate.difference(endDate);
+      int ret = diff.inMinutes;
+      if (ret > 0) {
+          return true;
+      }
+      return false;
   }
 
   void initRooms() {
@@ -219,7 +242,7 @@ class Delivery {
   Item item;
   DateTime expectedDeliveryTime;
 
-  Delivery(Item item) {
+  Delivery(Item this.item) {
     DateTime currentDate = Controller.instance.currentDate;
     expectedDeliveryTime = new DateTime(currentDate.year, currentDate.month, currentDate.day + 1, currentDate.hour, currentDate.minute);
   }
@@ -231,5 +254,6 @@ class Delivery {
     if (ret > 0) {
       return true;
     }
+    return false;
   }
 }

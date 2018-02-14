@@ -12,7 +12,7 @@ import 'dart:html';
     int lineIndex = 0;
 
 
-    OneCharAtTimeWrapper(List<Line> this.lines, {this.msBetweenChars: 13});
+    OneCharAtTimeWrapper(List<Line> this.lines, {this.msBetweenChars: 3});
 
     Future<Null> write() async {
         if(currentLine == null) currentLine = lines[0];
