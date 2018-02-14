@@ -40,6 +40,17 @@ html, body {
 
 }
 
+#reward{
+  width:700px;
+  min-height: 50px;
+  position:relative;
+
+  background-color: black;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .gameInputContainer{
     position: absolute;
     top: 88%;

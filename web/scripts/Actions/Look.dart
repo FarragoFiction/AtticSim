@@ -11,7 +11,7 @@ class Look extends Action {
         return ALTS.contains(word.toUpperCase().trim());
     }
 
-    Look():super("Look",ALTS);
+    Look():super("Look",ALTS,pointValue: 10);
 
 
 
@@ -30,6 +30,7 @@ class Look extends Action {
   }
   @override
   String apply(Item item, [String itemName]) {
+      applyPoints();
       return "You LOOK at the ${item.name}. ${item.description}";
   }
 }

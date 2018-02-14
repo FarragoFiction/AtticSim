@@ -149,11 +149,12 @@ class Controller {
   }
 
   void endGame() {
-      gameText.text = "It has been a full month since Shogun shit post his way into the SBURBSim Control room. Can JR shitpost their way back?";
+      String ending =  "It has been a full month since Shogun shit post his way into the SBURBSim Control room. Can JR shitpost their way back?";
       String embed = '<iframe width="560" height="315" src="https://www.youtube.com/embed/hS5c7p8zFSY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
       inventoryText.appendHtml(embed, treeSanitizer: NodeTreeSanitizer.trusted);
-      String bodyPillow = "It seems to have worked! Shogun seems to have fled in confusion and terror and or boredom. But what's this he left behind amid the flood of weird useless shit he bought online? A...body pillow of JR? <img src = 'bodypillow.png>";
-      inventoryText.appendHtml(bodyPillow, treeSanitizer: NodeTreeSanitizer.trusted);
+      String bodyPillow = "$ending <br><br> $embed <br><br>It seems to have worked! Shogun seems to have fled in confusion and terror and or boredom. But what's this he left behind amid the flood of weird useless shit he bought online? A...body pillow of JR? <br><br><img src = 'images/130333a.png'><br><br>You suddenly realize that those points didn't even matter. What the hell. JR is so shit at making games.";
+      querySelector("#reward").appendHtml(bodyPillow, treeSanitizer: NodeTreeSanitizer.trusted);
+      gameText.text = ending;
 
   }
   void displayText(String text) {
@@ -194,7 +195,7 @@ class Controller {
     controlRoom.contents.add(unicorn);
     controlRoom.contents.add(new Item("Toddler!JR 'Do it For Her' board", <String>["BOARD", "TODDLER JR BOARD", "DO IT FOR HER BOARD", "TODDLER!JR 'DO IT FOR HER' BOARD"], "Pure. Blessed. Powerful. God Bless this board.", "You admire the board. Toddler JR is always full of such terrible ideas. They are your favorite JR."));
     controlRoom.contents.add(new Item("JR's 4th Wall", <String>["WALL", "4TH WALL", "JR'S 4TH WALL", "FENESTRATED WALL"], "Something something meta. If I climbed through this I could get myself some burgs.", "You attempt to crawl through JR's Fenestrated Window. Luckily, it is currently unpowered.", destroyable: true, portable: true));
-    passwordScrawl = new Item("scrawled password riddle", <String>["SCRAWLED PASSWORD RIDDLE", "SCRAWL", "GIGGLESNORT", "RIDDLE"], "... is JR's password REALLY 'where is everything better than expected?' What a shit riddle.", "You stare in frustration at the gigglesnort.", destroyable: true, portable: true, consumable: true);
+    passwordScrawl = new Item("scrawled password riddle", <String>["PASSWORD","SCRAWLED PASSWORD RIDDLE", "SCRAWL", "GIGGLESNORT", "RIDDLE"], "... is JR's password REALLY 'where is everything better than expected?' What a shit riddle.", "You stare in frustration at the gigglesnort.", destroyable: true, portable: true, consumable: true);
     controlRoom.contents.add(passwordScrawl);
 
     Room testExit = new Room("Dennis", ["DENNIS", "DUDE", "GUY", "MEME"], "Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.", "You use Dennis, you heartless monster.");
@@ -212,7 +213,7 @@ class Controller {
     currentPlayer.inventory.add(new Item("Katana", <String>["SWORD", "KATANA", "SHITTY SWORD", "ANIME SWORD"], "This is an unbelievably shit sword. Where is Muramasa? Where is my blade why is it shit JR how dare you nerf me.", "You contemplate using your shitty sword to DESTROY some object.", portable: true));
     currentPlayer.inventory.add(new Item("Mind Hoodie", <String>["MIND HOODIE", "HOODIE", "JACKET", "COAT"], "No comment.", "You feel so safe.", portable: true));
 
-    jr = new Player(controlRoom, "jadedResearcher", <String>["JR", "JADEDRESEARCHER", "THE WASTE", "A WASTE", "WASTE OF MIND", "THE WASTE OF MIND", "THE AUTHOR"], "A waste exactly 1.0 JRs tall. You created SBURBSim and like trolling the Shogun.", "You fail to use JR.");
+    jr = new Player(controlRoom, "jadedResearcher", <String>["JADED","WASTED","JR", "JADEDRESEARCHER", "THE WASTE", "A WASTE", "WASTE OF MIND", "THE WASTE OF MIND", "THE AUTHOR"], "A waste exactly 1.0 JRs tall. You created SBURBSim and like trolling the Shogun.", "You fail to use JR.");
     jr.inventory.add(new Item("Yellow Yard", <String>["YELLOW YARD", "YARD", "YELLOW LAWNRING", "STICK", "GIMMICK"], "At least Shogun didn't break this. I hate it when I can't control all that fucking Waste shit.", "You fail to change the Decisions that lead you here. You kind of want to see how this plays out.", portable: true));
     jr.inventory.add(new Item("Unbelievably Shitty Laptop", <String>["LAPTOP", "SHITTY LAPTOP", "SHIT", "UNBELIEVABLY SHITTY LAPTOP", "COMPUTER"], "Oh god. It's so shitty. I have to close programs just to compile the Sim. At least I still CAN work on the Sim, though. Plus, I can still Troll Shogun. This isn't so bad.", "This should  troll shogun and not be seen directly.", portable: true));
     jr.inventory.add(new Item("Dr Pepper BBQ Sauce", <String>["SAUCE", "BBQ SAUCE", "DR PEPPER BBQ SAUCE"], "I am hiding this from Shogun and it's HILARIOUS.", "Use it? What would I even do with it? It's just shitty soda flavored sauce.", portable: true));
