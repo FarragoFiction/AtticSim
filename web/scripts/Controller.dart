@@ -245,7 +245,7 @@ class Controller {
     Player df = new Player(voidRoom, "dystopicFuturism", <String>["DYSTOPICFUTURISIM","DF","DARTH PEANUT BRITTLE","PEANUT","PEANUTBRITTLE"], " DF is making amazing panel edits. ", "You fail to use them.");
     Player fortyseven = new Player(voidRoom, "47", <String>["47"], " 47 is ... actually, you know what? No. ", "You fail to use them.");
     Player eon = new Player(voidRoom, "eon", <String>["EON"], " Eon is thinking about Transformers.  ", "You fail to use them.");
-    Player cool = new Player(voidRoom, "coolthulu", <String>["COOLTHULU","COOL"], " Coolthulu isn't surprised you summoned them on accident, though usually they expect Cthulu. ", "You fail to use them.");
+    Player cool = new Player(voidRoom, "coolthulu", <String>["COOLTHULU","COOL"], " Coolthulu isn't surprised you summoned them on accident, though usually people expect Cthulu. ", "You fail to use them.");
     Player twentyeighteen = new Player(voidRoom, "2018 Personified", <String>["2018 PERSONIFIED","DOOP"], "2018 Personified is busy being disappointed by the ending of Homestuck. ", "You fail to use them.");
     Player cactus = new Player(voidRoom, "cactus", <String>["CACTUS"], " Cactus isn't going to ever back down from their spirit animal being a cactus. You just have to deal with that.", "You fail to use them.");
     Player ms = new Player(voidRoom, "mysteriousSource", <String>["MYSTERIOUSSOURCE","ZAQ","MS"], " MS is busy drawing fascinating pictures. ", "You fail to use them.");
@@ -265,7 +265,7 @@ class Controller {
 
     Room attic = new Room("Attic", ["ATTIC", "ROOM"], "mostly empty. You're probably trapped in here, in fact, you're suddenly sure of it. At the very least if you left you'd have to be in the same room as that asshole and like fuck THAT's happening. ", "You decide to use this Attic as a base of operations in your campaign to annoy Shogun.");
     for (int i = 0; i < 13; i++) {
-      attic.contents.add(new Item("Box of Lucky Charms", <String>["LUCKY CHARMS", "LEWD CEREAL", "BOX OF LUCKY CHARMS", "TROVE BAIT", "CEREAL", "CEREAL BOXES", "BOXES", "LUCKY CHARMS BOXES"], "Where did these even come from? Is this a trove thing? Did Shogun do this?", "You assemble the Lucky Charms boxes into passable furniture.", consumable: true, portable: true));
+      attic.contents.add(new Item("Box of Lucky Charms", <String>["BOX","LUCKY CHARMS", "LEWD CEREAL", "BOX OF LUCKY CHARMS", "TROVE BAIT", "CEREAL", "CEREAL BOXES", "BOXES", "LUCKY CHARMS BOXES"], "Where did these even come from? Is this a trove thing? Did Shogun do this?", "You assemble the Lucky Charms boxes into passable furniture.", consumable: true, portable: true));
     }
     attic.contents.add(new Item("Unbelievably Shitty Spook Wolf Head", <String>["WOLF", "WOLF HEAD", "UNBELIEVABLY SHITTY SPOOK WOLF HEAD", "SCARY WOLF", 'NIGHTMARE'], "It doesn't even do the 'light activated' spooky howl unless you go up to it on purpose. 3/10, not spooky at all.", "You puposefully activate the motion capture Spook Wolf. It manages to scare the shit out of you despite you being literally as prepared as it is Wastely possible."));
     jr.currentRoom = attic;
