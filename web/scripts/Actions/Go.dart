@@ -12,7 +12,7 @@ class Go extends Action {
         return ALTS.contains(word.toUpperCase().trim());
     }
 
-    Go():super("Go",ALTS);
+    Go():super("Go",ALTS, pointValue: 10);
 
 
 
@@ -38,6 +38,7 @@ class Go extends Action {
       String ret = "";
       if(item != null) {
           Controller.instance.currentPlayer.currentRoom = item;
+          applyPoints();
           ret = "You GO to the ${item.name}.";
       }else {
           Random rand = new Random();

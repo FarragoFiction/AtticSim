@@ -198,8 +198,10 @@ class Controller {
     passwordScrawl = new Item("scrawled password riddle", <String>["PASSWORD","SCRAWLED PASSWORD RIDDLE", "SCRAWL", "GIGGLESNORT", "RIDDLE"], "... is JR's password REALLY 'where is everything better than expected?' What a shit riddle.", "You stare in frustration at the gigglesnort.", destroyable: true, portable: true, consumable: true);
     controlRoom.contents.add(passwordScrawl);
 
-    Room testExit = new Room("Dennis", ["DENNIS", "DUDE", "GUY", "MEME"], "Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.", "You use Dennis, you heartless monster.");
+    Room dennis = new Room("Dennis", ["DENNIS", "DUDE", "GUY", "MEME"], "Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.", "You use Dennis, you heartless monster.");
     // controlRoom.exits.add(testExit);
+    Item flask = new Item("ye flask", <String>["YE FLASK"], "Is. Is this a refrance?","You cannot get ye flask.", destroyable: true,consumable: true);
+    dennis.contents.add(flask);
 
     //Control Console
     controlConsole = new Room("Control Console", ["CONTROL CONSOLE", "CONSOLE"], "the control console for SBURBSim. It's actually just a regular computer, with regular shit you can do on it, like shitpost or troll jr or buy shit online. It's not really a place, but close enough.", "You fail to use the CONTROL CONSOLE as it requires a PASSWORD.");
@@ -220,6 +222,8 @@ class Controller {
 
 
     Room voidRoom = new Room("the Void", ["VOID", "SKAIAN MAGICANT"], "mostly void, partially stars. You feel like where you are isn't particularly narratively significant to AtticStuck. ", "You decide to use the Void. Somehow.");
+    voidRoom.exits.add(dennis);
+
     Player pl = new Player(voidRoom, "paradoxLands", <String>["PL", "PARADOXLANDS", "THE WITCH", "A WITCH", "THE WITCH OF VOID", "THE ARCHITECT"], "The Architect, exactly 1.25 JRs tall. Good at both Art and Programming. Currently watching the shenanigans the Author and the Antithesis are up to and being very amused.", "You fail to use PL.");
     Player kr = new Player(voidRoom, "karmicRetribution", <String>["KR", "KARMICRETRIBUTION", "THE SMITH", "A SMITH", "THE SMITH OF DREAM", "THE ARTIST"], "The Artist, exactly 1.05 JRs tall. Currently ignoring the shenanigans the Author and the Antithesis are up to entirely. JR knows they can just leave the attic at any time, don't they?", "You fail to use KR.");
     Player mi = new Player(voidRoom, "manicInsomniac", <String>["MI", "MANICINSOMNIAC", "THE BARD", "A BARD", "THE BARD OF DOOM", "MANIC"], "You are suddenly accosted by about 50000 notes being played all at once. There is no rhyme, no reason, no connection. There is only chaos. Again. Man you need to learn how to stop your music program crashing.", "You fail to use MI.");
@@ -229,6 +233,35 @@ class Controller {
     Player shogunBot = new Player(voidRoom, "ShogunBot", <String>["SHOGUNBOT", "SB"], "You have an unending desire to destroy, and actually don't like Unicron as much as Shogun thinks you do.", "You perpetuate human-robot stereotypes.");
     Player authorBot = new Player(voidRoom, "AuthorBot", <String>["AUTHORBOT", "AB"], "You have no idea why your BioDoppelganger is so obsessed with annoying that Shogun. Whatever, who can understand organics?", "Fuck no. Go 'use' someone else, asshole. I'm working here.");
     Player abj = new Player(voidRoom, "AuthorBotJunior", <String>["AUTHORBOTJUNIOR", "ABJ","SOMEONE INTERESTING"], "Hrmmm... ABJ is... Yes. That IS a lighter. Interesting. I didn't know cruxite was flammable.", "Hrmmm...");
+    Player somebody = new Player(voidRoom, "somebody", <String>["SOMEBODY","RS","nobody","the brope"], " Somebody would like to tell you all about the cult of Dutton.", "You fail to use them.");
+    Player rs = new Player(voidRoom, "recursiveSlacker", <String>["RECURSIVESLACKER","RS"], " RS is unimpressed at what you've been doing in the void. They know.", "You fail to use them.");
+    Player aw = new Player(voidRoom, "aspiringWatcher", <String>["ASPIRINGWATCHER","AW"], " AW has been watching you and writing things down.", "You fail to use them.");
+    Player io = new Player(voidRoom, "insufferableOracle", <String>["INSUFFERABLEORACLE","IO"], " IO shows you their bloodswap trolls. They are amazing.", "You fail to use them.");
+    Player tg = new Player(voidRoom, "tableGuardian", <String>["TABLEGUARDIAN","TG"], " TG is guarding tables from society and society from tables. Also debugging the sim.", "You fail to use them.");
+    Player wm = new Player(voidRoom, "wooMod", <String>["WOOMOD","WM"], " WM is planning elaborate SBURB rpgs.", "You fail to use them.");
+    Player dm = new Player(voidRoom, "dilettantMathematian", <String>["DILETTANTMATHEMATICIAN","DM"], " DM is working on incredibly impressive math. ", "You fail to use them.");
+    Player fp = new Player(voidRoom, "flippetUrnways", <String>["FLIPPETURNWAYS","MISTER SIR FLIPPET MOTHERFUCKER"], " Flippet is working on the Hedron Scheme. ", "You fail to use them.");
+    Player pb = new Player(voidRoom, "pineappleBoi", <String>["PINEAPPLEBOI","PB"], " PineappleBOI is ... huh. Wow. You didn't know you could use lucky charms in math equations. ", "You fail to use them.");
+    Player df = new Player(voidRoom, "dystopicFuturism", <String>["DYSTOPICFUTURISIM","DF","DARTH PEANUT BRITTLE","PEANUT","PEANUTBRITTLE"], " DF is making amazing panel edits. ", "You fail to use them.");
+    Player fortyseven = new Player(voidRoom, "47", <String>["47"], " 47 is ... actually, you know what? No. ", "You fail to use them.");
+    Player eon = new Player(voidRoom, "eon", <String>["EON"], " Eon is thinking about Transformers.  ", "You fail to use them.");
+    Player cool = new Player(voidRoom, "coolthulu", <String>["COOLTHULU","COOL"], " Coolthulu isn't surprised you summoned them on accident, though usually they expect Cthulu. ", "You fail to use them.");
+    Player twentyeighteen = new Player(voidRoom, "2018 Personified", <String>["2018 PERSONIFIED","DOOP"], "2018 Personified is busy being disappointed by the ending of Homestuck. ", "You fail to use them.");
+    Player cactus = new Player(voidRoom, "cactus", <String>["CACTUS"], " Cactus isn't going to ever back down from their spirit animal being a cactus. You just have to deal with that.", "You fail to use them.");
+    Player ms = new Player(voidRoom, "mysteriousSource", <String>["MYSTERIOUSSOURCE","ZAQ","MS"], " MS is busy drawing fascinating pictures. ", "You fail to use them.");
+    Player goose = new Player(voidRoom, "goose", <String>["GOOSE","RT"], " Goose is listening to their favorite pieces of music and sharing them online.", "You fail to use them.");
+    Player jp = new Player(voidRoom, "jegusPersona", <String>["JEGUSPERSONA","JP"], "JP is starting shitty fanfic readings. It's so great.", "You fail to use them.");
+    Player sz = new Player(voidRoom, "sniperZee", <String>["SNIPERZEE","SZ"], "SZ is getting excited about the privitization of space travel.", "You fail to use them.");
+    Player cl = new Player(voidRoom, "cartlord", <String>["CARTLORD","CL"], "CL is making sure to credit original artists.", "You fail to use them.");
+    Player ath = new Player(voidRoom, "Athena", <String>["ATHENA","ATH"], "ATH is making level designs.", "You fail to use them.");
+    Player star = new Player(voidRoom, "star.eyes", <String>["STAR.EYES","STAR"], "star.eyes is making amazing abj x kid boi x nepeta fanfics and comics.", "You fail to use them.");
+    Player bunpt = new Player(voidRoom, "Bunpt", <String>["BUNPT","RUSTGAZE"], "Bunpt is helpfully using Dutton to protect us all.", "You fail to use them.");
+
+
+
+
+
+
 
     Room attic = new Room("Attic", ["ATTIC", "ROOM"], "mostly empty. You're probably trapped in here, in fact, you're suddenly sure of it. At the very least if you left you'd have to be in the same room as that asshole and like fuck THAT's happening. ", "You decide to use this Attic as a base of operations in your campaign to annoy Shogun.");
     for (int i = 0; i < 13; i++) {
