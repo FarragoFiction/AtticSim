@@ -233,7 +233,7 @@ class Controller {
     Player shogunBot = new Player(voidRoom, "ShogunBot", <String>["SHOGUNBOT", "SB"], "You have an unending desire to destroy, and actually don't like Unicron as much as Shogun thinks you do.", "You perpetuate human-robot stereotypes.");
     Player authorBot = new Player(voidRoom, "AuthorBot", <String>["AUTHORBOT", "AB"], "You have no idea why your BioDoppelganger is so obsessed with annoying that Shogun. Whatever, who can understand organics?", "Fuck no. Go 'use' someone else, asshole. I'm working here.");
     Player abj = new Player(voidRoom, "AuthorBotJunior", <String>["AUTHORBOTJUNIOR", "ABJ","SOMEONE INTERESTING"], "Hrmmm... ABJ is... Yes. That IS a lighter. Interesting. I didn't know cruxite was flammable.", "Hrmmm...");
-    Player somebody = new Player(voidRoom, "somebody", <String>["SOMEBODY","RS","nobody","the brope"], " Somebody would like to tell you all about the cult of Dutton.", "You fail to use them.");
+    Player somebody = new Player(voidRoom, "somebody", <String>["SOMEBODY","SB","nobody","the brope"], " Somebody would like to tell you all about the cult of Dutton.", "You fail to use them.");
     Player rs = new Player(voidRoom, "recursiveSlacker", <String>["RECURSIVESLACKER","RS"], " RS is unimpressed at what you've been doing in the void. They know.", "You fail to use them.");
     Player aw = new Player(voidRoom, "aspiringWatcher", <String>["ASPIRINGWATCHER","AW"], " AW has been watching you and writing things down.", "You fail to use them.");
     Player io = new Player(voidRoom, "insufferableOracle", <String>["INSUFFERABLEORACLE","IO"], " IO shows you their bloodswap trolls. They are amazing.", "You fail to use them.");
