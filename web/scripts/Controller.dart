@@ -15,6 +15,8 @@ class Controller
 {
 
     static Controller instance;
+
+    List<Delivery> expectedDeliveries = new List<Delivery>();
     Room controlConsole;
 
     int _totalAvailablePoints = -1300;
@@ -39,8 +41,7 @@ class Controller
     Item guyFieriWig;
     Item passwordScrawl;
 
-    //dumb shit shogun can order online
-    List<Item> dumbShit = new List<Item>();
+
 
 
     Controller(Element wrapper) {
@@ -102,7 +103,7 @@ class Controller
     }
 
     String moveTime() {
-        currentDate = new DateTime(currentDate.year, currentDate.month, currentDate.day+7, currentDate.hour, currentDate.minute);
+        currentDate = new DateTime(currentDate.year, currentDate.month, currentDate.day+1, currentDate.hour, currentDate.minute);
         WeightedList<String> snark = new WeightedList<String>();
         snark.add("You shitpost through the night. ",0.5);
         snark.add("You completely fail to sleep at all. ",0.5);
@@ -138,11 +139,32 @@ class Controller
         displayText(Action.applyAction(command));
     }
 
+    String checkDeliveries() {
+        String ret = "";
+        List<Delivery> toRemove = new List<Delivery>();
+        for(Delivery d in expectedDeliveries) {
+            if(d.checkDelivery()) {
+                shogun.inventory.add(d.item);
+                ret += " You got a ${d.item} delivered! ";
+                toRemove.add(d);
+            }
+        }
+
+        for(Delivery d in toRemove) {
+            expectedDeliveries.remove(d);
+        }
+
+        if(expectedDeliveries.isNotEmpty) ret += " You are expecting ${expectedDeliveries.length} deliveries";
+
+        return ret;
+    }
+
     void displayText(String text) {
         print("displaying text, current player is ${currentPlayer} and they are in room ${currentPlayer.currentRoom}");
         String dateSlug ="${currentDate.year.toString()}-${currentDate.month.toString().padLeft(2,'0')}-${currentDate.day.toString().padLeft(2,'0')} ${currentDate.hour.toString().padLeft(2,'0')}:${currentDate.minute.toString().padLeft(2,'0')}";
 
-        dateText.text = "$dateSlug Points: ${points}/${totalAvailablePoints}";
+        String newItems = checkDeliveries();
+        dateText.text = "$dateSlug Points: ${points}/${totalAvailablePoints} $newItems";
         new OneCharAtTimeWrapper(<Line>[new Line(text,gameText),new Line(currentPlayer.currentRoom.fullDescription,roomText),new Line(currentPlayer.itemsDescription,inventoryText),new Line(currentPlayer.currentRoom.itemsDescription,itemsText),new Line(currentPlayer.currentRoom.exitsDescription,exitsText)]).write();
     }
 
@@ -173,7 +195,7 @@ class Controller
         //Control Console
         controlConsole = new Room("Control Console",["CONTROL CONSOLE","CONSOLE"],"the control console for SBURBSim. It's actually just a regular computer, with regular shit you can do on it, like shitpost or troll jr or buy shit online. It's not really a place, but close enough.","You fail to use the CONTROL CONSOLE as it requires a PASSWORD.");
         controlRoom.exits.add(controlConsole);
-        controlConsole.contents.add(new Item("Password Locked JR's Computer",<String>["COMPUTER", "PASSWORD LOCKED COMPUTER", "JR'S COMPUTER","PASSWORD LOCKED JR'S COMPUTER"],"JR's computer, with a shitty password.","You have no idea what the password is, so you can't use it.", useConditionString: Item.ORDERSHIT));
+        controlConsole.contents.add(new Item("Password Locked JR's Computer",<String>["COMPUTER", "UNLOCKED COMPUTER","UNLOCKED JR'S COMPUTER","PASSWORD LOCKED COMPUTER", "JR'S COMPUTER","PASSWORD LOCKED JR'S COMPUTER"],"JR's computer, with a shitty password.","You have no idea what the password is, so you can't use it.", useConditionString: Item.ORDERSHIT));
 
         controlConsole.exits.add(controlRoom);
 
@@ -204,4 +226,25 @@ class Controller
         jr.currentRoom = attic;
     }
 
+}
+
+class Delivery {
+
+    Item item;
+    DateTime expectedDeliveryTime;
+
+    Delivery(Item item) {
+        DateTime currentDate = Controller.instance.currentDate;
+        expectedDeliveryTime = new DateTime(currentDate.year, currentDate.month, currentDate.day+1, currentDate.hour, currentDate.minute);
+
+    }
+
+    bool checkDelivery() {
+        DateTime currentDate = Controller.instance.currentDate;
+        Duration diff = currentDate.difference(expectedDeliveryTime);
+        int ret = diff.inMilliseconds;
+        if(ret > 0) {
+            return true;
+        }
+    }
 }

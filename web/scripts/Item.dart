@@ -16,6 +16,7 @@ typedef String Condition();
 
 
 class Item {
+
     String name;
     List<String> alts;
     String _description;
@@ -64,7 +65,7 @@ class Item {
         }
     }
 
-    String turnArrayIntoHumanSentence(List<dynamic> retArray) {
+    static String turnArrayIntoHumanSentence(List<dynamic> retArray) {
         return [retArray.sublist(0, retArray.length - 1).join(', '), retArray.last].join(retArray.length < 2 ? '' : ' and ');
     }
 
@@ -116,9 +117,12 @@ class Item {
 
         if(p.inventory.contains(passwordScrawl)){
             applyPoints(130);
+            p.inventory.remove(passwordScrawl);
+            parts.add(passwordScrawl);
+            name = "Unlocked JR's Computer";
             return "Huh. So that's what that shitty password hint means. You're in. You can now use JR's CONTROL CONSOLE to order all sorts of dumb shit online to pass the time.";
         }else if(parts.contains(passwordScrawl)) {
-            return "TODO: Need to be able to order random shit and have them show up in 24 hours.";
+            return orderDumbShit();
         }else{
             return defaultCondition(false);
         }
@@ -161,5 +165,21 @@ class Item {
             if(a.runtimeType == template.runtimeType) return a;
         }
         return null;
+    }
+
+    //allows repeats
+    String orderDumbShit() {
+        List<Item> dumbShit = new List<Item>();
+        Random rand = new Random();
+
+        List<Item> itemsOrdered = new List<Item>();
+        int numberItems = rand.nextInt(3)+1;
+        for(int i = 0; i<numberItems; i++) {
+            Item item =  rand.pickFrom(dumbShit);
+            Controller.instance.expectedDeliveries.add(new Delivery(item));
+            itemsOrdered.add(item);
+        }
+        Controller.instance.moveTime();
+        return "You browse Gristmart for way too long and end up ordering ${Item.turnArrayIntoHumanSentence(itemsOrdered)}";
     }
 }

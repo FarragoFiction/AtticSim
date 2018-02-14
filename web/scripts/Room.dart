@@ -17,11 +17,6 @@ class Room extends Item{
     }
 
 
-
-    String turnArrayIntoHumanSentence(List<dynamic> retArray) {
-        return [retArray.sublist(0, retArray.length - 1).join(', '), retArray.last].join(retArray.length < 2 ? '' : ' and ');
-    }
-
     String toString() {
         return name;
     }
@@ -34,13 +29,13 @@ class Room extends Item{
     String get exitsDescription {
         print ("exits");
         String ret = "You are trapped here. It's no good, can't find the exit.";
-        if(exits.isNotEmpty) ret = "Obvious exits are: ${turnArrayIntoHumanSentence(exits)}.";
+        if(exits.isNotEmpty) ret = "Obvious exits are: ${Item.turnArrayIntoHumanSentence(exits)}.";
         return ret;
     }
 
     String get itemsDescription {
         String ret = "It is empty.";
-        if(contents.isNotEmpty) ret = "You see: ${turnArrayIntoHumanSentence(contents)}.";
+        if(contents.isNotEmpty) ret = "You see: ${Item.turnArrayIntoHumanSentence(contents)}.";
         return ret;
     }
 }
