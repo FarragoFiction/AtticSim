@@ -5,7 +5,7 @@ import "../weighted_lists.dart";
 import "../Controller.dart";
 class Use extends Action {
 
-    static List<String> ALTS = <String>["USE","DEPLOY","ABJURE"];
+    static List<String> ALTS = <String>["USE","DEPLOY","ABJURE","COMMUNE","COMMAND"];
 
     static bool isCommand(String word) {
         return ALTS.contains(word.toUpperCase().trim());

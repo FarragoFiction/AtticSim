@@ -5,7 +5,7 @@ import "../weighted_lists.dart";
 import "../Controller.dart";
 class Vore extends Action {
 
-    static List<String> ALTS = <String>["VORE","EAT","CONSUME","DEVOUR", "SWALLOW","SLURP"];
+    static List<String> ALTS = <String>["VORE","EAT","CONSUME","DEVOUR", "SWALLOW","SLURP","DRINK"];
 
     static bool isCommand(String word) {
         return ALTS.contains(word.toUpperCase().trim());
