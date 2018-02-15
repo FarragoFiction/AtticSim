@@ -55,7 +55,10 @@ abstract class Action {
     }
 
     static Item findItemFromString(String itemString) {
+        print("trying to find $itemString");
+        if(itemString == null || itemString.isEmpty) return null;
         itemString.trim();
+        if(itemString.isEmpty) return null;
         Player p = Controller.instance.currentPlayer;
         print("player is p");
 
@@ -70,7 +73,9 @@ abstract class Action {
 
 
     static Item findItemFromStringInRoom(String itemString) {
+        if(itemString == null || itemString.isEmpty) return null;
         itemString.trim();
+        if(itemString.isEmpty) return null;
         Player p = Controller.instance.currentPlayer;
         print("player is p");
 
@@ -84,9 +89,9 @@ abstract class Action {
     }
 
     static Item findExitFromString(String itemString) {
+        if(itemString == null || itemString.isEmpty) return null;
         itemString.trim();
-
-
+        if(itemString.isEmpty) return null;
         List<Item> allItems = new List.from(Controller.instance.currentPlayer.currentRoom.exits);
         print("found ${allItems.length} items");
         for(Item item in allItems) {
@@ -97,8 +102,9 @@ abstract class Action {
     }
 
     static Item findPlayerFromString(String itemString) {
+        if(itemString == null || itemString.isEmpty) return null;
         itemString.trim();
-
+        if(itemString.isEmpty) return null;
 
         List<Item> allItems = new List.from(Controller.instance.players);
         print("found ${allItems.length} items");
@@ -187,10 +193,13 @@ abstract class Action {
     }
 
     static List<String> cantFidnItemSnark(String itemName) {
+        Random rand = new Random();
+
+        List<String> nullReplacements = <String>["null","the lack of subject you provided","nothing at all","whatever you expected me to assume you were trying to interact with","a huge pile of nothing"];
+        if(itemName == null) itemName = rand.pickFrom(nullReplacements);
         WeightedList<String> snark = new WeightedList<String>();
         snark.add("You do not see a $itemName anywhere.",1.0);
         snark.add("You briefly hallucinate that there is a '$itemName' somewhere. ",0.5);
-        Random rand = new Random();
         //guess it's ab
         snark.add("There is a ${90+(rand.nextDouble()*10)} % chance that JR was too much of a lazy fuck to realize that you would try to interact with  '$itemName'. ",0.5);
         return snark;

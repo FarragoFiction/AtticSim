@@ -41,6 +41,10 @@ class Controller {
   Item guyFieriWig;
   Item passwordScrawl;
 
+  //special rooms
+  Room voidRoom;
+  Room dennis;
+
   Controller(Element wrapper) {
     instance = this;
     Element container = new DivElement();
@@ -198,7 +202,7 @@ class Controller {
     passwordScrawl = new Item("scrawled password riddle", <String>["PASSWORD","SCRAWLED PASSWORD RIDDLE", "SCRAWL", "GIGGLESNORT", "RIDDLE"], "... is JR's password REALLY 'where is everything better than expected?' What a shit riddle.", "You stare in frustration at the gigglesnort.", destroyable: true, portable: true, consumable: true);
     controlRoom.contents.add(passwordScrawl);
 
-    Room dennis = new Room("Dennis", ["DENNIS", "DUDE", "GUY", "MEME"], "Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.", "You use Dennis, you heartless monster.");
+    dennis = new Room("Dennis", ["DENNIS", "DUDE", "GUY", "MEME"], "Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.", "You use Dennis, you heartless monster.");
     // controlRoom.exits.add(testExit);
     Item flask = new Item("ye flask", <String>["YE FLASK"], "Is. Is this a refrance?","You cannot get ye flask.", destroyable: true,consumable: true);
     dennis.contents.add(flask);
@@ -221,7 +225,7 @@ class Controller {
     jr.inventory.add(new Item("Dr Pepper BBQ Sauce", <String>["SAUCE", "BBQ SAUCE", "DR PEPPER BBQ SAUCE"], "I am hiding this from Shogun and it's HILARIOUS.", "Use it? What would I even do with it? It's just shitty soda flavored sauce.", portable: true));
 
 
-    Room voidRoom = new Room("the Void", ["VOID", "SKAIAN MAGICANT"], "mostly void, partially stars. You feel like where you are isn't particularly narratively significant to AtticStuck. ", "You decide to use the Void. Somehow.");
+    voidRoom = new Room("the Void", ["VOID", "SKAIAN MAGICANT"], "mostly void, partially stars. You feel like where you are isn't particularly narratively significant to AtticStuck. ", "You decide to use the Void. Somehow.");
     voidRoom.exits.add(dennis);
 
     Player pl = new Player(voidRoom, "paradoxLands", <String>["PL", "PARADOXLANDS", "THE WITCH", "A WITCH", "THE WITCH OF VOID", "THE ARCHITECT"], "The Architect, exactly 1.25 JRs tall. Good at both Art and Programming. Currently watching the shenanigans the Author and the Antithesis are up to and being very amused.", "You fail to use PL.");
@@ -249,7 +253,7 @@ class Controller {
     Player twentyeighteen = new Player(voidRoom, "2018 Personified", <String>["2018 PERSONIFIED","DOOP"], "2018 Personified is busy being disappointed by the ending of Homestuck. ", "You fail to use them.");
     Player cactus = new Player(voidRoom, "cactus", <String>["CACTUS"], " Cactus isn't going to ever back down from their spirit animal being a cactus. You just have to deal with that.", "You fail to use them.");
     Player ms = new Player(voidRoom, "mysteriousSource", <String>["MYSTERIOUSSOURCE","ZAQ","MS"], " MS is busy drawing fascinating pictures. ", "You fail to use them.");
-    Player goose = new Player(voidRoom, "goose", <String>["GOOSE","RT"], " Goose is listening to their favorite pieces of music and sharing them online.", "You fail to use them.");
+    Player goose = new Player(voidRoom, "Goose", <String>["GOOSE","RT"], " Goose is listening to their favorite pieces of music and sharing them online.", "You fail to use them.");
     Player jp = new Player(voidRoom, "jegusPersona", <String>["JEGUSPERSONA","JP"], "JP is starting shitty fanfic readings. It's so great.", "You fail to use them.");
     Player sz = new Player(voidRoom, "sniperZee", <String>["SNIPERZEE","SZ"], "SZ is getting excited about the privitization of space travel.", "You fail to use them.");
     Player cl = new Player(voidRoom, "cartlord", <String>["CARTLORD","CL"], "CL is making sure to credit original artists.", "You fail to use them.");

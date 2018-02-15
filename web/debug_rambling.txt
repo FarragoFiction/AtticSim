@@ -142,6 +142,8 @@ Now what.`
 
 I want to get this in a state that doesn't feel so 'unpolished' to me.
 
+*  fix bugs
+
 *  Dare System. (JR can troll Shogun to get him to eat random shit.
     Happens if Shogun, or if you pick 'troll shogun' or whatever as
     JR she'll make a dare as well.
