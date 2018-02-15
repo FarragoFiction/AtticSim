@@ -257,6 +257,7 @@ class Controller {
     Player star = new Player(voidRoom, "star.eyes", <String>["STAR.EYES","STAR"], "star.eyes is making amazing abj x kid boi x nepeta fanfics and comics.", "You fail to use them.");
     Player bunpt = new Player(voidRoom, "Bunpt", <String>["BUNPT","RUSTGAZE"], "Bunpt is helpfully using Dutton to protect us all.", "You fail to use them.");
 
+    Player cmj = new Player(voidRoom, "Cotton Mouth Joe", <String>["COTTONMOUTHJOE","CMJ"], "Cotton Mouth Joe just wants to help.", "You fail to use them.");
 
 
 
