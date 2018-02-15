@@ -75,7 +75,7 @@ class Item {
         String own = "";
         if(respondsTo(new Destroy())) destroy = "You want to destroy it.";
         if(respondsTo(new Vore())) eat = "You want to eat it.";
-        if(respondsTo(new Take())) own = "You want to own it.";
+        if(respondsTo(new Take()) && !Controller.instance.currentPlayer.inventory.contains(this)) own = "You want to own it.";
 
         String ret =  "$_description $destroy $eat $own";
         if(parts.isEmpty) return ret;
