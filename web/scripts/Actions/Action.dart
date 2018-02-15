@@ -12,6 +12,7 @@ import "Take.dart";
 import "ShitPost.dart";
 import "Sleep.dart";
 import "Use.dart";
+import "Fuck.dart";
 
 
 import "../Player.dart";
@@ -152,6 +153,9 @@ abstract class Action {
         }else if(Use.isCommand(parts[0])) {
             String item = parseOutItem(parts);
             return Use.performAction(item);
+        }else if(Fuck.isCommand(parts[0])) {
+            String item = parseOutItem(parts);
+            return Fuck.performAction(item);
         }
         return null;
     }
