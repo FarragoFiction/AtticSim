@@ -332,7 +332,7 @@ class Delivery {
 
   Delivery(Item this.item) {
     DateTime currentDate = Controller.instance.currentDate;
-    expectedDeliveryTime = new DateTime(currentDate.year, currentDate.month, currentDate.day + 1, currentDate.hour, currentDate.minute);
+    expectedDeliveryTime = new DateTime(currentDate.year, currentDate.month, currentDate.day + 4, currentDate.hour, currentDate.minute);
   }
 
   bool checkDelivery() {
