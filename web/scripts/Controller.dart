@@ -82,6 +82,15 @@ class Controller {
     init();
   }
 
+  List<Player> get playersNotInDennis {
+    List<Player> ret = new List<Player>();
+    for(Player p in players) {
+      if(p.currentRoom != dennis) ret.add(p);
+    }
+    return ret;
+
+  }
+
   void calculateTotalAvailablePoints() {
     _totalAvailablePoints = 0;
     for (Action a in Action.allActions) {

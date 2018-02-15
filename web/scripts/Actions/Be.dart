@@ -42,7 +42,7 @@ class Be extends Action {
           ret = "You are now ${item.name}. ${item.description}";
       }else {
           Random rand = new Random();
-          item = rand.pickFrom(Controller.instance.players);
+          item = rand.pickFrom(Controller.instance.playersNotInDennis);
           Controller.instance.currentPlayer = item;
           ret = "You fail to become ${itemName} and instead become ${item.name}. ${item.description}";
       }
