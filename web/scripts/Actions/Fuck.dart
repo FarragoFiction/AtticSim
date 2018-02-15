@@ -23,6 +23,7 @@ class Fuck extends Action {
     String apply(Item item, [String itemName]) {
         applyPoints();
         Random rand = new Random();
+        //turtle because of the meme of 'do the turtles ever stop fucking' from a sburbsim either glitch or hack
         return "You can't do that! ${rand.pickFrom(Action.cantFidnItemSnark("Turtle"))}";
     }
 }
