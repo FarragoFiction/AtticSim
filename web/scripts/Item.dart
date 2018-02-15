@@ -160,6 +160,12 @@ class Item {
         return name;
     }
 
+    bool respondsTo(Action template) {
+        Action l = findActionWithSameClassAs(template);
+        if(l!=null) return true;
+        return false;
+    }
+
     Action findActionWithSameClassAs(Action template) {
         for(Action a in validActions) {
             if(a.runtimeType == template.runtimeType) return a;

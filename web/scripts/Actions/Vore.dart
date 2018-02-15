@@ -11,7 +11,7 @@ class Vore extends Action {
         return ALTS.contains(word.toUpperCase().trim());
     }
 
-    Vore():super("Eat",ALTS,pointValue:10);
+    Vore([pointsValue= 10]):super("Eat",ALTS,pointValue:pointsValue);
 
 
 

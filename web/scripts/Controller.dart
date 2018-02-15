@@ -4,6 +4,8 @@ import "Room.dart";
 import "Player.dart";
 import 'dart:async';
 import "Actions/Action.dart";
+import "Actions/Vore.dart";
+
 import "Item.dart";
 import "random.dart";
 import "weighted_lists.dart";
@@ -40,6 +42,8 @@ class Controller {
   Item nepetaWig;
   Item guyFieriWig;
   Item passwordScrawl;
+  //will never be eaten or destroyed
+  Item mindHoodie;
 
   //special rooms
   Room voidRoom;
@@ -89,6 +93,31 @@ class Controller {
     }
     return ret;
 
+  }
+
+  //finds an item in Shogun's (not currently player's) inventory
+  //dares him to eat it (diff text if it is or is not edible).
+  String applyDare() {
+    Random rand = new Random();
+    Item chosen = rand.pickFrom(shogun.inventory);
+    String edible = "";
+    WeightedList<String> taunts = new WeightedList<String>();
+    if(chosen.respondsTo(new Vore())){
+      taunts.addAll(<String>["...how can you even eat garbage like $chosen?","Bluh. That $chosen looks so gross.","Holy shit, how much $chosen do you even eat?", "Do you eat anything BUT $chosen? So gross. No wonder you can't sleep.", "You know, instead of eating all that $chosen you could just fucking sleep."]);
+    }else {
+      edible = "Whether or not is is, technically, edible.";
+      //well NOW it's edible. and you get bonus points for it
+      if(chosen != mindHoodie) {
+        chosen.validActions.add(new Vore(130));
+      }else {
+        edible = " But you never would. JR is a fool for thinking otherwise.";
+      }
+      taunts.addAll(<String>["... why the fuck do you look like you are thinking about eating $chosen?","... Are you seriously gonna eat $chosen?","Holy fuck, $chosen is not a food, why are you looking at it like that?"]);
+    }
+    taunts.add("... dare you to eat $chosen ;)",0.1);
+    taunts.add("bet you can't eat $chosen ;)",0.1);
+
+    return "${rand.pickFrom(taunts)} You feel a strong urge to eat the $chosen. $edible";
   }
 
   void calculateTotalAvailablePoints() {
@@ -226,12 +255,14 @@ class Controller {
     shogun = new Player(controlRoom, "Shogun", <String>["MAIN CHARACTER", "PROTAGONIST", "SHOGUN", "SHOGUN OF SAUCE", "MEMELORD", "LORD OF WORDS", "FU", "FUEDALULTIMATUM", "THE ANTITHESIS", "THE VILLAIN", "VILLAIN"], "a towering memelord, 1.3 JRs tall. Who even IS he???", "You fail to use Shogun.");
     currentPlayer = shogun;
     currentPlayer.inventory.add(new Item("Katana", <String>["SWORD", "KATANA", "SHITTY SWORD", "ANIME SWORD"], "This is an unbelievably shit sword. Where is Muramasa? Where is my blade why is it shit JR how dare you nerf me.", "You contemplate using your shitty sword to DESTROY some object.", portable: true));
-    currentPlayer.inventory.add(new Item("Mind Hoodie", <String>["MIND HOODIE", "HOODIE", "JACKET", "COAT"], "No comment.", "You feel so safe.", portable: true));
+    mindHoodie = new Item("Mind Hoodie", <String>["MIND HOODIE", "HOODIE", "JACKET", "COAT"], "No comment.", "You feel so safe.", portable: true);
+    shogun.inventory.add(mindHoodie);
 
     jr = new Player(controlRoom, "jadedResearcher", <String>["JADED","WASTED","JR", "JADEDRESEARCHER", "THE WASTE", "A WASTE", "WASTE OF MIND", "THE WASTE OF MIND", "THE AUTHOR"], "A waste exactly 1.0 JRs tall. You created SBURBSim and like trolling the Shogun.", "You fail to use JR.");
     jr.inventory.add(new Item("Yellow Yard", <String>["YELLOW YARD", "YARD", "YELLOW LAWNRING", "STICK", "GIMMICK"], "At least Shogun didn't break this. I hate it when I can't control all that fucking Waste shit.", "You fail to change the Decisions that lead you here. You kind of want to see how this plays out.", portable: true));
     jr.inventory.add(new Item("Unbelievably Shitty Laptop", <String>["LAPTOP", "SHITTY LAPTOP", "SHIT", "UNBELIEVABLY SHITTY LAPTOP", "COMPUTER"], "Oh god. It's so shitty. I have to close programs just to compile the Sim. At least I still CAN work on the Sim, though. Plus, I can still Troll Shogun. This isn't so bad.", "This should  troll shogun and not be seen directly.", portable: true));
     jr.inventory.add(new Item("Dr Pepper BBQ Sauce", <String>["SAUCE", "BBQ SAUCE", "DR PEPPER BBQ SAUCE"], "I am hiding this from Shogun and it's HILARIOUS.", "Use it? What would I even do with it? It's just shitty soda flavored sauce.", portable: true));
+    jr.inventory.add(new Item("Meta Bullshit", <String>["META BULLSHIT", "BULLSHIT", "META","LIST OF COMMANDS","LIST","COMMANDS"], "It's a list of all the commands in this game. huh. Be. Destroy. Go. Look. Shitpost. Sleep. Take. Troll. Use. Vore. Hopefully JR wasn't a lazy piece of shit and forgot to keep this updated. You're also pretty sure that all these commands have other words that mean the same thing, too. That 'vore' in particular is unsettling you.", "Use it? Why don't you just type all those commands, dunkass.", portable: true));
 
 
     voidRoom = new Room("the Void", ["VOID", "SKAIAN MAGICANT"], "mostly void, partially stars. You feel like where you are isn't particularly narratively significant to AtticStuck. ", "You decide to use the Void. Somehow.");
