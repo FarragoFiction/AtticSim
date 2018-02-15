@@ -133,3 +133,40 @@ I'm screwing up. I keep forgetting parts of the use case while coding.
 How do I fix this?
 
 fuck it, let's not care about reuse, then.
+
+~~~~~~~~
+
+Alright. I took yesterday to recover from a bunch of stress, including getting this out in time.
+
+Now what.`
+
+I want to get this in a state that doesn't feel so 'unpolished' to me.
+
+*  Dare System. (JR can troll Shogun to get him to eat random shit.
+    Happens if Shogun, or if you pick 'troll shogun' or whatever as
+    JR she'll make a dare as well.
+
+* Dennis.
+    anyone who has become trapped in teh Dennis realm is now an item in it's contents.
+     how to implement this so 'you' are not visible? i think i have it. unless it's void (special because void),
+     ask the controller what people are in this room and then list them.
+
+* More 'be' easter eggs.
+    (( i am going to add a bunch of ppl from main, but realize i actually don't know too much about who is active or not, anybody know? all sauce/juice players since that's so new.... all submods since activeness was a criteria for that... anybody i see posting on general today that i recognize.... ))
+    ((floral, obvs))
+    ((shanks))
+    ((anybody who solved the arg))
+    ((the smiths))
+    ((all the shoguns))
+    ((jibade))
+    ((dutton))
+    ((enfuir))
+    ((toddlerJR/badIdeas JR)) ((scrawling dicks))
+    insipidTestimony
+    cutelyMagnificent(Katie)
+
+
+
+* more puzzles like the wig. combine everything with everything maybe.
+
+*try to make it so you can't submit a command if it's still typing

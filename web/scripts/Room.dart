@@ -1,6 +1,7 @@
 import "Item.dart";
 import "Controller.dart";
 import "Actions/Go.dart";
+import "Player.dart";
 class Room extends Item{
 
 
@@ -33,9 +34,20 @@ class Room extends Item{
         return ret;
     }
 
+    List<Player> get people {
+        List<Player> ret = new List<Player>();
+        List<Player> players = Controller.instance.players;
+        for(Player p in players) {
+            if(p.currentRoom == this) ret.add(p);
+        }
+        return ret;
+    }
+
     String get itemsDescription {
         String ret = "It is empty.";
         if(contents.isNotEmpty) ret = "You see: ${Item.turnArrayIntoHumanSentence(contents)}.";
+        List<Player> peeps = people;
+        if(peeps.isNotEmpty) ret = "You wave to: ${Item.turnArrayIntoHumanSentence(peeps)}.";
         return ret;
     }
 }
