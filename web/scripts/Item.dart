@@ -70,8 +70,16 @@ class Item {
     }
 
     String get description {
-        if(parts.isEmpty) return _description;
-        return "$_description Attached are ${turnArrayIntoHumanSentence(parts)}. You cannot remove them.";
+        String destroy = "";
+        String eat = "";
+        String own = "";
+        if(respondsTo(new Destroy())) destroy = "You want to destroy it.";
+        if(respondsTo(new Vore())) eat = "You want to eat it.";
+        if(respondsTo(new Take())) own = "You want to own it.";
+
+        String ret =  "$_description $destroy $eat $own";
+        if(parts.isEmpty) return ret;
+        return "$ret Attached are ${turnArrayIntoHumanSentence(parts)}. You cannot remove them.";
 
     }
 

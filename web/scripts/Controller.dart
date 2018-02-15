@@ -110,14 +110,23 @@ class Controller {
       if(chosen != mindHoodie) {
         chosen.validActions.add(new Vore(130));
       }else {
-        edible = " But you never would. JR is a fool for thinking otherwise.";
+        if(currentPlayer == shogun) {
+          edible = " But you never would. JR is a fool for thinking otherwise.";
+        }else {
+          edible = "But it looks like he isn't tempted. Oh well.";
+        }
       }
       taunts.addAll(<String>["... why the fuck do you look like you are thinking about eating $chosen?","... Are you seriously gonna eat $chosen?","Holy fuck, $chosen is not a food, why are you looking at it like that?"]);
     }
     taunts.add("... dare you to eat $chosen ;)",0.1);
     taunts.add("bet you can't eat $chosen ;)",0.1);
 
-    return "${rand.pickFrom(taunts)} You feel a strong urge to eat the $chosen. $edible";
+    if(currentPlayer == shogun) {
+      return "${rand.pickFrom(taunts)} You feel a strong urge to eat the $chosen. $edible";
+    }else {
+      return "${rand.pickFrom(taunts)} You aren't quite sure if you hope he will or will not eat the $chosen. It's kind of fun how hard it is to predict Shogun! $edible";
+
+    }
   }
 
   void calculateTotalAvailablePoints() {

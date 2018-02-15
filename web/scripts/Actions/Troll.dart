@@ -68,7 +68,7 @@ class Troll extends Action {
           if(rand.nextBool()) {
               return "${rand.pickFrom(jrHarrassments())}";
           }else {
-              return "You watch Shogun on your cameras for a while, then decide to troll him. ${Controller.instance.applyDare()}";
+              return "You watch Shogun on your cameras for a while, then decide to troll him. You say: ${Controller.instance.applyDare()}";
           }
       }
   }
