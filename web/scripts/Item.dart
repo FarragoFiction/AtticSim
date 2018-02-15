@@ -32,6 +32,8 @@ class Item {
     static String WIGRIDER = "wigrider";
     static String ORDERSHIT = "ORDERSHIT";
     static String APPEASEKR = "appeaseKR";
+    static String APPRECIATEPL = "APPRECIATEPL";
+
 
 
     List<Action> validActions = new List<Action>();
@@ -53,6 +55,10 @@ class Item {
             useCondition = rideMeWithWigOn;
         }else if (useConditionString == ORDERSHIT) {
             useCondition = orderShit;
+        }else if (useConditionString == APPRECIATEPL) {
+            useCondition = readPLsBook;
+        }else if (useConditionString == APPEASEKR) {
+            useCondition = giveOfferingToKR;
         }else {
             useCondition = defaultCondition;
         }
@@ -99,6 +105,33 @@ class Item {
             return "You really improve the look of the Frankenfuck Unicorn by adding a stylish wig to it.";
         }else{
              return defaultCondition(false);
+        }
+    }
+
+    //does what it says on the tin.
+    String readPLsBook() {
+        throw("TODO: if you have pringles sit down and read the book");
+    }
+
+    //does what it says on the tin.
+    String giveOfferingToKR() {
+        throw("TODO: if you have the sandwich, offer it up to kr (add to parts)");
+
+    }
+
+    //does what it says on the tin.
+    String read() {
+        print("trying to add me to unicorn");
+        Player p = Controller.instance.currentPlayer;
+        Room r = p.currentRoom;
+        Item unicorn = Controller.instance.unicorn;
+        if(r.contents.contains(unicorn) && p.inventory.contains(this)){
+            unicorn.parts.add(this);
+            p.inventory.remove(this);
+            applyPoints(130);
+            return "You really improve the look of the Frankenfuck Unicorn by adding a stylish wig to it.";
+        }else{
+            return defaultCondition(false);
         }
     }
 
@@ -185,8 +218,8 @@ class Item {
     //allows repeats
     String orderDumbShit() {
         List<Item> dumbShit = new List<Item>();
-        dumbShit.add(new Item("Doritos", <String>["DORITOS", "NACHOS", "CHIPS"], "Crunch chunch munch and cronch. All I do is doritos. It's so nice. Ahhhhhh. ", "You attempt to commune with the dorritos, instead of eating them.", destroyable: true, portable: true, consumable: true));
-        dumbShit.add(new Item("BBQ Pringles", <String>["PRINGLES", "BBQ PRINGLES", "CHIPS"], "Crunch chunch munch and cronch. All I do is pringles. PL gets it. It is one reason you've spared them, so far. ", "You attempt to commune with the pringles, instead of eating them. You resent how hard the tube is to get into with your massive hands.", destroyable: true, portable: true, consumable: true));
+        dumbShit.add(new Item("Doritos", <String>["DORITOS", "NACHOS", "CHIPS","CRISPS"], "Crunch chunch munch and cronch. All I do is doritos. It's so nice. Ahhhhhh. ", "You attempt to commune with the dorritos, instead of eating them.", destroyable: true, portable: true, consumable: true));
+        dumbShit.add(new Item("BBQ Pringles", <String>["PRINGLES", "BBQ PRINGLES", "CHIPS","CRISPS"], "Crunch chunch munch and cronch. All I do is pringles. PL gets it. It is one reason you've spared them, so far. ", "You attempt to commune with the pringles, instead of eating them. You resent how hard the tube is to get into with your massive hands.", destroyable: true, portable: true, consumable: true));
         dumbShit.add(new Item("Inside-Out Grilled Cheese Sandwich", <String>["INSIDE-OUT GRILLED CHEESE SANDWICH", "SANDWICH", "CHEESE SANDWICH","GRILLED CHEESE SANDWICH"], "Two cheeses, one bread. An image of this burg spurned the Smith into their inevitable defeat at the hands of the rules they enforced. Rip.", "You get the feeling that KR would like this.", destroyable: true, portable: true, consumable: true));
 
         dumbShit.add(new Item("Monster Energy Drink", <String>["ENERGY DRINK", "MONSTER ENERGY DRINK", "MONSTER","CAN"], "I live exclusively on these fucking capsules of god elixir. They fill my saucy veins with raw god like energy. I haven't slept in so long.", "You pretend you can absorb the can's energy powers via your mind instead of by drinking it.", destroyable: true, portable: true, consumable: true));
