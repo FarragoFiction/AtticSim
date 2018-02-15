@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7aa57a7e-5955-4379-97ff-e64b08567478" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/debug_rambling.txt" afterPath="$PROJECT_DIR$/web/debug_rambling.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/Actions/Vore.dart" afterPath="$PROJECT_DIR$/web/scripts/Actions/Vore.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/Controller.dart" afterPath="$PROJECT_DIR$/web/scripts/Controller.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/Item.dart" afterPath="$PROJECT_DIR$/web/scripts/Item.dart" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/Actions/Troll.dart" afterPath="$PROJECT_DIR$/web/scripts/Actions/Troll.dart" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Controller.dart" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controller.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/scripts/Controller.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="99" column="18" lean-forward="false" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="18" />
+            <state relative-caret-position="152">
+              <caret line="119" column="12" lean-forward="false" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -42,56 +39,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Vore.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/scripts/Actions/Vore.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Action.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/scripts/Actions/Action.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="198" column="70" lean-forward="false" selection-start-line="198" selection-start-column="70" selection-end-line="198" selection-end-column="70" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pubspec.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pubspec.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Be.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/scripts/Actions/Be.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="43" column="37" lean-forward="true" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Room.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/scripts/Room.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="52" column="68" lean-forward="false" selection-start-line="52" selection-start-column="68" selection-end-line="52" selection-end-column="68" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -106,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Troll.dart" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Troll.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/scripts/Actions/Troll.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+            <state relative-caret-position="292">
+              <caret line="70" column="92" lean-forward="false" selection-start-line="70" selection-start-column="92" selection-end-line="70" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -174,7 +127,6 @@
         <option value="$PROJECT_DIR$/web/farragotransfer.sh" />
         <option value="$PROJECT_DIR$/web/scripts/main.dart" />
         <option value="$PROJECT_DIR$/web/scripts/Actions.dart" />
-        <option value="$PROJECT_DIR$/web/scripts/Actions/Troll.dart" />
         <option value="$PROJECT_DIR$/web/scripts/Actions/ShitPost.dart" />
         <option value="$PROJECT_DIR$/web/scripts/Actions/Sleep.dart" />
         <option value="$PROJECT_DIR$/web/scripts/Actions/Destroy.dart" />
@@ -193,6 +145,7 @@
         <option value="$PROJECT_DIR$/web/scripts/Item.dart" />
         <option value="$PROJECT_DIR$/web/scripts/Actions/Vore.dart" />
         <option value="$PROJECT_DIR$/web/scripts/Controller.dart" />
+        <option value="$PROJECT_DIR$/web/scripts/Actions/Troll.dart" />
       </list>
     </option>
   </component>
@@ -838,14 +791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/scripts/Actions/Look.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="29" column="43" lean-forward="false" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/Actions/Action.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -882,22 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/debug_rambling.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="149" column="80" lean-forward="false" selection-start-line="149" selection-start-column="80" selection-end-line="149" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/scripts/Actions/Troll.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/Actions/Vore.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -916,13 +845,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/debug_rambling.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="149" column="80" lean-forward="false" selection-start-line="149" selection-start-column="80" selection-end-line="149" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/scripts/Actions/Look.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="29" column="43" lean-forward="false" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/Controller.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="99" column="18" lean-forward="false" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="18" />
+        <state relative-caret-position="152">
+          <caret line="119" column="12" lean-forward="false" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/scripts/Actions/Troll.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="70" column="92" lean-forward="false" selection-start-line="70" selection-start-column="92" selection-end-line="70" selection-end-column="92" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -60,11 +60,16 @@ class Troll extends Action {
   @override
   String apply(Item item, [String itemName, bool trollJR = true]) {
       Random rand = new Random();
+      rand.nextInt();
 
       if(trollJR) {
-          return "${Controller.instance.moveTime()} ${rand.pickFrom(shogunHarrassments())}";
+          return "${Controller.instance.moveTime()} ${rand.pickFrom(shogunHarrassments())} JR messages you back: ${Controller.instance.applyDare()}";
       }else {
-          return rand.pickFrom(jrHarrassments());
+          if(rand.nextBool()) {
+              return "${rand.pickFrom(jrHarrassments())}";
+          }else {
+              return "You watch Shogun on your cameras for a while, then decide to troll him. ${Controller.instance.applyDare()}";
+          }
       }
   }
 }
