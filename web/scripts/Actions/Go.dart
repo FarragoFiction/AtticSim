@@ -17,11 +17,11 @@ class Go extends Action {
 
 
   static String performAction(String itemName) {
-      print("going to look at $itemName");
+      //print("going to look at $itemName");
     Item item = Action.findExitFromString(itemName);
 
       if(item != null) {
-          print("exit found, it's $item");
+          //print("exit found, it's $item");
           Go l = item.findActionWithSameClassAs(new Go());
           if(l != null) {
               return l.apply(item);

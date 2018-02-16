@@ -187,7 +187,7 @@ class Controller {
     for (Delivery d in expectedDeliveries) {
       if (d.checkDelivery()) {
         shogun.inventory.add(d.item);
-        print("Delivery $d is ready with ${d.item}");
+        //print("Delivery $d is ready with ${d.item}");
         ret += " You got a ${d.item} delivered! ";
         toRemove.add(d);
       }

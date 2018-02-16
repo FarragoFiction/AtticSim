@@ -17,11 +17,11 @@ class Be extends Action {
 
 
   static String performAction(String itemName) {
-      print("going to look at $itemName");
+      //print("going to look at $itemName");
     Item item = Action.findPlayerFromString(itemName);
 
       if(item != null) {
-          print("player found, it's $item");
+          //print("player found, it's $item");
           Be l = item.findActionWithSameClassAs(new Be());
           if(l != null) {
               l.applyPoints();

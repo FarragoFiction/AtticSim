@@ -17,7 +17,7 @@ class Vore extends Action {
 
   static String performAction(String itemName) {
     Item item = Action.findItemFromString(itemName);
-    print("found item to destroy it is $item");
+    //print("found item to destroy it is $item");
       if(item != null) {
           Vore l = item.findActionWithSameClassAs(new Vore());
           if(l != null) {
@@ -42,7 +42,7 @@ class Vore extends Action {
     //if i am passed null, i fail to becomd x and isntead become some random player
   @override
   String apply(Item item, [String itemName, bool notFood = false]) {
-      print("precious is $notFood and item is $item");
+      //print("precious is $notFood and item is $item");
       if(notFood && item != null) {
           Random rand = new Random();
           return rand.pickFrom(adorableProtest(item.name));

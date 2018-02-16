@@ -56,15 +56,15 @@ abstract class Action {
     }
 
     static Item findItemFromString(String itemString) {
-        print("trying to find $itemString");
+        //print("trying to find $itemString");
         if(itemString == null || itemString.isEmpty) return null;
         itemString.trim();
         if(itemString.isEmpty) return null;
         Player p = Controller.instance.currentPlayer;
-        print("player is p");
+        //print("player is p");
 
         List<Item> allItems = p.allAccessibleItems();
-        print("found ${allItems.length} items");
+        //print("found ${allItems.length} items");
         for(Item item in allItems) {
             if(item.isItem(itemString)) return item;
         }
@@ -78,10 +78,10 @@ abstract class Action {
         itemString.trim();
         if(itemString.isEmpty) return null;
         Player p = Controller.instance.currentPlayer;
-        print("player is p");
+        //print("player is p");
 
         List<Item> allItems = p.currentRoom.contents;
-        print("found ${allItems.length} items");
+        //print("found ${allItems.length} items");
         for(Item item in allItems) {
             if(item.isItem(itemString)) return item;
         }
@@ -94,7 +94,7 @@ abstract class Action {
         itemString.trim();
         if(itemString.isEmpty) return null;
         List<Item> allItems = new List.from(Controller.instance.currentPlayer.currentRoom.exits);
-        print("found ${allItems.length} items");
+        //print("found ${allItems.length} items");
         for(Item item in allItems) {
             if(item.isItem(itemString)) return item;
         }
@@ -108,7 +108,7 @@ abstract class Action {
         if(itemString.isEmpty) return null;
 
         List<Item> allItems = new List.from(Controller.instance.players);
-        print("found ${allItems.length} items");
+        //print("found ${allItems.length} items");
         for(Item item in allItems) {
             if(item.isItem(itemString)) return item;
         }
@@ -119,7 +119,7 @@ abstract class Action {
     static String foundCommand(String command) {
         //first parse into action item pairs.
         List<String> parts = command.split(" ");
-        print("parts is $parts");
+        //print("parts is $parts");
         if(parts.isEmpty) return null;
         //then check all known actions and ask if it's them
         if(Look.isCommand(parts[0])) {
@@ -165,7 +165,7 @@ abstract class Action {
         parts.remove(parts[0]);
         if(parts.length > 0) item = parts.join(' ');
 
-        print("the item is $item");
+        //print("the item is $item");
         //then, give it the rest of the command and call it a day, you lazy fuck
         return item;
     }

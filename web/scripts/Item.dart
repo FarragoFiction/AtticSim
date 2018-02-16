@@ -192,7 +192,7 @@ class Item {
 
     //does what it says on the tin.
     String read() {
-        print("trying to add me to unicorn");
+        //print("trying to add me to unicorn");
         Player p = Controller.instance.currentPlayer;
         Room r = p.currentRoom;
         Item unicorn = Controller.instance.unicorn;

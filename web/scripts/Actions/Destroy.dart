@@ -17,13 +17,13 @@ class Destroy extends Action {
 
   static String performAction(String itemName) {
     Item item = Action.findItemFromString(itemName);
-    print("found item to destroy it is $item");
+    //print("found item to destroy it is $item");
       if(item != null) {
           Destroy l = item.findActionWithSameClassAs(new Destroy());
           if(l != null) {
               return l.apply(item);
           }else {
-              print ("The $item is too precious to destroy");
+              //print ("The $item is too precious to destroy");
               return new Destroy().apply(item, itemName, true);
           }
       }
@@ -44,7 +44,7 @@ class Destroy extends Action {
     //if i am passed null, i fail to becomd x and isntead become some random player
   @override
   String apply(Item item, [String itemName, bool precious = false]) {
-      print("precious is $precious and item is $item");
+      //print("precious is $precious and item is $item");
       if(precious && item != null) {
           Random rand = new Random();
           return rand.pickFrom(adorableProtest(item.name));

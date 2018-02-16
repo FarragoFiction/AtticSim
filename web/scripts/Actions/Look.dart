@@ -16,16 +16,16 @@ class Look extends Action {
 
 
   static String performAction(String itemName) {
-      print("going to look at $itemName");
-      print("what is going on");
+      //print("going to look at $itemName");
+      //print("what is going on");
     Item item = Action.findItemFromString(itemName);
     if(item != null) {
-        print("item found, it's $item");
+        //print("item found, it's $item");
         Look l = item.findActionWithSameClassAs(new Look());
         if(l != null) return l.apply(item);
         return "...This is probably a bug but you find yourself unable to even LOOK at the ${item.name}";
     }else {
-        print("item not found");
+        //print("item not found");
         Random rand = new Random();
         return rand.pickFrom(Action.cantFidnItemSnark(itemName));
     }
