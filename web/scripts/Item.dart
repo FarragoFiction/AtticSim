@@ -305,7 +305,8 @@ class Item {
     String orderDumbShit() {
         List<Item> dumbShit = new List<Item>();
         dumbShit.add(new Item("Doritos", <String>["DORITOS", "NACHOS", "CHIPS","CRISPS"], "Crunch chunch munch and cronch. All I do is doritos. It's so nice. Ahhhhhh. ", "You attempt to commune with the dorritos, instead of eating them.", destroyable: true, portable: true, consumable: true));
-        dumbShit.add(new Item(PRINGLESNAME, <String>["PRINGLES", "BBQ PRINGLES", "CHIPS","CRISPS"], "Crunch chunch munch and cronch. All I do is pringles. PL gets it. It is one reason you've spared them, so far. ", "You attempt to commune with the pringles, instead of eating them. You resent how hard the tube is to get into with your massive hands.", destroyable: true, portable: true, consumable: true, useConditionString: Item.PRINGLESSTUDYHOUR));
+        Item pringles = (new Item(PRINGLESNAME, <String>["PRINGLES", "BBQ PRINGLES", "CHIPS","CRISPS"], "Crunch chunch munch and cronch. All I do is pringles. PL gets it. It is one reason you've spared them, so far. ", "You attempt to commune with the pringles, instead of eating them. You resent how hard the tube is to get into with your massive hands.", destroyable: true, portable: true, consumable: true, useConditionString: Item.PRINGLESSTUDYHOUR));
+        dumbShit.add(pringles);
         dumbShit.add(new Item(SANDWICHNAME, <String>["INSIDE-OUT GRILLED CHEESE SANDWICH", "SANDWICH", "CHEESE SANDWICH","GRILLED CHEESE SANDWICH"], "Two cheeses, one bread. An image of this burg spurned the Smith into their inevitable defeat at the hands of the rules they enforced. Rip.", "You get the feeling that KR would like this.", destroyable: true, portable: true, consumable: true, useConditionString: Item.OFFERKRSANDWICH));
 
         dumbShit.add(new Item("Monster Energy Drink", <String>["ENERGY DRINK", "MONSTER ENERGY DRINK", "MONSTER","CAN"], "I live exclusively on these fucking capsules of god elixir. They fill my saucy veins with raw god like energy. I haven't slept in so long.", "You pretend you can absorb the can's energy powers via your mind instead of by drinking it.", destroyable: true, portable: true, consumable: true));
@@ -327,6 +328,8 @@ class Item {
             Controller.instance.expectedDeliveries.add(new Delivery(item));
             itemsOrdered.add(item);
         }
+        //for testing
+        //itemsOrdered.add(pringles);
         Controller.instance.moveTime();
         return "You browse Gristmart for way too long and end up ordering ${Item.turnArrayIntoHumanSentence(itemsOrdered)}";
     }
