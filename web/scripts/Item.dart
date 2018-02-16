@@ -31,8 +31,20 @@ class Item {
     static String UNICORNMETHOD = "unicorn";
     static String WIGRIDER = "wigrider";
     static String ORDERSHIT = "ORDERSHIT";
+    static String USEPASSWORD = "USEPASSWORD";
+
     static String APPEASEKR = "appeaseKR";
+    static String OFFERKRSANDWICH = "appeaseKR";
+
     static String APPRECIATEPL = "APPRECIATEPL";
+    static String PRINGLESSTUDYHOUR = "PRINGLESSTUDYHOUR";
+
+    //needed for shitty 'use' hardcoded bs
+    static String BUFFKRNAME = "Statue of a Greek God Except it has KR's Head";
+    static String SANDWICHNAME = "Inside-Out Grilled Cheese Sandwich";
+    static String PRINGLESNAME = "BBQ Pringles";
+
+
 
 
 
@@ -59,6 +71,10 @@ class Item {
             useCondition = readPLsBook;
         }else if (useConditionString == APPEASEKR) {
             useCondition = giveOfferingToKR;
+        }else if (useConditionString == OFFERKRSANDWICH) {
+            useCondition = krSandwich;
+        }else if (useConditionString == PRINGLESSTUDYHOUR) {
+            useCondition = pringlesStudy;
         }else {
             useCondition = defaultCondition;
         }
@@ -108,15 +124,66 @@ class Item {
         }
     }
 
-    //does what it says on the tin.
+    //on book
     String readPLsBook() {
-        throw("TODO: if you have pringles sit down and read the book");
+        Player p = Controller.instance.currentPlayer;
+        Item food = Item.findItemNamed(PRINGLESSTUDYHOUR, p.inventory);
+        if(food != null){
+            applyPoints(130);
+            p.inventory.remove(food);
+            return "The calming presence of the BBQ pringles and their association with PL allows you to sit through a chapter of the DART BOOK while snacking. Huh, so that's how things work. ";
+        }else{
+            return defaultCondition(false);
+        }
     }
 
-    //does what it says on the tin.
-    String giveOfferingToKR() {
-        throw("TODO: if you have the sandwich, offer it up to kr (add to parts)");
+    //on pringles
+    String pringlesStudy() {
+        Player p = Controller.instance.currentPlayer;
+        Item book = Controller.instance.dartBook;
+        if(p.inventory.contains(book)){
+            applyPoints(130);
+            p.inventory.remove(this);
+            return "While you munch on the BBQ pringles, you remember that PL agrees that these are the best snack. You pull out PL'S DART BOOK and start reading. Huh, so that's how things work. ";
+        }else{
+            return defaultCondition(false);
+        }
+    }
 
+    //on sandwich
+    String krSandwich() {
+        Player p = Controller.instance.currentPlayer;
+        Item statue = Item.findItemNamed(BUFFKRNAME, p.currentRoom.contents);
+        if(statue != null){
+            applyPoints(130);
+            p.inventory.remove(this);
+            statue.parts.add(this);
+            return "You give the BUFF AS FUCK STATUE OF KR an offering. Hopefully your inevitable rad as fuck fight against them will be put off another day. You've actually never seen KR in person, but your online interactions with them have lead you to believe they are buff as fuck.";
+        }else{
+            return defaultCondition(false);
+        }
+    }
+
+
+    //lets you ask rooms or players for things
+    static  Item findItemNamed(String name, List<Item> items) {
+        for(Item item in items) {
+           if(item.name == name) return item;
+        }
+    }
+
+    //on statue
+    String giveOfferingToKR() {
+        Player p = Controller.instance.currentPlayer;
+        Item food = Item.findItemNamed(SANDWICHNAME, p.inventory);
+        if(food != null){
+            applyPoints(130);
+            p.inventory.remove(food);
+            parts.add(food);
+            return "You give the BUFF AS FUCK STATUE OF KR an offering. Hopefully your inevitable rad as fuck fight against them will be put off another day.";
+        }else{
+            return defaultCondition(false);
+        }
     }
 
     //does what it says on the tin.
@@ -147,6 +214,21 @@ class Item {
         }else if(p.inventory.contains(guyFieriWig)){
             applyPoints(1300);
             return "You ride the FrankenFuck Unicorn while appearing to have shocking blond hair. Everyone is suitably impressed.";
+        }else{
+            return defaultCondition(false);
+        }
+    }
+
+    String usePassword() {
+        Player p = Controller.instance.currentPlayer;
+        Item passwordScrawl = Controller.instance.passwordScrawl;
+
+        if(p.currentRoom == Controller.instance.controlConsole){
+            applyPoints(130);
+            p.inventory.remove(this);
+            Controller.instance.jrComputer.parts.add(passwordScrawl);
+            name = "Unlocked JR's Computer";
+            return "Huh. So that's what that shitty password hint means. You're in. You can now use JR's CONTROL CONSOLE to order all sorts of dumb shit online to pass the time.";
         }else{
             return defaultCondition(false);
         }
@@ -219,8 +301,8 @@ class Item {
     String orderDumbShit() {
         List<Item> dumbShit = new List<Item>();
         dumbShit.add(new Item("Doritos", <String>["DORITOS", "NACHOS", "CHIPS","CRISPS"], "Crunch chunch munch and cronch. All I do is doritos. It's so nice. Ahhhhhh. ", "You attempt to commune with the dorritos, instead of eating them.", destroyable: true, portable: true, consumable: true));
-        dumbShit.add(new Item("BBQ Pringles", <String>["PRINGLES", "BBQ PRINGLES", "CHIPS","CRISPS"], "Crunch chunch munch and cronch. All I do is pringles. PL gets it. It is one reason you've spared them, so far. ", "You attempt to commune with the pringles, instead of eating them. You resent how hard the tube is to get into with your massive hands.", destroyable: true, portable: true, consumable: true));
-        dumbShit.add(new Item("Inside-Out Grilled Cheese Sandwich", <String>["INSIDE-OUT GRILLED CHEESE SANDWICH", "SANDWICH", "CHEESE SANDWICH","GRILLED CHEESE SANDWICH"], "Two cheeses, one bread. An image of this burg spurned the Smith into their inevitable defeat at the hands of the rules they enforced. Rip.", "You get the feeling that KR would like this.", destroyable: true, portable: true, consumable: true));
+        dumbShit.add(new Item(PRINGLESNAME, <String>["PRINGLES", "BBQ PRINGLES", "CHIPS","CRISPS"], "Crunch chunch munch and cronch. All I do is pringles. PL gets it. It is one reason you've spared them, so far. ", "You attempt to commune with the pringles, instead of eating them. You resent how hard the tube is to get into with your massive hands.", destroyable: true, portable: true, consumable: true, useConditionString: Item.PRINGLESSTUDYHOUR));
+        dumbShit.add(new Item(SANDWICHNAME, <String>["INSIDE-OUT GRILLED CHEESE SANDWICH", "SANDWICH", "CHEESE SANDWICH","GRILLED CHEESE SANDWICH"], "Two cheeses, one bread. An image of this burg spurned the Smith into their inevitable defeat at the hands of the rules they enforced. Rip.", "You get the feeling that KR would like this.", destroyable: true, portable: true, consumable: true, useConditionString: Item.OFFERKRSANDWICH));
 
         dumbShit.add(new Item("Monster Energy Drink", <String>["ENERGY DRINK", "MONSTER ENERGY DRINK", "MONSTER","CAN"], "I live exclusively on these fucking capsules of god elixir. They fill my saucy veins with raw god like energy. I haven't slept in so long.", "You pretend you can absorb the can's energy powers via your mind instead of by drinking it.", destroyable: true, portable: true, consumable: true));
         dumbShit.add(new Item("Poster of Unicron", <String>["POSTER", "UNICRON", "POSTER OF UNICRON"], "ShogunBot really likes this giant planet fucking lord of darkness. Respectable choice, but he's no Aku.", "You spend some time wondering why ShogunBot likes Unicron so much.", destroyable: true, portable: true));
@@ -228,7 +310,7 @@ class Item {
         dumbShit.add(new Item("Dr Pepper", <String>["DR PEPPER", "SODA", "SHITTY SODA"], "This is a terrifying elixir. Immense power. I still have yet to find that Dr Pepper BBQ sauce. I know you're hiding it from me JR. I will find it. So help me god.", "You rage at that asshole Waste for hiding the Dr Pepper BBQ Sauce from you.", destroyable: true, portable: true, consumable: true));
         dumbShit.add(new Item("Guy Fieri Wig", <String>["GUY FIERI WIG", "GUY WIG", "FIERI WIG","WIG"], "Welcome to Dungeons, Diners, Drive-ins n Dives n Dungeons. I will be your God.", "You cosplay as Guy Fieri for a while.", destroyable: true, portable: true, useConditionString: Item.UNICORNMETHOD));
         dumbShit.add(new Item("Signed and Framed Jerry Seinfeld Picture", <String>["SIGNED AND FRAMED JERRY SEINFELD PICTURE","FRAMED JERRY SEINFELD PICTURE","PICTURE", "SEINFELD PICTURE", "JERRY SEINFELD PICTURE"], "This is a true god amongst men. A cosmic being. I have memorised his entire auto-biography, self named series (including the secret 42 seasons) 13 movies and celebrity melt down.", "", destroyable: true, portable: true, consumable: true));
-        dumbShit.add(new Item("Statue of a Greek God Except it has KR's Head", <String>["STATUE OF A GREEK GOD EXCEPT IT HAS KR'S HEAD", "GREEK GOD", "KR","KR STATUE","GREEK GOOD STATUE","STATUE","SWOLEPTURE"], "KR strikes fear into my soul like no other Being should. Like what does She smith? Where is the smith hammer? Is He that strong that they need only use her fists to forge the dreams? Is She that powerful he can control dreams? How buff is KR?", "You contemplate KR's theoretical buffness.", useConditionString: Item.APPEASEKR));
+        dumbShit.add(new Item(BUFFKRNAME, <String>["STATUE OF A GREEK GOD EXCEPT IT HAS KR'S HEAD", "GREEK GOD", "KR","KR STATUE","GREEK GOOD STATUE","STATUE","SWOLEPTURE"], "KR strikes fear into my soul like no other Being should. Like what does She smith? Where is the smith hammer? Is He that strong that they need only use her fists to forge the dreams? Is She that powerful he can control dreams? How buff is KR?", "You contemplate KR's theoretical buffness.", useConditionString: Item.APPEASEKR));
         dumbShit.add(new Item("Map of Continential Europe", <String>["MAP OF CONTINENTIAL EUROPE", "MAP", "MAP OF EUROPE","EUROPE"], "Legends says a huge dude worshipped by japanese gamers ruled this continent. I aspire to have that level of worship. Also...somehow it is brimming with violent sexual energy?", "You admire all of Continental Europe. Besides Portugal. ", destroyable: true, portable: true));
         dumbShit.add(new Item("Camera Footage of 2 Cowboys", <String>["CAMERA FOOTAGE","COWBOY", "MARQIS", "COWBOYS","2 COWBOYS","CAMERA FOOTAGE OF 2 COWBOYS"], "Look at these two identical cowboys. Look at them manipulating souls and turning monsters to plasma with their volley of death. Look at that. I don't know who the fuck they are but I'm fucking proud.", "You spend some time being proud of the two cowboys.", destroyable: true, portable: true));
 

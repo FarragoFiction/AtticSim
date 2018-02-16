@@ -18,6 +18,7 @@ class Controller {
 
   List<Delivery> expectedDeliveries = new List<Delivery>();
   Room controlConsole;
+  Item jrComputer;
 
   int _totalAvailablePoints = -1300;
 
@@ -40,6 +41,7 @@ class Controller {
 
   Item unicorn;
   Item nepetaWig;
+  Item dartBook;
   Item guyFieriWig;
   Item passwordScrawl;
   //will never be eaten or destroyed
@@ -241,12 +243,14 @@ class Controller {
     nepetaWig = new Item("Hair7 Wig", <String>["HAIR7", "WIG", "CATTROLL WIG", "NEPETA WIG", "HAIR7 WIG"], "Heheh.", "You try the wig on. You get the eerie feeling that the Narrator hates you just a little bit more now.", portable: true, useConditionString: Item.UNICORNMETHOD);
     controlRoom.contents.add(nepetaWig);
     controlRoom.contents.add(new Item("AB Charging Station", <String>["AB'S CHARGING STATION", "STATION", "CHARGING STATION"], "Oh is this where that uncanny valley looking robot of JR sleeps or some shit? Hm. Well. Can I legally make an apple joke here?", "You attempt to use my charging station. Since you are a fleshy organic weakling, it fails to charge you."));
-    controlRoom.contents.add(new Item("PL's Guide to Dart Book", <String>["BOOK", "DART BOOK", "PL's GUIDE TO DART", "PL'S GUIDE TO DART BOOK", "PL'S BOOK", "PL'S GUIDE BOOK"], "This would be useful probably. If I gave enough of a fuck about reading or putting effort into this.", "You flip through the book. Huh, apparently JR scrawled crude pictures of dicks and shitty comics about how learning things in a structured way is fucking stupid. ", destroyable: true, portable: true, useConditionString: Item.APPRECIATEPL));
+    dartBook = new Item("PL's Guide to Dart Book", <String>["BOOK", "DART BOOK", "PL's GUIDE TO DART", "PL'S GUIDE TO DART BOOK", "PL'S BOOK", "PL'S GUIDE BOOK"], "This would be useful probably. If I gave enough of a fuck about reading or putting effort into this.", "You flip through the book. Huh, apparently JR scrawled crude pictures of dicks and shitty comics about how learning things in a structured way is fucking stupid. ", destroyable: true, portable: true, useConditionString: Item.APPRECIATEPL);
+    controlRoom.contents.add(dartBook);
+
     unicorn = new Item("life size unicorn plush", <String>["FRANKENFUCK UNICORN", "UNICORN", "PLUSH", "HOOF BEAST", "HOOFBEAST"], "This is like a fucking anomaly. it looks so normal from a distance but it's like, it's a fucking frankenfuck of other stuffed creatures. How many corpses has JR got in this? ", "You admire the FrankenFuck Unicorn in all it's unnatural glory. You wish you could ride it, but you aren't quite...stylish enough.", destroyable: true, useConditionString: Item.WIGRIDER);
     controlRoom.contents.add(unicorn);
     controlRoom.contents.add(new Item("Toddler!JR 'Do it For Her' board", <String>["BOARD", "TODDLER JR BOARD", "DO IT FOR HER BOARD", "TODDLER!JR 'DO IT FOR HER' BOARD"], "Pure. Blessed. Powerful. God Bless this board.", "You admire the board. Toddler JR is always full of such terrible ideas. They are your favorite JR."));
     controlRoom.contents.add(new Item("JR's 4th Wall", <String>["WALL", "4TH WALL", "JR'S 4TH WALL", "FENESTRATED WALL"], "Something something meta. If I climbed through this I could get myself some burgs.", "You attempt to crawl through JR's Fenestrated Window. Luckily, it is currently unpowered.", destroyable: true, portable: true));
-    passwordScrawl = new Item("scrawled password riddle", <String>["PASSWORD","SCRAWLED PASSWORD RIDDLE", "SCRAWL", "GIGGLESNORT", "RIDDLE"], "... is JR's password REALLY 'where is everything better than expected?' What a shit riddle.", "You stare in frustration at the gigglesnort.", destroyable: true, portable: true, consumable: true);
+    passwordScrawl = new Item("scrawled password riddle", <String>["PASSWORD","SCRAWLED PASSWORD RIDDLE", "SCRAWL", "GIGGLESNORT", "RIDDLE"], "... is JR's password REALLY 'where is everything better than expected?' What a shit riddle.", "You stare in frustration at the gigglesnort.", destroyable: true, portable: true, consumable: true, useConditionString: Item.USEPASSWORD);
     controlRoom.contents.add(passwordScrawl);
 
     dennis = new Room("Dennis", ["DENNIS", "DUDE", "GUY", "MEME"], "Ye arrive at Dennis. He wears a sporty frock coat and a long jimberjam. He paces about nervously. Obvious exits are NOT DENNIS.", "You use Dennis, you heartless monster.");
@@ -257,7 +261,8 @@ class Controller {
     //Control Console
     controlConsole = new Room("Control Console", ["CONTROL CONSOLE", "CONSOLE"], "the control console for SBURBSim. It's actually just a regular computer, with regular shit you can do on it, like shitpost or troll jr or buy shit online. It's not really a place, but close enough.", "You fail to use the CONTROL CONSOLE as it requires a PASSWORD.");
     controlRoom.exits.add(controlConsole);
-    controlConsole.contents.add(new Item("Password Locked JR's Computer", <String>["COMPUTER", "UNLOCKED COMPUTER", "UNLOCKED JR'S COMPUTER", "PASSWORD LOCKED COMPUTER", "JR'S COMPUTER", "PASSWORD LOCKED JR'S COMPUTER"], "JR's computer, with a shitty password.", "You have no idea what the password is, so you can't use it.", useConditionString: Item.ORDERSHIT));
+    jrComputer = new Item("Password Locked JR's Computer", <String>["COMPUTER", "UNLOCKED COMPUTER", "UNLOCKED JR'S COMPUTER", "PASSWORD LOCKED COMPUTER", "JR'S COMPUTER", "PASSWORD LOCKED JR'S COMPUTER"], "JR's computer, with a shitty password.", "You have no idea what the password is, so you can't use it.", useConditionString: Item.ORDERSHIT);
+    controlConsole.contents.add(jrComputer);
 
     controlConsole.exits.add(controlRoom);
 
@@ -298,7 +303,7 @@ class Controller {
     Player df = new Player(voidRoom, "dystopicFuturism", <String>["DYSTOPICFUTURISIM","DF","DARTH PEANUT BRITTLE","PEANUT","PEANUTBRITTLE"], " DF is making amazing panel edits. ", "You fail to use them.");
     Player fortyseven = new Player(voidRoom, "47", <String>["47"], " 47 is ... actually, you know what? No. ", "You fail to use them.");
     Player eon = new Player(voidRoom, "eon", <String>["EON"], " Eon is thinking about Transformers.  ", "You fail to use them.");
-    Player cool = new Player(voidRoom, "coolthulu", <String>["COOLTHULU","COOL"], " Coolthulu isn't surprised you summoned them on accident, though usually people expect Cthulu. ", "You fail to use them.");
+    Player cool = new Player(voidRoom, "coolthulu", <String>["COOLTHULU","COOL"], " Coolthulu isn't surprised you summoned them on accident, though usually people expect Cthulhu. ", "You fail to use them.");
     Player twentyeighteen = new Player(voidRoom, "2018 Personified", <String>["2018 PERSONIFIED","DOOP"], "2018 Personified is busy being disappointed by the ending of Homestuck. ", "You fail to use them.");
     Player cactus = new Player(voidRoom, "cactus", <String>["CACTUS"], " Cactus isn't going to ever back down from their spirit animal being a cactus. You just have to deal with that.", "You fail to use them.");
     Player ms = new Player(voidRoom, "mysteriousSource", <String>["MYSTERIOUSSOURCE","ZAQ","MS"], " MS is busy drawing fascinating pictures. ", "You fail to use them.");
