@@ -102,6 +102,7 @@ class Controller {
   String applyDare() {
     Random rand = new Random();
     Item chosen = rand.pickFrom(shogun.inventory);
+    if(chosen == null) return "Shogun doesn't even have shit in his inventory, so lame.";
     String edible = "";
     WeightedList<String> taunts = new WeightedList<String>();
     if(chosen.respondsTo(new Vore())){
@@ -215,7 +216,7 @@ class Controller {
         endGame();
         return;
       }
-    print("displaying text, current player is ${currentPlayer} and they are in room ${currentPlayer.currentRoom}");
+    //print("displaying text, current player is ${currentPlayer} and they are in room ${currentPlayer.currentRoom}");
     String dateSlug = "${currentDate.year.toString()}-${currentDate.month.toString().padLeft(2,'0')}-${currentDate.day.toString().padLeft(2,'0')} ${currentDate.hour.toString().padLeft(2,'0')}:${currentDate.minute.toString().padLeft(2,'0')}";
 
     String newItems = checkDeliveries();

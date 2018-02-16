@@ -38,20 +38,25 @@ class Room extends Item{
         List<Player> ret = new List<Player>();
         List<Player> players = Controller.instance.players;
         for(Player p in players) {
-            print("is $p in room $this ? I think they are in ${p.currentRoom}");
+            //print("is $p in room $this ? I think they are in ${p.currentRoom}");
             if(p.currentRoom == this && p != Controller.instance.currentPlayer) ret.add(p);
         }
         return ret;
     }
 
     String get itemsDescription {
-        print("getting items description");
+        //print("getting items description");
         String ret = "It is empty.";
         if(contents.isNotEmpty) ret = "You see: ${Item.turnArrayIntoHumanSentence(contents)}.";
         List<Player> peeps = people;
         if(peeps.isNotEmpty && this != Controller.instance.voidRoom) ret += " You wave to: ${Item.turnArrayIntoHumanSentence(peeps)}.";
         //if everybody but shogun and jr are in dennis....then what?
-        if(this == Controller.instance.dennis && peeps.length == (Controller.instance.players.length -2)) ret += " It is done. But for what purpose???";
+        if(this == Controller.instance.dennis) {
+            int x = peeps.length;
+            int y = Controller.instance.players.length -2;
+            print("Dennis progress is $x/$y");
+            if(x == y) ret += " It is done. But for what purpose???";
+        }
         return ret;
     }
 }
