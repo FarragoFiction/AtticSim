@@ -59,6 +59,8 @@ class Item {
         if(portable) validActions.add(new Take()); //all things can be looked at.
 
 
+        //i am so embarassed at how this is architected, it is so fucking brittle
+        //but i had a huge time crunch and this was faster
         if(useConditionString == null) {
             useCondition = defaultCondition;
         }else if (useConditionString == UNICORNMETHOD) {
@@ -129,7 +131,7 @@ class Item {
     //on book
     String readPLsBook() {
         Player p = Controller.instance.currentPlayer;
-        Item food = Item.findItemNamed(PRINGLESSTUDYHOUR, p.inventory);
+        Item food = Item.findItemNamed(PRINGLESNAME, p.inventory);
         if(food != null){
             applyPoints(130);
             p.inventory.remove(food);

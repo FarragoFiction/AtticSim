@@ -50,8 +50,8 @@
       <file leaf-file-name="Item.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/scripts/Item.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="231" column="17" lean-forward="false" selection-start-line="231" selection-start-column="17" selection-end-line="231" selection-end-column="17" />
+            <state relative-caret-position="292">
+              <caret line="157" column="25" lean-forward="true" selection-start-line="157" selection-start-column="25" selection-end-line="157" selection-end-column="25" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -148,7 +148,6 @@
       <find>listen</find>
       <find>goose</find>
       <find>dare</find>
-      <find>statue</find>
       <find>list</find>
       <find>DART</find>
       <find>kr</find>
@@ -159,8 +158,9 @@
       <find>cool</find>
       <find>krsand</find>
       <find>USEP</find>
-      <find>book</find>
       <find>usepassword</find>
+      <find>book</find>
+      <find>statue</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -928,8 +928,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/Item.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="231" column="17" lean-forward="false" selection-start-line="231" selection-start-column="17" selection-end-line="231" selection-end-column="17" />
+        <state relative-caret-position="292">
+          <caret line="157" column="25" lean-forward="true" selection-start-line="157" selection-start-column="25" selection-end-line="157" selection-end-column="25" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
