@@ -298,25 +298,25 @@ class Controller {
     Player tg = new Player(voidRoom, "tableGuardian", <String>["TABLEGUARDIAN","TG"], " TG is guarding tables from society and society from tables. Also debugging the sim.", "You fail to use them.");
     Player wm = new Player(voidRoom, "wooMod", <String>["WOOMOD","WM"], " WM is planning elaborate SBURB rpgs.", "You fail to use them.");
     Player dm = new Player(voidRoom, "dilettantMathematian", <String>["DILETTANTMATHEMATICIAN","DM"], " DM is working on incredibly impressive math. ", "You fail to use them.");
-    Player fp = new Player(voidRoom, "flippetUrnways", <String>["FLIPPETURNWAYS","MISTER SIR FLIPPET MOTHERFUCKER"], " Flippet is working on the Hedron Scheme. ", "You fail to use them.");
+    Player fp = new Player(voidRoom, "flippetUrnways", <String>["FLIPPETURNWAYS","MISTER SIR FLIPPET MOTHERFUCKER"], " Flippet is working on the Hedron Scheme. They know who Shogun is, and have formed a support group for those who want to find out.", "You fail to use them.");
     Player pb = new Player(voidRoom, "pineappleBoi", <String>["PINEAPPLEBOI","PB"], " PineappleBOI is ... huh. Wow. You didn't know you could use lucky charms in math equations. ", "You fail to use them.");
     Player df = new Player(voidRoom, "dystopicFuturism", <String>["DYSTOPICFUTURISIM","DF","DARTH PEANUT BRITTLE","PEANUT","PEANUTBRITTLE"], " DF is making amazing panel edits. ", "You fail to use them.");
     Player fortyseven = new Player(voidRoom, "47", <String>["47"], " 47 is ... actually, you know what? No. ", "You fail to use them.");
     Player eon = new Player(voidRoom, "eon", <String>["EON"], " Eon is thinking about Transformers.  ", "You fail to use them.");
     Player cool = new Player(voidRoom, "coolthulu", <String>["COOLTHULU","COOL"], " Coolthulu isn't surprised you summoned them on accident, though usually people expect Cthulhu. ", "You fail to use them.");
     Player twentyeighteen = new Player(voidRoom, "2018 Personified", <String>["2018 PERSONIFIED","DOOP"], "2018 Personified is busy being disappointed by the ending of Homestuck. ", "You fail to use them.");
-    Player cactus = new Player(voidRoom, "cactus", <String>["CACTUS", "PLANT", "SPIKES", "PLANT OF SPIKES"], " Cactus isn't going to ever back down from their spirit animal being a cactus. You just have to deal with that. You sit on the windowsill and contemplate reality.", "You attempt to use Cactus but the spikes prevent you from touching them.");
+    Player cactus = new Player(voidRoom, "cactus", <String>["CACTUS", "PLANT", "SPIKES", "PLANT OF SPIKES"], " Cactus isn't going to ever back down from their spirit animal being a cactus. You just have to deal with that. You sit on the windowsill and contemplate reality. They know who Shogun is.", "You attempt to use Cactus but the spikes prevent you from touching them.");
 
     Player ms = new Player(voidRoom, "mysteriousSource", <String>["MYSTERIOUSSOURCE","ZAQ","MS"], " MS is busy drawing fascinating pictures. ", "You fail to use them.");
     Player goose = new Player(voidRoom, "Goose", <String>["GOOSE","RT"], " Goose is listening to their favorite pieces of music and sharing them online.", "You fail to use them.");
     Player jp = new Player(voidRoom, "jegusPersona", <String>["JEGUSPERSONA","JP"], "JP is starting shitty fanfic readings. It's so great.", "You fail to use them.");
-    Player sz = new Player(voidRoom, "sniperZee", <String>["SNIPERZEE","SZ"], "SZ is getting excited about the privitization of space travel.", "You fail to use them.");
+    Player sz = new Player(voidRoom, "sniperZee", <String>["SNIPERZEE","SZ"], "SZ is getting excited about the privitization of space travel. They know who Shogun is.", "You fail to use them.");
     Player cl = new Player(voidRoom, "cartlord", <String>["CARTLORD","CL"], "CL is making sure to credit original artists.", "You fail to use them.");
     Player ath = new Player(voidRoom, "Athena", <String>["ATHENA","ATH"], "ATH is making level designs.", "You fail to use them.");
     Player star = new Player(voidRoom, "star.eyes", <String>["STAR.EYES","STAR"], "star.eyes is making amazing abj x kid boi x nepeta fanfics and comics.", "You fail to use them.");
     Player bunpt = new Player(voidRoom, "Bunpt", <String>["BUNPT","RUSTGAZE"], "Bunpt is helpfully using Dutton to protect us all.", "You fail to use them.");
     Player cmj = new Player(voidRoom, "Cotton Mouth Joe", <String>["COTTONMOUTHJOE","CMJ"], "Cotton Mouth Joe just wants to help.", "You fail to use them.");
-    //main
+    //main, some of you know who shogun is. some do not.
     Player orange = new Player(voidRoom, "Orange Speedo Asshole", <String>["ORANGE", "ORANGE SPEEDO ASSHOLE", "OSA", "CITRUS"], "You are sitting in the Void eating pretzels. You have no intention of getting up. You are still happy you got to be the CONTEST OFFICIAL for the JR vs Shogun competition.", "You use Orange to make some delicious juice. This is murder. Wait, except it never happens. False alarm. This game doesn't let you kill players.");
     new Player(voidRoom, "Sandwich", <String>["SANDWICH", "SATAN", "LUCIFER", "THE DEVIL", "BREAD-BASED FUCK"], "You are sitting in the Void being a sandwich. You have no intention of getting up.", "You eat Sandwich. This is hilarious. Or would be if Player murder was allowed in this game. If Shogun doesn't get to kill JR, no one gets to die.");
     Player Blabk = new Player(voidRoom, "Blabk", <String>["BLABK", "BUSHI", "BLAPCK", "BLABCK"], "You are sitting in the Void doing...something. You have no intention of getting up.", "You fail to eat Bushi. What the fuck.");
@@ -325,8 +325,29 @@ class Controller {
     Player fef = new Player(voidRoom, "fef", <String>["FEF", "INKAY", "CUTTLEFISH"], "You are now fef. You immediately attempt to summon an improbable number of cuttlefish.", "You feel as if you are reaching into an infinite void of tentacles and oddly-shaped eyes. Glub glub.");
     Player sage = new Player(voidRoom, "sage", <String>["SAGE"], "You are now sage. You observe the brooding caverns with a keen eye.", "Sage begins drawing trolls and never stops.");
     Player Firanka = new Player(voidRoom, "Firanka", <String>["FIRANKA", "FIRANKAMIPINSKA"], "You are now Firanka. This is absolutely ridiculous.", "You attempt to use Firanka but you cannot. Firanka controls you.");
-    Player cumulusCanine = new Player(voidRoom, "cumulusCanine", <String>["CUMULUSCANINE", "CC", "DOG", "MAJIMJAM"], "You are now cumulusCanine. You are a good boy. The best.", "You cannot use cumulusCanine, but you play for several hours. This is great fun.");
+    Player cumulusCanine = new Player(voidRoom, "cumulusCanine", <String>["CUMULUSCANINE", "CC", "DOG", "MAJIMJAM"], "You are now cumulusCanine. You are a good boy. The best. You know who Shogun is.", "You cannot use cumulusCanine, but you play for several hours. This is great fun.");
     Player yogisticDoctor = new Player(voidRoom, "Doc Mahjong", <String>["YOG", "YD", "YOGISTICDOCTOR", "DOC MAHJONG", "YOGISTIC DOCTOR"], "You are now Doc Mahjong. Everything is going according to plan. Soon, your master will arrive.", "You cannot use Doc Mahjong. He will not allow it.");
+    Player shanks = new Player(voidRoom, "Seven Shanks", <String>["SS", "SEVEN SHANKS", "SHANKS"], "You are now Seven Shanks. Unsurprisingly, you are stabbing things.", "You use Shanks to stab things.");
+    Player floral = new Player(voidRoom, "floralShenanigans", <String>["FLORAL", "FS", "FLORALSHENANIGANS"], "You are now floralShenanigans. You are creating more alt!Shoguns to kiss each other.", "floralShenanigans makes amazing fanart of you.");
+    Player skylos = new Player(voidRoom, "chernobylsAquacade", <String>["CHERNOBYLSAQUACADE", "CA", "SKYLOSTEMPLAR","ST"], "You are busy stealing Sauce from Shogun and redestributing it to the masses.", "You fail to use them.");
+    new Player(voidRoom, "catatonicKeeper", <String>["CATATONICKEEPER", "CK"], "Knows who Shogun is.", "You fail to use them.");
+    new Player(voidRoom, "feverentAcolyte", <String>["FEVERENTACOLYTE", "FA"], "Knows who Shogun is.", "You fail to use them.");
+    new Player(voidRoom, "gibberingPhilosopher", <String>["GIBBERINGPHILOSOPHER", "GP"], "Knows who Shogun is.", "You fail to use them.");
+    new Player(voidRoom, "jovianArchiver", <String>["JOVIANARCHIVER", "JA"], "Knows who Shogun is.", "You fail to use them.");
+    new Player(voidRoom, "ActuallyTerrific", <String>["ACTUALLYTERRIFIC", "AT"], "Knows who Shogun is.", "You fail to use them.");
+    new Player(voidRoom, "brokenPlayer", <String>["BROKENPLAYER", "BP"], "Knows who Shogun is.", "You fail to use them.");
+    new Player(voidRoom, "asinineGodsend", <String>["ASININEGODSEND", "AG"], "Is  a deputy. Knows who Shogun is.", "You fail to use them.");
+    new Player(voidRoom, "asocialGoldfish", <String>["ANSTUS", "AG","ASOCIALGOLDFISH",'SA',"CI"], "You are responsible for Anstus, and the self-cest meme. You knows who Shogun is.", "You fail to use them.");
+    new Player(voidRoom, "decidedlyEntropic", <String>["DECIEDLYENTROPIC", "DA"], "Knows who Shogun is. Wishes you could input 'update sim' anywhere in this game.", "You fail to use them.");
+    new Player(voidRoom, "Duck King", <String>["DUCKKING", "DUCK","DK"], "Knows who Shogun is. Has the patience to smith all things. Master of the JR themed shitpost.", "You fail to use them.");
+    new Player(voidRoom, "FirankaMipińska", <String>["FIRANKAMIPINSKA", "FM"], "Knows who Shogun is. Good at catching bugs.", "You fail to use them.");
+    new Player(voidRoom, "flame_warp", <String>["FLAME_WARP", "FW","FLAMEWARP"], "Knows who Shogun is, and also how tiny Jack is.", "You fail to use them.");
+    new Player(voidRoom, "insipidTestimony", <String>["INSIPIDTESTIMONY", "IT"], "Knows who Shogun is and inspired the good vibes channel.", "You fail to use them.");
+    new Player(voidRoom, "maskedProxy", <String>["MASKEDPROXY", "MP"], "Knows who Shogun is. It's a puzzle.", "You fail to use them.");
+    new Player(voidRoom, "Cat, fireRachet", <String>["CAT, FIRERACHET", "FR","CAT","FIRERACHET"], "Knows who Shogun is, and blames them for taking all their name changing scrolls.", "You fail to use them.");
+    new Player(voidRoom, "creativeDungeoner", <String>["CREATIVEDUNGEONER", "CD"], "Knows about the Thug Life.", "You fail to use them.");
+    //new Player(voidRoom, "chernobylsAquacade", <String>["CHERNOBYLSAQUACADE", "CA"], "", "You fail to use them.");
+
 
 
 
