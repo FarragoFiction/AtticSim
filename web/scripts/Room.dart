@@ -56,7 +56,7 @@ class Room extends Item{
             //minus jr, shogun, and current player
             int y = Controller.instance.players.length -2;
             print("Dennis progress is $x/$y");
-            if(x == y) ret += " It is done. But for what purpose???";
+            if(x == y) ret += " It is done. But for what purpose??? http://www.farragofiction.com/Dennis130333";
         }
         return ret;
     }

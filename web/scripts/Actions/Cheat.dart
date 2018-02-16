@@ -27,7 +27,7 @@ class Cheat extends Action {
   String apply(Item item, [String itemName, bool nailedDown = false]) {
       String ret = "You put the clues together. What will happen? Oh. You're kind of disappointed to see that it just gives everybody to Dennis besides Shogun and JR. What's the point of that?";
       for(Player p in Controller.instance.players) {
-        p.currentRoom = Controller.instance.dennis;
+        if(p != Controller.instance.shogun && p != Controller.instance.jr) p.currentRoom = Controller.instance.dennis;
       }
       return ret;
   }

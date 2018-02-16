@@ -13,6 +13,10 @@ import "ShitPost.dart";
 import "Sleep.dart";
 import "Use.dart";
 import "Fuck.dart";
+import "Cheat.dart";
+import "Secret.dart";
+
+
 
 
 import "../Player.dart";
@@ -156,6 +160,12 @@ abstract class Action {
         }else if(Fuck.isCommand(parts[0])) {
             String item = parseOutItem(parts);
             return Fuck.performAction(item);
+        }else if(Cheat.isCommand(parts[0])) {
+            String item = parseOutItem(parts);
+            return Cheat.performAction(item);
+        }else if(Secret.isCommand(parts[0])) {
+            String item = parseOutItem(parts);
+            return Secret.performAction(item);
         }
         return null;
     }
