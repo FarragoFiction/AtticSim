@@ -75,6 +75,8 @@ class Item {
             useCondition = krSandwich;
         }else if (useConditionString == PRINGLESSTUDYHOUR) {
             useCondition = pringlesStudy;
+        }else if (useConditionString == USEPASSWORD) {
+            useCondition = usePassword;
         }else {
             useCondition = defaultCondition;
         }
