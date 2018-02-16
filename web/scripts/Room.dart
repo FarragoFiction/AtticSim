@@ -52,7 +52,8 @@ class Room extends Item{
         if(peeps.isNotEmpty && this != Controller.instance.voidRoom) ret += " You wave to: ${Item.turnArrayIntoHumanSentence(peeps)}.";
         //if everybody but shogun and jr are in dennis....then what?
         if(this == Controller.instance.dennis) {
-            int x = peeps.length;
+            int x = peeps.length +1; //add current player to count
+            //minus jr, shogun, and current player
             int y = Controller.instance.players.length -2;
             print("Dennis progress is $x/$y");
             if(x == y) ret += " It is done. But for what purpose???";
