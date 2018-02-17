@@ -243,7 +243,7 @@ class Controller {
 
     nepetaWig = new Item("Hair7 Wig", <String>["HAIR7", "WIG", "CATTROLL WIG", "NEPETA WIG", "HAIR7 WIG"], "Heheh.", "You try the wig on. You get the eerie feeling that the Narrator hates you just a little bit more now.", portable: true, useConditionString: Item.UNICORNMETHOD);
     controlRoom.contents.add(nepetaWig);
-    controlRoom.contents.add(new Item("AB Charging Station", <String>["AB'S CHARGING STATION", "STATION", "CHARGING STATION"], "Oh is this where that uncanny valley looking robot of JR sleeps or some shit? Hm. Well. Can I legally make an apple joke here?", "You attempt to use my charging station. Since you are a fleshy organic weakling, it fails to charge you."));
+    controlRoom.contents.add(new Item("AB's Charging Station", <String>["AB'S CHARGING STATION", "STATION", "CHARGING STATION","AB CHARGING STATION"], "Oh is this where that uncanny valley looking robot of JR sleeps or some shit? Hm. Well. Can I legally make an apple joke here?", "You attempt to use my charging station. Since you are a fleshy organic weakling, it fails to charge you."));
     dartBook = new Item("PL's Guide to Dart Book", <String>["BOOK", "DART BOOK", "PL's GUIDE TO DART", "PL'S GUIDE TO DART BOOK", "PL'S BOOK", "PL'S GUIDE BOOK"], "This would be useful probably. If I gave enough of a fuck about reading or putting effort into this.", "You flip through the book. Huh, apparently JR scrawled crude pictures of dicks and shitty comics about how learning things in a structured way is fucking stupid. ", destroyable: true, portable: true, useConditionString: Item.APPRECIATEPL);
     controlRoom.contents.add(dartBook);
 
