@@ -349,6 +349,8 @@ class Controller {
     new Player(voidRoom, "creativeDungeoneer", <String>["CREATIVEDUNGEONEER", "CD"], "You are currently working on your next  meme.", "You fail to use them.");
     new Player(voidRoom, "wongle", <String>["WONGLE", "WB"], "You have dedicated your life to making sprite edits.", "You fail to use them.");
     new Player(voidRoom, "cynicalTeuthida", <String>["CYNICALTEUTHIDA", "CT"], "You are eating calamari.", "You fail to use them.");
+//oblivionSurfer
+    new Player(voidRoom, "oblivionSurfer ", <String>["OBLIVIONSURFER", "OS"], "You know about JR's secret Library. You also know it isn't in this game.", "You fail to use them.");
 
     //new Player(voidRoom, "chernobylsAquacade", <String>["CHERNOBYLSAQUACADE", "CA"], "", "You fail to use them.");
 
