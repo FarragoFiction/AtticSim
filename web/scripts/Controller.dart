@@ -348,6 +348,7 @@ class Controller {
     new Player(voidRoom, "Cat, fireRachet", <String>["CAT, FIRERACHET", "FR","CAT","FIRERACHET"], "Knows who Shogun is, and blames them for taking all their name changing scrolls.", "You fail to use them.");
     new Player(voidRoom, "creativeDungeoneer", <String>["CREATIVEDUNGEONEER", "CD"], "You are currently working on your next  meme.", "You fail to use them.");
     new Player(voidRoom, "wongle", <String>["WONGLE", "WB"], "You have dedicated your life to making sprite edits.", "You fail to use them.");
+    new Player(voidRoom, "cynicalTeuthida", <String>["CYNICALTEUTHIDA", "CT"], "You are eating calamari.", "You fail to use them.");
 
     //new Player(voidRoom, "chernobylsAquacade", <String>["CHERNOBYLSAQUACADE", "CA"], "", "You fail to use them.");
 
