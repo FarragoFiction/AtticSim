@@ -352,6 +352,8 @@ class Controller {
 //oblivionSurfer
     new Player(voidRoom, "oblivionSurfer ", <String>["OBLIVIONSURFER", "OS"], "You know about JR's secret Library. You also know it isn't in this game.", "You fail to use them.");
 
+    new Player(voidRoom, "starSorceress ", <String>["STARSORCERESS", "SS"], "You...huh. Warp the very meaning of Juice?", "You fail to use them.");
+
     //new Player(voidRoom, "chernobylsAquacade", <String>["CHERNOBYLSAQUACADE", "CA"], "", "You fail to use them.");
 
 
