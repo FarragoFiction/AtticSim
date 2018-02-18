@@ -346,8 +346,8 @@ class Controller {
     new Player(voidRoom, "insipidTestimony", <String>["INSIPIDTESTIMONY", "IT"], "Knows who Shogun is and inspired the good vibes channel.", "You fail to use them.");
     new Player(voidRoom, "maskedProxy", <String>["MASKEDPROXY", "MP"], "Knows who Shogun is. It's a puzzle.", "You fail to use them.");
     new Player(voidRoom, "Cat, fireRachet", <String>["CAT, FIRERACHET", "FR","CAT","FIRERACHET"], "Knows who Shogun is, and blames them for taking all their name changing scrolls.", "You fail to use them.");
-    new Player(voidRoom, "creativeDungeoneer", <String>["CREATIVEDUNGEONER", "CD"], "You are currently working on your next  meme.", "You fail to use them.");
-    new Player(voidRoom, "wongle", <String>["WONGLER", "WB"], "You have dedicated your life to making sprite edits.", "You fail to use them.");
+    new Player(voidRoom, "creativeDungeoneer", <String>["CREATIVEDUNGEONEER", "CD"], "You are currently working on your next  meme.", "You fail to use them.");
+    new Player(voidRoom, "wongle", <String>["WONGLE", "WB"], "You have dedicated your life to making sprite edits.", "You fail to use them.");
 
     //new Player(voidRoom, "chernobylsAquacade", <String>["CHERNOBYLSAQUACADE", "CA"], "", "You fail to use them.");
 
