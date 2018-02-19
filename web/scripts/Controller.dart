@@ -353,6 +353,7 @@ class Controller {
     new Player(voidRoom, "oblivionSurfer ", <String>["OBLIVIONSURFER", "OS"], "You know about JR's secret Library. You also know it isn't in this game.", "You fail to use them.");
 
     new Player(voidRoom, "starSorceress ", <String>["STARSORCERESS", "SS"], "You...huh. Warp the very meaning of Juice?", "You fail to use them.");
+    new Player(voidRoom, "Zekeram12 ", <String>["ZEKERAM12", "ZEKERAM"], "Knows who Shogun is. Are they related to the Queen of Sauce?", "You fail to use them.");
 
     //new Player(voidRoom, "chernobylsAquacade", <String>["CHERNOBYLSAQUACADE", "CA"], "", "You fail to use them.");
 
