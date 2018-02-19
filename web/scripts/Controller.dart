@@ -341,7 +341,6 @@ class Controller {
     new Player(voidRoom, "asocialGoldfish", <String>["ANSTUS", "AG","ASOCIALGOLDFISH",'SA',"CI"], "You are responsible for Anstus, and the self-cest meme. You knows who Shogun is.", "You fail to use them.");
     new Player(voidRoom, "decidedlyEntropic", <String>["DECIEDLYENTROPIC", "DA"], "Knows who Shogun is. Wishes you could input 'update sim' anywhere in this game.", "You fail to use them.");
     new Player(voidRoom, "Duck King", <String>["DUCKKING", "DUCK","DK"], "Knows who Shogun is. Has the patience to smith all things. Master of the JR themed shitpost.", "You fail to use them.");
-    new Player(voidRoom, "FirankaMipińska", <String>["FIRANKAMIPINSKA", "FM"], "Knows who Shogun is. Good at catching bugs.", "You fail to use them.");
     new Player(voidRoom, "flame_warp", <String>["FLAME_WARP", "FW","FLAMEWARP"], "Knows who Shogun is, and also how tiny Jack is.", "You fail to use them.");
     new Player(voidRoom, "insipidTestimony", <String>["INSIPIDTESTIMONY", "IT"], "Knows who Shogun is and inspired the good vibes channel.", "You fail to use them.");
     new Player(voidRoom, "maskedProxy", <String>["MASKEDPROXY", "MP"], "Knows who Shogun is. It's a puzzle.", "You fail to use them.");
@@ -351,6 +350,7 @@ class Controller {
     new Player(voidRoom, "cynicalTeuthida", <String>["CYNICALTEUTHIDA", "CT"], "You are eating calamari.", "You fail to use them.");
 //oblivionSurfer
     new Player(voidRoom, "oblivionSurfer ", <String>["OBLIVIONSURFER", "OS"], "You know about JR's secret Library. You also know it isn't in this game.", "You fail to use them.");
+    new Player(voidRoom, "sadisticCynic ", <String>["SADISTICCYNIC", "SC"], "You know who Shogun is, and also what Spain is. It's a flavor of ice cream. So is glowcloud.", "You fail to use them.");
 
     new Player(voidRoom, "starSorceress ", <String>["STARSORCERESS", "SS"], "You...huh. Warp the very meaning of Juice?", "You fail to use them.");
     new Player(voidRoom, "Zekeram12 ", <String>["ZEKERAM12", "ZEKERAM"], "Knows who Shogun is. Are they related to the Queen of Sauce?", "You fail to use them.");
