@@ -331,11 +331,11 @@ class Controller {
     Player shanks = new Player(voidRoom, "Seven Shanks", <String>["SS", "SEVEN SHANKS", "SHANKS"], "You are now Seven Shanks. Unsurprisingly, you are stabbing things.", "You use Shanks to stab things.");
     Player floral = new Player(voidRoom, "floralShenanigans", <String>["FLORAL", "FS", "FLORALSHENANIGANS"], "You are now floralShenanigans. You are creating more alt!Shoguns to kiss each other.", "floralShenanigans makes amazing fanart of you.");
     Player skylos = new Player(voidRoom, "chernobylsAquacade", <String>["CHERNOBYLSAQUACADE", "CA", "SKYLOSTEMPLAR","ST"], "You are busy stealing Sauce from Shogun and redestributing it to the masses.", "You fail to use them.");
-    new Player(voidRoom, "catatonicKeeper", <String>["CATATONICKEEPER", "CK"], "Knows who Shogun is.", "You fail to use them.");
+    new Player(voidRoom, "catatonicKeeper", <String>["CATATONICKEEPER", "CK"], "Knows who Shogun is. Also knows where JR keeps all those weird doll body parts.", "You fail to use them.");
     new Player(voidRoom, "feverentAcolyte", <String>["FEVERENTACOLYTE", "FA"], "Knows who Shogun is.", "You fail to use them.");
     new Player(voidRoom, "gibberingPhilosopher", <String>["GIBBERINGPHILOSOPHER", "GP"], "Knows who Shogun is.", "You fail to use them.");
     new Player(voidRoom, "jovianArchiver", <String>["JOVIANARCHIVER", "JA"], "Knows who Shogun is.", "You fail to use them.");
-    new Player(voidRoom, "ActuallyTerrific", <String>["ACTUALLYTERRIFIC", "AT"], "Knows who Shogun is.", "You fail to use them.");
+    new Player(voidRoom, "ActuallyTerrific", <String>["ACTUALLYTERRIFIC", "AT"], "Knows who Shogun is. Really is terrific.", "You fail to use them.");
     new Player(voidRoom, "brokenPlayer", <String>["BROKENPLAYER", "BP"], "Knows who Shogun is.", "You fail to use them.");
     new Player(voidRoom, "asinineGodsend", <String>["ASININEGODSEND", "AG"], "Is  a deputy. Knows who Shogun is.", "You fail to use them.");
     new Player(voidRoom, "asocialGoldfish", <String>["ANSTUS", "AG","ASOCIALGOLDFISH",'SA',"CI"], "You are responsible for Anstus, and the self-cest meme. You knows who Shogun is.", "You fail to use them.");
